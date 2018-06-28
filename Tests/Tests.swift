@@ -13,8 +13,29 @@
 //   limitations under the License.
 
 import XCTest
+import ScreamNetworking
+
+public struct TestRequest: Request {
+    public static let endpoint = Endpoint.url(URL(string: "https://api.github.com/orgs/SwiftScream")!)
+    public typealias ResponseBodyType = ResultResponseBody<TestResponse, TestErrorResponse>
+}
+
+public struct TestResponse: Decodable {
+    public let name: String
+    public let description: String
+    public let location: String
+}
+
+public struct TestErrorResponse: Decodable {
+    let message: String
+}
 
 class Tests: XCTestCase {
+    var session: Session?
+
+    override func setUp() {
+        session = Session(description: "TestSession")
+    }
 
     func testExample() {
     }

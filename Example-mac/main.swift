@@ -13,3 +13,44 @@
 //   limitations under the License.
 
 import Foundation
+import ScreamNetworking
+
+let session = Session(description: "main session")
+
+let rootRequest = session.enqueue(GitHubService.Root()) { response in
+    do {
+        switch try response.unwrap() {
+        case .error(let e):
+            print("Domain Error: \(e.message)")
+        case .success(let root):
+            print("\(root.endpoints.count) Endpoints")
+        }
+    } catch let e {
+        print("Networking Error: \(e)")
+    }
+}
+
+let orgRequest = session.enqueue(GitHubService.Organization()) { response in
+    do {
+        switch try response.unwrap() {
+        case .error(let e):
+            print("Domain Error: \(e.message)")
+        case .success(let org):
+            print(org.name)
+            print(org.description)
+            print(org.location)
+        }
+    } catch let e {
+        print("Networking Error: \(e)")
+    }
+}
+
+RunLoop.current.run(until: Date(timeIntervalSinceNow: 10))
+
+/*
+ TODO:
+ - Add uri-template + variables
+ - Add entry relation
+ - Add hal relation
+ - Add headers
+*/

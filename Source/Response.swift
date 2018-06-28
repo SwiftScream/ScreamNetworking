@@ -14,5 +14,4 @@
 
 import Foundation
 
-public struct ScreamNetworking {
-}
+public typealias Response<ResponseBodyType> = Result<ResponseBodyType, Session.Error>

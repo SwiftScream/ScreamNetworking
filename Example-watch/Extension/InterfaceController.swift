@@ -14,11 +14,54 @@
 
 import WatchKit
 import Foundation
+import ScreamNetworking
 
 class InterfaceController: WKInterfaceController {
+    let session: Session
+    var rootRequest: AutoCancellable?
+    var orgRequest: AutoCancellable?
+
+    override init() {
+        session = Session(description: "GitHubSession")
+        super.init()
+    }
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+    }
+
+    override func didAppear() {
+        super.didAppear()
+
+        rootRequest = session.enqueue(GitHubService.Root()) { [weak self] response in
+            do {
+                switch try response.unwrap() {
+                case .error(let e):
+                    print("Domain Error: \(e.message)")
+                case .success(let root):
+                    print("\(root.endpoints.count) Endpoints")
+                }
+            } catch let e {
+                print("Networking Error: \(e)")
+            }
+            self?.rootRequest = nil
+        }
+
+        orgRequest = session.enqueue(GitHubService.Organization()) { [weak self] response in
+            do {
+                switch try response.unwrap() {
+                case .error(let e):
+                    print("Domain Error: \(e.message)")
+                case .success(let org):
+                    print(org.name)
+                    print(org.description)
+                    print(org.location)
+                }
+            } catch let e {
+                print("Networking Error: \(e)")
+            }
+            self?.orgRequest = nil
+        }
     }
 
 }

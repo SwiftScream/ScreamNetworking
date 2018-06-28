@@ -8,7 +8,14 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-4BC51D.svg?style=flat)](https://swift.org/package-manager/)
 
-A robust and performant Swift 4.1 implementation of [RFC6570](https://tools.ietf.org/html/rfc6570) URI Template.  Full Level 4 support is provided.
+A HTTP Networking library in Swift 4.1
+
+This project is under active development and isn't production-ready.
+
+We currently only support performing a GET request to a hardcoded URL that responds with a JSON payload.
+More coming soon.
+
+NB: essentials.swift is likely to become it's own library in future
 
 ## Getting Started
 
