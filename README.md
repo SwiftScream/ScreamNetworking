@@ -20,7 +20,7 @@ NB: essentials.swift is likely to become it's own library in future
 ## Getting Started
 
 ### Manual
-Static Library and Dynamic Framework targets are provided for iOS, MacOS, tvOS, and watchOS; integrate them as you normally would.
+Static Framework targets are provided for iOS, MacOS, tvOS, and watchOS; integrate them as you normally would.
 
 ### Carthage
 Add `github "SwiftScream/ScreamNetworking" ~> 0.1` to your Cartfile

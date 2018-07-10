@@ -13,10 +13,6 @@
 			buildPhases = (
 			);
 			dependencies = (
-				9588123A209354DC0080D3D4 /* PBXTargetDependency */,
-				958812A32096E9120080D3D4 /* PBXTargetDependency */,
-				9588123C209354DC0080D3D4 /* PBXTargetDependency */,
-				958812622096C3C00080D3D4 /* PBXTargetDependency */,
 				95D06B8A20AAB13A005D6947 /* PBXTargetDependency */,
 				95D06B8C20AAB13A005D6947 /* PBXTargetDependency */,
 				95D06B8E20AAB13A005D6947 /* PBXTargetDependency */,
@@ -28,34 +24,18 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		9518467A20DD206700F16EAC /* ResultResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518467920DD206700F16EAC /* ResultResponseBody.swift */; };
-		9518467B20DD206700F16EAC /* ResultResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518467920DD206700F16EAC /* ResultResponseBody.swift */; };
-		9518467C20DD206700F16EAC /* ResultResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518467920DD206700F16EAC /* ResultResponseBody.swift */; };
-		9518467D20DD206700F16EAC /* ResultResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518467920DD206700F16EAC /* ResultResponseBody.swift */; };
 		9518467E20DD206700F16EAC /* ResultResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518467920DD206700F16EAC /* ResultResponseBody.swift */; };
 		9518467F20DD206700F16EAC /* ResultResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518467920DD206700F16EAC /* ResultResponseBody.swift */; };
 		9518468020DD206700F16EAC /* ResultResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518467920DD206700F16EAC /* ResultResponseBody.swift */; };
 		9518468120DD206700F16EAC /* ResultResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518467920DD206700F16EAC /* ResultResponseBody.swift */; };
-		9518468320DD294400F16EAC /* Essentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518468220DD294400F16EAC /* Essentials.swift */; };
-		9518468420DD294400F16EAC /* Essentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518468220DD294400F16EAC /* Essentials.swift */; };
-		9518468520DD294400F16EAC /* Essentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518468220DD294400F16EAC /* Essentials.swift */; };
-		9518468620DD294400F16EAC /* Essentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518468220DD294400F16EAC /* Essentials.swift */; };
 		9518468720DD294400F16EAC /* Essentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518468220DD294400F16EAC /* Essentials.swift */; };
 		9518468820DD294400F16EAC /* Essentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518468220DD294400F16EAC /* Essentials.swift */; };
 		9518468920DD294400F16EAC /* Essentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518468220DD294400F16EAC /* Essentials.swift */; };
 		9518468A20DD294400F16EAC /* Essentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518468220DD294400F16EAC /* Essentials.swift */; };
-		9518468D20DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518468C20DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift */; };
-		9518468E20DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518468C20DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift */; };
-		9518468F20DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518468C20DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift */; };
-		9518469020DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518468C20DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift */; };
 		9518469120DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518468C20DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift */; };
 		9518469220DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518468C20DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift */; };
 		9518469320DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518468C20DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift */; };
 		9518469420DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518468C20DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift */; };
-		9518469620E0BF9C00F16EAC /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518469520E0BF9C00F16EAC /* Response.swift */; };
-		9518469720E0BF9C00F16EAC /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518469520E0BF9C00F16EAC /* Response.swift */; };
-		9518469820E0BF9C00F16EAC /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518469520E0BF9C00F16EAC /* Response.swift */; };
-		9518469920E0BF9C00F16EAC /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518469520E0BF9C00F16EAC /* Response.swift */; };
 		9518469A20E0BF9C00F16EAC /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518469520E0BF9C00F16EAC /* Response.swift */; };
 		9518469B20E0BF9C00F16EAC /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518469520E0BF9C00F16EAC /* Response.swift */; };
 		9518469C20E0BF9C00F16EAC /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518469520E0BF9C00F16EAC /* Response.swift */; };
@@ -63,6 +43,9 @@
 		9533E13A20EFA1EF00ADECFD /* SessionQueuesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9533E13920EFA1EF00ADECFD /* SessionQueuesTests.swift */; };
 		9533E13B20EFA1EF00ADECFD /* SessionQueuesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9533E13920EFA1EF00ADECFD /* SessionQueuesTests.swift */; };
 		9533E13C20EFA1EF00ADECFD /* SessionQueuesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9533E13920EFA1EF00ADECFD /* SessionQueuesTests.swift */; };
+		9533E16620F47F0400ADECFD /* ScreamNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D06B7420AAB08E005D6947 /* ScreamNetworking.framework */; };
+		9533E16720F47F1200ADECFD /* ScreamNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9549657B20A41AAD00BD6E16 /* ScreamNetworking.framework */; };
+		9533E16820F47F1E00ADECFD /* ScreamNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9549658D20A4230500BD6E16 /* ScreamNetworking.framework */; };
 		954999CC20E4C0B2002ED05D /* GitHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EF120D8825B001D36CE /* GitHubService.swift */; };
 		954999CD20E4C0B3002ED05D /* GitHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EF120D8825B001D36CE /* GitHubService.swift */; };
 		954999CE20E4C0BD002ED05D /* GitHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EF120D8825B001D36CE /* GitHubService.swift */; };
@@ -75,18 +58,10 @@
 		954999E520E5DE3C002ED05D /* RequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954999E420E5DE3C002ED05D /* RequestTests.swift */; };
 		954999E620E5DE3C002ED05D /* RequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954999E420E5DE3C002ED05D /* RequestTests.swift */; };
 		954999E720E5DE3C002ED05D /* RequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954999E420E5DE3C002ED05D /* RequestTests.swift */; };
-		954999E920E899DC002ED05D /* Session+Mocking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954999E820E899DC002ED05D /* Session+Mocking.swift */; };
-		954999EA20E899DC002ED05D /* Session+Mocking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954999E820E899DC002ED05D /* Session+Mocking.swift */; };
-		954999EB20E899DC002ED05D /* Session+Mocking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954999E820E899DC002ED05D /* Session+Mocking.swift */; };
-		954999EC20E899DC002ED05D /* Session+Mocking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954999E820E899DC002ED05D /* Session+Mocking.swift */; };
 		954999ED20E899DC002ED05D /* Session+Mocking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954999E820E899DC002ED05D /* Session+Mocking.swift */; };
 		954999EE20E899DC002ED05D /* Session+Mocking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954999E820E899DC002ED05D /* Session+Mocking.swift */; };
 		954999EF20E899DC002ED05D /* Session+Mocking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954999E820E899DC002ED05D /* Session+Mocking.swift */; };
 		954999F020E899DC002ED05D /* Session+Mocking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954999E820E899DC002ED05D /* Session+Mocking.swift */; };
-		95499A1D20EC51C5002ED05D /* MockResponseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95499A1C20EC51C5002ED05D /* MockResponseStore.swift */; };
-		95499A1E20EC51C5002ED05D /* MockResponseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95499A1C20EC51C5002ED05D /* MockResponseStore.swift */; };
-		95499A1F20EC51C5002ED05D /* MockResponseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95499A1C20EC51C5002ED05D /* MockResponseStore.swift */; };
-		95499A2020EC51C5002ED05D /* MockResponseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95499A1C20EC51C5002ED05D /* MockResponseStore.swift */; };
 		95499A2120EC51C5002ED05D /* MockResponseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95499A1C20EC51C5002ED05D /* MockResponseStore.swift */; };
 		95499A2220EC51C5002ED05D /* MockResponseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95499A1C20EC51C5002ED05D /* MockResponseStore.swift */; };
 		95499A2320EC51C5002ED05D /* MockResponseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95499A1C20EC51C5002ED05D /* MockResponseStore.swift */; };
@@ -112,36 +87,21 @@
 		958812802096C71A0080D3D4 /* ScreamNetworkingExample-watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 958812662096C7190080D3D4 /* ScreamNetworkingExample-watch.app */; };
 		958812B72096ED170080D3D4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958812B62096ED170080D3D4 /* main.swift */; };
 		958812D7209745FE0080D3D4 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958812D6209745FE0080D3D4 /* Tests.swift */; };
-		958812D9209745FE0080D3D4 /* libScreamNetworking-mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 958812982096E8EB0080D3D4 /* libScreamNetworking-mac.a */; };
-		958812F12097F3090080D3D4 /* libScreamNetworking-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C591721F6F7A1100C4405A /* libScreamNetworking-ios.a */; };
 		958812F72097F32D0080D3D4 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958812D6209745FE0080D3D4 /* Tests.swift */; };
-		958813062097F8B70080D3D4 /* libScreamNetworking-tv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95AE3DD62092FC0F004D6773 /* libScreamNetworking-tv.a */; };
 		9588130C2097F8CB0080D3D4 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958812D6209745FE0080D3D4 /* Tests.swift */; };
 		95C591891F6F7C1200C4405A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C591881F6F7C1200C4405A /* AppDelegate.swift */; };
 		95C5918B1F6F7C1200C4405A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C5918A1F6F7C1200C4405A /* ViewController.swift */; };
 		95C591901F6F7C1200C4405A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95C5918F1F6F7C1200C4405A /* Assets.xcassets */; };
 		95C591931F6F7C1200C4405A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95C591911F6F7C1200C4405A /* LaunchScreen.storyboard */; };
-		95E25EE020D39008001D36CE /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EDF20D39007001D36CE /* Request.swift */; };
-		95E25EE120D39008001D36CE /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EDF20D39007001D36CE /* Request.swift */; };
-		95E25EE220D39008001D36CE /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EDF20D39007001D36CE /* Request.swift */; };
-		95E25EE320D39008001D36CE /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EDF20D39007001D36CE /* Request.swift */; };
 		95E25EE420D39008001D36CE /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EDF20D39007001D36CE /* Request.swift */; };
 		95E25EE520D39008001D36CE /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EDF20D39007001D36CE /* Request.swift */; };
 		95E25EE620D39008001D36CE /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EDF20D39007001D36CE /* Request.swift */; };
 		95E25EE720D39008001D36CE /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EDF20D39007001D36CE /* Request.swift */; };
-		95E25EE920D39364001D36CE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EE820D39364001D36CE /* Endpoint.swift */; };
-		95E25EEA20D39364001D36CE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EE820D39364001D36CE /* Endpoint.swift */; };
-		95E25EEB20D39364001D36CE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EE820D39364001D36CE /* Endpoint.swift */; };
-		95E25EEC20D39364001D36CE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EE820D39364001D36CE /* Endpoint.swift */; };
 		95E25EED20D39364001D36CE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EE820D39364001D36CE /* Endpoint.swift */; };
 		95E25EEE20D39364001D36CE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EE820D39364001D36CE /* Endpoint.swift */; };
 		95E25EEF20D39364001D36CE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EE820D39364001D36CE /* Endpoint.swift */; };
 		95E25EF020D39364001D36CE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EE820D39364001D36CE /* Endpoint.swift */; };
 		95E25EFA20D8826B001D36CE /* GitHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EF120D8825B001D36CE /* GitHubService.swift */; };
-		95E25EFC20D89FD0001D36CE /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EFB20D89FD0001D36CE /* Session.swift */; };
-		95E25EFD20D89FD0001D36CE /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EFB20D89FD0001D36CE /* Session.swift */; };
-		95E25EFE20D89FD0001D36CE /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EFB20D89FD0001D36CE /* Session.swift */; };
-		95E25EFF20D89FD0001D36CE /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EFB20D89FD0001D36CE /* Session.swift */; };
 		95E25F0020D89FD0001D36CE /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EFB20D89FD0001D36CE /* Session.swift */; };
 		95E25F0120D89FD0001D36CE /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EFB20D89FD0001D36CE /* Session.swift */; };
 		95E25F0220D89FD0001D36CE /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EFB20D89FD0001D36CE /* Session.swift */; };
@@ -149,33 +109,54 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		95881239209354DC0080D3D4 /* PBXContainerItemProxy */ = {
+		9533E15820F47E4000ADECFD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 95C5916A1F6F7A1100C4405A /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 95C591711F6F7A1100C4405A;
-			remoteInfo = "ScreamNetworking-ios";
+			remoteGlobalIDString = 9549657A20A41AAD00BD6E16;
+			remoteInfo = "ScreamNetworking-ios-d";
 		};
-		9588123B209354DC0080D3D4 /* PBXContainerItemProxy */ = {
+		9533E15A20F47E4A00ADECFD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 95C5916A1F6F7A1100C4405A /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 95AE3DD52092FC0F004D6773;
-			remoteInfo = "ScreamNetworking-tv";
+			remoteGlobalIDString = 95D06B7320AAB08E005D6947;
+			remoteInfo = "ScreamNetworking-tv-d";
 		};
-		958812522096A20C0080D3D4 /* PBXContainerItemProxy */ = {
+		9533E15C20F47E5700ADECFD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 95C5916A1F6F7A1100C4405A /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 95AE3DD52092FC0F004D6773;
-			remoteInfo = "ScreamNetworking-tv";
+			remoteGlobalIDString = 95D06B8020AAB126005D6947;
+			remoteInfo = "ScreamNetworking-watch-d";
 		};
-		958812612096C3C00080D3D4 /* PBXContainerItemProxy */ = {
+		9533E15E20F47E6000ADECFD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 95C5916A1F6F7A1100C4405A /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 958812582096C3820080D3D4;
-			remoteInfo = "ScreamNetworking-watch";
+			remoteGlobalIDString = 9549658C20A4230500BD6E16;
+			remoteInfo = "ScreamNetworking-mac-d";
+		};
+		9533E16020F47E7200ADECFD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 95C5916A1F6F7A1100C4405A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9549658C20A4230500BD6E16;
+			remoteInfo = "ScreamNetworking-mac-d";
+		};
+		9533E16220F47E7A00ADECFD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 95C5916A1F6F7A1100C4405A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9549657A20A41AAD00BD6E16;
+			remoteInfo = "ScreamNetworking-ios-d";
+		};
+		9533E16420F47E8200ADECFD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 95C5916A1F6F7A1100C4405A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 95D06B7320AAB08E005D6947;
+			remoteInfo = "ScreamNetworking-tv-d";
 		};
 		958812742096C7190080D3D4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -190,55 +171,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 958812652096C7190080D3D4;
 			remoteInfo = "ScreamNetworkingExample-watch";
-		};
-		958812892096CA340080D3D4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 95C5916A1F6F7A1100C4405A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 958812582096C3820080D3D4;
-			remoteInfo = "ScreamNetworking-watch";
-		};
-		958812A22096E9120080D3D4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 95C5916A1F6F7A1100C4405A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 958812972096E8EB0080D3D4;
-			remoteInfo = "ScreamNetworking-mac";
-		};
-		958812BB2096ED650080D3D4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 95C5916A1F6F7A1100C4405A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 958812972096E8EB0080D3D4;
-			remoteInfo = "ScreamNetworking-mac";
-		};
-		958812DA209745FE0080D3D4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 95C5916A1F6F7A1100C4405A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 958812972096E8EB0080D3D4;
-			remoteInfo = "ScreamNetworking-mac";
-		};
-		958812F22097F3090080D3D4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 95C5916A1F6F7A1100C4405A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 95C591711F6F7A1100C4405A;
-			remoteInfo = "ScreamNetworking-ios";
-		};
-		958813072097F8B70080D3D4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 95C5916A1F6F7A1100C4405A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 95AE3DD52092FC0F004D6773;
-			remoteInfo = "ScreamNetworking-tv";
-		};
-		95BAAD631F70EE4B005F3D08 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 95C5916A1F6F7A1100C4405A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 95C591711F6F7A1100C4405A;
-			remoteInfo = ScreamNetworking;
 		};
 		95D06B8920AAB13A005D6947 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -271,15 +203,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		958812572096C3820080D3D4 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		958812842096C71A0080D3D4 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -311,24 +234,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
-		95AE3DD42092FC0F004D6773 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		95C591701F6F7A1100C4405A /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -339,10 +244,10 @@
 		9533E13920EFA1EF00ADECFD /* SessionQueuesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionQueuesTests.swift; sourceTree = "<group>"; };
 		9549657B20A41AAD00BD6E16 /* ScreamNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ScreamNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9549658D20A4230500BD6E16 /* ScreamNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ScreamNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		954965D220AAA5B900BD6E16 /* DynamicLibTarget-ios.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "DynamicLibTarget-ios.xcconfig"; sourceTree = "<group>"; };
-		954965D320AAA5B900BD6E16 /* DynamicLibTarget-mac.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "DynamicLibTarget-mac.xcconfig"; sourceTree = "<group>"; };
-		954965D420AAA5B900BD6E16 /* DynamicLibTarget-tv.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "DynamicLibTarget-tv.xcconfig"; sourceTree = "<group>"; };
-		954965D520AAA5B900BD6E16 /* DynamicLibTarget-watch.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "DynamicLibTarget-watch.xcconfig"; sourceTree = "<group>"; };
+		954965D220AAA5B900BD6E16 /* FrameworkTarget-ios.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "FrameworkTarget-ios.xcconfig"; sourceTree = "<group>"; };
+		954965D320AAA5B900BD6E16 /* FrameworkTarget-mac.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "FrameworkTarget-mac.xcconfig"; sourceTree = "<group>"; };
+		954965D420AAA5B900BD6E16 /* FrameworkTarget-tv.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "FrameworkTarget-tv.xcconfig"; sourceTree = "<group>"; };
+		954965D520AAA5B900BD6E16 /* FrameworkTarget-watch.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "FrameworkTarget-watch.xcconfig"; sourceTree = "<group>"; };
 		954999DC20E4FE66002ED05D /* ResultResponseBodyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultResponseBodyTests.swift; sourceTree = "<group>"; };
 		954999E020E5A90A002ED05D /* URLSessionTaskAutoCancellableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionTaskAutoCancellableTests.swift; sourceTree = "<group>"; };
 		954999E420E5DE3C002ED05D /* RequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTests.swift; sourceTree = "<group>"; };
@@ -351,15 +256,12 @@
 		95499A2520ECF3CD002ED05D /* SessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTests.swift; sourceTree = "<group>"; };
 		95499A2920EDC1A0002ED05D /* SessionTests+ResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SessionTests+ResponseData.swift"; sourceTree = "<group>"; };
 		95499A2D20EDE81E002ED05D /* EssentialsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialsTests.swift; sourceTree = "<group>"; };
-		9588123420934F150080D3D4 /* StaticLibTarget-tv.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "StaticLibTarget-tv.xcconfig"; sourceTree = "<group>"; };
 		958812432096A0980080D3D4 /* ScreamNetworkingExample-tv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ScreamNetworkingExample-tv.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		958812452096A0980080D3D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		958812472096A0980080D3D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9588124C2096A09A0080D3D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9588124E2096A09A0080D3D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		958812542096A6900080D3D4 /* ExampleTarget-tv.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ExampleTarget-tv.xcconfig"; sourceTree = "<group>"; };
-		958812592096C3820080D3D4 /* libScreamNetworking-watch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libScreamNetworking-watch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		958812632096C4A10080D3D4 /* StaticLibTarget-watch.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "StaticLibTarget-watch.xcconfig"; sourceTree = "<group>"; };
 		958812662096C7190080D3D4 /* ScreamNetworkingExample-watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ScreamNetworkingExample-watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		958812692096C7190080D3D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		9588126B2096C7190080D3D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -371,8 +273,6 @@
 		9588127D2096C71A0080D3D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		958812922096DAED0080D3D4 /* ExampleTarget-watch.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ExampleTarget-watch.xcconfig"; sourceTree = "<group>"; };
 		958812932096DAED0080D3D4 /* ExampleTarget-watch-ext.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ExampleTarget-watch-ext.xcconfig"; sourceTree = "<group>"; };
-		958812982096E8EB0080D3D4 /* libScreamNetworking-mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libScreamNetworking-mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		958812A42096E9CD0080D3D4 /* StaticLibTarget-mac.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "StaticLibTarget-mac.xcconfig"; sourceTree = "<group>"; };
 		958812B42096ED160080D3D4 /* ScreamNetworkingExample-mac */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "ScreamNetworkingExample-mac"; sourceTree = BUILT_PRODUCTS_DIR; };
 		958812B62096ED170080D3D4 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		958812BF2096EDBE0080D3D4 /* ExampleTarget-mac.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ExampleTarget-mac.xcconfig"; sourceTree = "<group>"; };
@@ -384,8 +284,6 @@
 		958812FC2097F5470080D3D4 /* TestTarget-ios.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "TestTarget-ios.xcconfig"; sourceTree = "<group>"; };
 		958813012097F8B70080D3D4 /* Tests-tv.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests-tv.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		958813112097FB130080D3D4 /* TestTarget-tv.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "TestTarget-tv.xcconfig"; sourceTree = "<group>"; };
-		95AE3DD62092FC0F004D6773 /* libScreamNetworking-tv.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libScreamNetworking-tv.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		95C591721F6F7A1100C4405A /* libScreamNetworking-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libScreamNetworking-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C591861F6F7C1200C4405A /* ScreamNetworkingExample-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ScreamNetworkingExample-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C591881F6F7C1200C4405A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95C5918A1F6F7C1200C4405A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -394,13 +292,12 @@
 		95C591941F6F7C1200C4405A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95C5919F1F6F83B200C4405A /* Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
 		95C591A01F6F85F400C4405A /* Warnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Warnings.xcconfig; sourceTree = "<group>"; };
-		95C591A11F6F873D00C4405A /* StaticLibTarget-ios.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "StaticLibTarget-ios.xcconfig"; sourceTree = "<group>"; };
 		95C591A21F6F8B3C00C4405A /* ExampleTarget-ios.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ExampleTarget-ios.xcconfig"; sourceTree = "<group>"; };
 		95C591A31F6F907300C4405A /* Project-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Project-Release.xcconfig"; sourceTree = "<group>"; };
 		95C591A41F6F909500C4405A /* Project-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Project-Debug.xcconfig"; sourceTree = "<group>"; };
 		95D06B7420AAB08E005D6947 /* ScreamNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ScreamNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95D06B8120AAB126005D6947 /* ScreamNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ScreamNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		95D06BA120AAB407005D6947 /* DynamicFrameworkInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = DynamicFrameworkInfo.plist; sourceTree = "<group>"; };
+		95D06BA120AAB407005D6947 /* FrameworkInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FrameworkInfo.plist; sourceTree = "<group>"; };
 		95E25EDF20D39007001D36CE /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		95E25EE820D39364001D36CE /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		95E25EF120D8825B001D36CE /* GitHubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubService.swift; sourceTree = "<group>"; };
@@ -429,21 +326,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		958812562096C3820080D3D4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9588126F2096C7190080D3D4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		958812952096E8EB0080D3D4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -461,7 +344,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				958812D9209745FE0080D3D4 /* libScreamNetworking-mac.a in Frameworks */,
+				9533E16820F47F1E00ADECFD /* ScreamNetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,7 +352,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				958812F12097F3090080D3D4 /* libScreamNetworking-ios.a in Frameworks */,
+				9533E16720F47F1200ADECFD /* ScreamNetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,21 +360,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				958813062097F8B70080D3D4 /* libScreamNetworking-tv.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		95AE3DD32092FC0F004D6773 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		95C5916F1F6F7A1100C4405A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				9533E16620F47F0400ADECFD /* ScreamNetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,14 +488,10 @@
 		95C591731F6F7A1100C4405A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				95C591721F6F7A1100C4405A /* libScreamNetworking-ios.a */,
 				95C591861F6F7C1200C4405A /* ScreamNetworkingExample-ios.app */,
-				95AE3DD62092FC0F004D6773 /* libScreamNetworking-tv.a */,
 				958812432096A0980080D3D4 /* ScreamNetworkingExample-tv.app */,
-				958812592096C3820080D3D4 /* libScreamNetworking-watch.a */,
 				958812662096C7190080D3D4 /* ScreamNetworkingExample-watch.app */,
 				958812722096C7190080D3D4 /* ScreamNetworkingExample-watch Extension.appex */,
-				958812982096E8EB0080D3D4 /* libScreamNetworking-mac.a */,
 				958812B42096ED160080D3D4 /* ScreamNetworkingExample-mac */,
 				958812D4209745FE0080D3D4 /* Tests-mac.xctest */,
 				958812EC2097F3090080D3D4 /* Tests-ios.xctest */,
@@ -650,7 +515,7 @@
 				9518468220DD294400F16EAC /* Essentials.swift */,
 				95499A1C20EC51C5002ED05D /* MockResponseStore.swift */,
 				9518468B20DD29F500F16EAC /* Internal */,
-				95D06BA120AAB407005D6947 /* DynamicFrameworkInfo.plist */,
+				95D06BA120AAB407005D6947 /* FrameworkInfo.plist */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -673,14 +538,10 @@
 				95C5919F1F6F83B200C4405A /* Project.xcconfig */,
 				95C591A31F6F907300C4405A /* Project-Release.xcconfig */,
 				95C591A41F6F909500C4405A /* Project-Debug.xcconfig */,
-				95C591A11F6F873D00C4405A /* StaticLibTarget-ios.xcconfig */,
-				958812A42096E9CD0080D3D4 /* StaticLibTarget-mac.xcconfig */,
-				9588123420934F150080D3D4 /* StaticLibTarget-tv.xcconfig */,
-				958812632096C4A10080D3D4 /* StaticLibTarget-watch.xcconfig */,
-				954965D220AAA5B900BD6E16 /* DynamicLibTarget-ios.xcconfig */,
-				954965D320AAA5B900BD6E16 /* DynamicLibTarget-mac.xcconfig */,
-				954965D420AAA5B900BD6E16 /* DynamicLibTarget-tv.xcconfig */,
-				954965D520AAA5B900BD6E16 /* DynamicLibTarget-watch.xcconfig */,
+				954965D220AAA5B900BD6E16 /* FrameworkTarget-ios.xcconfig */,
+				954965D320AAA5B900BD6E16 /* FrameworkTarget-mac.xcconfig */,
+				954965D420AAA5B900BD6E16 /* FrameworkTarget-tv.xcconfig */,
+				954965D520AAA5B900BD6E16 /* FrameworkTarget-watch.xcconfig */,
 				958812FC2097F5470080D3D4 /* TestTarget-ios.xcconfig */,
 				958812E72097D88D0080D3D4 /* TestTarget-mac.xcconfig */,
 				958813112097FB130080D3D4 /* TestTarget-tv.xcconfig */,
@@ -711,13 +572,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		958812962096E8EB0080D3D4 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		95D06B7120AAB08E005D6947 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -735,9 +589,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		9549657A20A41AAD00BD6E16 /* ScreamNetworking-ios-d */ = {
+		9549657A20A41AAD00BD6E16 /* ScreamNetworking-ios */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9549658020A41AAD00BD6E16 /* Build configuration list for PBXNativeTarget "ScreamNetworking-ios-d" */;
+			buildConfigurationList = 9549658020A41AAD00BD6E16 /* Build configuration list for PBXNativeTarget "ScreamNetworking-ios" */;
 			buildPhases = (
 				9549657620A41AAD00BD6E16 /* Sources */,
 				9549657720A41AAD00BD6E16 /* Frameworks */,
@@ -748,14 +602,14 @@
 			);
 			dependencies = (
 			);
-			name = "ScreamNetworking-ios-d";
+			name = "ScreamNetworking-ios";
 			productName = "ScreamNetworking-ios-dylib";
 			productReference = 9549657B20A41AAD00BD6E16 /* ScreamNetworking.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		9549658C20A4230500BD6E16 /* ScreamNetworking-mac-d */ = {
+		9549658C20A4230500BD6E16 /* ScreamNetworking-mac */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9549659220A4230500BD6E16 /* Build configuration list for PBXNativeTarget "ScreamNetworking-mac-d" */;
+			buildConfigurationList = 9549659220A4230500BD6E16 /* Build configuration list for PBXNativeTarget "ScreamNetworking-mac" */;
 			buildPhases = (
 				9549658820A4230500BD6E16 /* Sources */,
 				9549658920A4230500BD6E16 /* Frameworks */,
@@ -766,7 +620,7 @@
 			);
 			dependencies = (
 			);
-			name = "ScreamNetworking-mac-d";
+			name = "ScreamNetworking-mac";
 			productName = "ScreamNetworking-mac-dylib";
 			productReference = 9549658D20A4230500BD6E16 /* ScreamNetworking.framework */;
 			productType = "com.apple.product-type.framework";
@@ -782,30 +636,12 @@
 			buildRules = (
 			);
 			dependencies = (
-				958812532096A20C0080D3D4 /* PBXTargetDependency */,
+				9533E15B20F47E4A00ADECFD /* PBXTargetDependency */,
 			);
 			name = "ScreamNetworkingExample-tv";
 			productName = "ScreamNetworkingExample-tv";
 			productReference = 958812432096A0980080D3D4 /* ScreamNetworkingExample-tv.app */;
 			productType = "com.apple.product-type.application";
-		};
-		958812582096C3820080D3D4 /* ScreamNetworking-watch */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9588125F2096C3820080D3D4 /* Build configuration list for PBXNativeTarget "ScreamNetworking-watch" */;
-			buildPhases = (
-				958812552096C3820080D3D4 /* Sources */,
-				958812562096C3820080D3D4 /* Frameworks */,
-				958812572096C3820080D3D4 /* CopyFiles */,
-				95DC57B820CA587E0007C182 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "ScreamNetworking-watch";
-			productName = "ScreamNetworking-watch";
-			productReference = 958812592096C3820080D3D4 /* libScreamNetworking-watch.a */;
-			productType = "com.apple.product-type.library.static";
 		};
 		958812652096C7190080D3D4 /* ScreamNetworkingExample-watch */ = {
 			isa = PBXNativeTarget;
@@ -835,30 +671,12 @@
 			buildRules = (
 			);
 			dependencies = (
-				9588128A2096CA340080D3D4 /* PBXTargetDependency */,
+				9533E15D20F47E5700ADECFD /* PBXTargetDependency */,
 			);
 			name = "ScreamNetworkingExample-watch Extension";
 			productName = "ScreamNetworkingExample-watch Extension";
 			productReference = 958812722096C7190080D3D4 /* ScreamNetworkingExample-watch Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
-		};
-		958812972096E8EB0080D3D4 /* ScreamNetworking-mac */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9588129E2096E8EB0080D3D4 /* Build configuration list for PBXNativeTarget "ScreamNetworking-mac" */;
-			buildPhases = (
-				958812942096E8EB0080D3D4 /* Sources */,
-				958812952096E8EB0080D3D4 /* Frameworks */,
-				958812962096E8EB0080D3D4 /* Headers */,
-				95DC57B620CA586D0007C182 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "ScreamNetworking-mac";
-			productName = "ScreamNetworking-mac";
-			productReference = 958812982096E8EB0080D3D4 /* libScreamNetworking-mac.a */;
-			productType = "com.apple.product-type.library.static";
 		};
 		958812B32096ED160080D3D4 /* ScreamNetworkingExample-mac */ = {
 			isa = PBXNativeTarget;
@@ -871,7 +689,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				958812BC2096ED650080D3D4 /* PBXTargetDependency */,
+				9533E15F20F47E6000ADECFD /* PBXTargetDependency */,
 			);
 			name = "ScreamNetworkingExample-mac";
 			productName = "ScreamNetworkingExample-mac";
@@ -889,7 +707,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				958812DB209745FE0080D3D4 /* PBXTargetDependency */,
+				9533E16120F47E7200ADECFD /* PBXTargetDependency */,
 			);
 			name = "Tests-mac";
 			productName = "Tests-mac";
@@ -907,7 +725,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				958812F32097F3090080D3D4 /* PBXTargetDependency */,
+				9533E16320F47E7A00ADECFD /* PBXTargetDependency */,
 			);
 			name = "Tests-ios";
 			productName = "Tests-ios";
@@ -925,48 +743,12 @@
 			buildRules = (
 			);
 			dependencies = (
-				958813082097F8B70080D3D4 /* PBXTargetDependency */,
+				9533E16520F47E8200ADECFD /* PBXTargetDependency */,
 			);
 			name = "Tests-tv";
 			productName = "Tests-tv";
 			productReference = 958813012097F8B70080D3D4 /* Tests-tv.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		95AE3DD52092FC0F004D6773 /* ScreamNetworking-tv */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 95AE3DDA2092FC0F004D6773 /* Build configuration list for PBXNativeTarget "ScreamNetworking-tv" */;
-			buildPhases = (
-				95AE3DD22092FC0F004D6773 /* Sources */,
-				95AE3DD32092FC0F004D6773 /* Frameworks */,
-				95AE3DD42092FC0F004D6773 /* CopyFiles */,
-				95DC57B720CA58770007C182 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "ScreamNetworking-tv";
-			productName = "ScreamNetworking-tv";
-			productReference = 95AE3DD62092FC0F004D6773 /* libScreamNetworking-tv.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		95C591711F6F7A1100C4405A /* ScreamNetworking-ios */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 95C5917B1F6F7A1100C4405A /* Build configuration list for PBXNativeTarget "ScreamNetworking-ios" */;
-			buildPhases = (
-				95C5916E1F6F7A1100C4405A /* Sources */,
-				95C5916F1F6F7A1100C4405A /* Frameworks */,
-				95C591701F6F7A1100C4405A /* CopyFiles */,
-				95DC57B520CA58500007C182 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "ScreamNetworking-ios";
-			productName = ScreamNetworking;
-			productReference = 95C591721F6F7A1100C4405A /* libScreamNetworking-ios.a */;
-			productType = "com.apple.product-type.library.static";
 		};
 		95C591851F6F7C1200C4405A /* ScreamNetworkingExample-ios */ = {
 			isa = PBXNativeTarget;
@@ -980,7 +762,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				95BAAD641F70EE4B005F3D08 /* PBXTargetDependency */,
+				9533E15920F47E4000ADECFD /* PBXTargetDependency */,
 				9588127F2096C71A0080D3D4 /* PBXTargetDependency */,
 			);
 			name = "ScreamNetworkingExample-ios";
@@ -988,9 +770,9 @@
 			productReference = 95C591861F6F7C1200C4405A /* ScreamNetworkingExample-ios.app */;
 			productType = "com.apple.product-type.application";
 		};
-		95D06B7320AAB08E005D6947 /* ScreamNetworking-tv-d */ = {
+		95D06B7320AAB08E005D6947 /* ScreamNetworking-tv */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 95D06B7B20AAB08E005D6947 /* Build configuration list for PBXNativeTarget "ScreamNetworking-tv-d" */;
+			buildConfigurationList = 95D06B7B20AAB08E005D6947 /* Build configuration list for PBXNativeTarget "ScreamNetworking-tv" */;
 			buildPhases = (
 				95D06B6F20AAB08E005D6947 /* Sources */,
 				95D06B7020AAB08E005D6947 /* Frameworks */,
@@ -1001,14 +783,14 @@
 			);
 			dependencies = (
 			);
-			name = "ScreamNetworking-tv-d";
+			name = "ScreamNetworking-tv";
 			productName = "ScreamNetworking-tv-d";
 			productReference = 95D06B7420AAB08E005D6947 /* ScreamNetworking.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		95D06B8020AAB126005D6947 /* ScreamNetworking-watch-d */ = {
+		95D06B8020AAB126005D6947 /* ScreamNetworking-watch */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 95D06B8620AAB126005D6947 /* Build configuration list for PBXNativeTarget "ScreamNetworking-watch-d" */;
+			buildConfigurationList = 95D06B8620AAB126005D6947 /* Build configuration list for PBXNativeTarget "ScreamNetworking-watch" */;
 			buildPhases = (
 				95D06B7C20AAB126005D6947 /* Sources */,
 				95D06B7D20AAB126005D6947 /* Frameworks */,
@@ -1019,7 +801,7 @@
 			);
 			dependencies = (
 			);
-			name = "ScreamNetworking-watch-d";
+			name = "ScreamNetworking-watch";
 			productName = "ScreamNetworking-watch-d";
 			productReference = 95D06B8120AAB126005D6947 /* ScreamNetworking.framework */;
 			productType = "com.apple.product-type.framework";
@@ -1049,9 +831,6 @@
 						CreatedOnToolsVersion = 9.3;
 						ProvisioningStyle = Automatic;
 					};
-					958812582096C3820080D3D4 = {
-						CreatedOnToolsVersion = 9.3;
-					};
 					958812652096C7190080D3D4 = {
 						CreatedOnToolsVersion = 9.3;
 						ProvisioningStyle = Automatic;
@@ -1059,9 +838,6 @@
 					958812712096C7190080D3D4 = {
 						CreatedOnToolsVersion = 9.3;
 						ProvisioningStyle = Automatic;
-					};
-					958812972096E8EB0080D3D4 = {
-						CreatedOnToolsVersion = 9.3;
 					};
 					958812B32096ED160080D3D4 = {
 						CreatedOnToolsVersion = 9.3;
@@ -1074,15 +850,6 @@
 					};
 					958813002097F8B70080D3D4 = {
 						CreatedOnToolsVersion = 9.3;
-					};
-					95AE3DD52092FC0F004D6773 = {
-						CreatedOnToolsVersion = 9.3;
-						ProvisioningStyle = Automatic;
-					};
-					95C591711F6F7A1100C4405A = {
-						CreatedOnToolsVersion = 9.0;
-						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
 					};
 					95C591851F6F7C1200C4405A = {
 						CreatedOnToolsVersion = 9.0;
@@ -1109,14 +876,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				95C591711F6F7A1100C4405A /* ScreamNetworking-ios */,
-				958812972096E8EB0080D3D4 /* ScreamNetworking-mac */,
-				95AE3DD52092FC0F004D6773 /* ScreamNetworking-tv */,
-				958812582096C3820080D3D4 /* ScreamNetworking-watch */,
-				9549657A20A41AAD00BD6E16 /* ScreamNetworking-ios-d */,
-				9549658C20A4230500BD6E16 /* ScreamNetworking-mac-d */,
-				95D06B7320AAB08E005D6947 /* ScreamNetworking-tv-d */,
-				95D06B8020AAB126005D6947 /* ScreamNetworking-watch-d */,
+				9549657A20A41AAD00BD6E16 /* ScreamNetworking-ios */,
+				9549658C20A4230500BD6E16 /* ScreamNetworking-mac */,
+				95D06B7320AAB08E005D6947 /* ScreamNetworking-tv */,
+				95D06B8020AAB126005D6947 /* ScreamNetworking-watch */,
 				958812352093549E0080D3D4 /* All */,
 				95C591851F6F7C1200C4405A /* ScreamNetworkingExample-ios */,
 				958812422096A0980080D3D4 /* ScreamNetworkingExample-tv */,
@@ -1216,77 +979,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		95DC57B520CA58500007C182 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		95DC57B620CA586D0007C182 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		95DC57B720CA58770007C182 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		95DC57B820CA587E0007C182 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		9549657620A41AAD00BD6E16 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1330,22 +1022,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		958812552096C3820080D3D4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9518469920E0BF9C00F16EAC /* Response.swift in Sources */,
-				9518468620DD294400F16EAC /* Essentials.swift in Sources */,
-				9518469020DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift in Sources */,
-				954999EC20E899DC002ED05D /* Session+Mocking.swift in Sources */,
-				95E25EFF20D89FD0001D36CE /* Session.swift in Sources */,
-				95E25EEC20D39364001D36CE /* Endpoint.swift in Sources */,
-				95E25EE320D39008001D36CE /* Request.swift in Sources */,
-				95499A2020EC51C5002ED05D /* MockResponseStore.swift in Sources */,
-				9518467D20DD206700F16EAC /* ResultResponseBody.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9588126E2096C7190080D3D4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1353,22 +1029,6 @@
 				9588127A2096C7190080D3D4 /* ExtensionDelegate.swift in Sources */,
 				954999CE20E4C0BD002ED05D /* GitHubService.swift in Sources */,
 				958812782096C7190080D3D4 /* InterfaceController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		958812942096E8EB0080D3D4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9518469720E0BF9C00F16EAC /* Response.swift in Sources */,
-				9518468420DD294400F16EAC /* Essentials.swift in Sources */,
-				9518468E20DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift in Sources */,
-				954999EA20E899DC002ED05D /* Session+Mocking.swift in Sources */,
-				95E25EFD20D89FD0001D36CE /* Session.swift in Sources */,
-				95E25EEA20D39364001D36CE /* Endpoint.swift in Sources */,
-				95E25EE120D39008001D36CE /* Request.swift in Sources */,
-				95499A1E20EC51C5002ED05D /* MockResponseStore.swift in Sources */,
-				9518467B20DD206700F16EAC /* ResultResponseBody.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1426,38 +1086,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		95AE3DD22092FC0F004D6773 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9518469820E0BF9C00F16EAC /* Response.swift in Sources */,
-				9518468520DD294400F16EAC /* Essentials.swift in Sources */,
-				9518468F20DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift in Sources */,
-				954999EB20E899DC002ED05D /* Session+Mocking.swift in Sources */,
-				95E25EFE20D89FD0001D36CE /* Session.swift in Sources */,
-				95E25EEB20D39364001D36CE /* Endpoint.swift in Sources */,
-				95E25EE220D39008001D36CE /* Request.swift in Sources */,
-				95499A1F20EC51C5002ED05D /* MockResponseStore.swift in Sources */,
-				9518467C20DD206700F16EAC /* ResultResponseBody.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		95C5916E1F6F7A1100C4405A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9518469620E0BF9C00F16EAC /* Response.swift in Sources */,
-				9518468320DD294400F16EAC /* Essentials.swift in Sources */,
-				9518468D20DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift in Sources */,
-				954999E920E899DC002ED05D /* Session+Mocking.swift in Sources */,
-				95E25EFC20D89FD0001D36CE /* Session.swift in Sources */,
-				95E25EE920D39364001D36CE /* Endpoint.swift in Sources */,
-				95E25EE020D39008001D36CE /* Request.swift in Sources */,
-				95499A1D20EC51C5002ED05D /* MockResponseStore.swift in Sources */,
-				9518467A20DD206700F16EAC /* ResultResponseBody.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		95C591821F6F7C1200C4405A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1503,25 +1131,40 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9588123A209354DC0080D3D4 /* PBXTargetDependency */ = {
+		9533E15920F47E4000ADECFD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 95C591711F6F7A1100C4405A /* ScreamNetworking-ios */;
-			targetProxy = 95881239209354DC0080D3D4 /* PBXContainerItemProxy */;
+			target = 9549657A20A41AAD00BD6E16 /* ScreamNetworking-ios */;
+			targetProxy = 9533E15820F47E4000ADECFD /* PBXContainerItemProxy */;
 		};
-		9588123C209354DC0080D3D4 /* PBXTargetDependency */ = {
+		9533E15B20F47E4A00ADECFD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 95AE3DD52092FC0F004D6773 /* ScreamNetworking-tv */;
-			targetProxy = 9588123B209354DC0080D3D4 /* PBXContainerItemProxy */;
+			target = 95D06B7320AAB08E005D6947 /* ScreamNetworking-tv */;
+			targetProxy = 9533E15A20F47E4A00ADECFD /* PBXContainerItemProxy */;
 		};
-		958812532096A20C0080D3D4 /* PBXTargetDependency */ = {
+		9533E15D20F47E5700ADECFD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 95AE3DD52092FC0F004D6773 /* ScreamNetworking-tv */;
-			targetProxy = 958812522096A20C0080D3D4 /* PBXContainerItemProxy */;
+			target = 95D06B8020AAB126005D6947 /* ScreamNetworking-watch */;
+			targetProxy = 9533E15C20F47E5700ADECFD /* PBXContainerItemProxy */;
 		};
-		958812622096C3C00080D3D4 /* PBXTargetDependency */ = {
+		9533E15F20F47E6000ADECFD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 958812582096C3820080D3D4 /* ScreamNetworking-watch */;
-			targetProxy = 958812612096C3C00080D3D4 /* PBXContainerItemProxy */;
+			target = 9549658C20A4230500BD6E16 /* ScreamNetworking-mac */;
+			targetProxy = 9533E15E20F47E6000ADECFD /* PBXContainerItemProxy */;
+		};
+		9533E16120F47E7200ADECFD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9549658C20A4230500BD6E16 /* ScreamNetworking-mac */;
+			targetProxy = 9533E16020F47E7200ADECFD /* PBXContainerItemProxy */;
+		};
+		9533E16320F47E7A00ADECFD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9549657A20A41AAD00BD6E16 /* ScreamNetworking-ios */;
+			targetProxy = 9533E16220F47E7A00ADECFD /* PBXContainerItemProxy */;
+		};
+		9533E16520F47E8200ADECFD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 95D06B7320AAB08E005D6947 /* ScreamNetworking-tv */;
+			targetProxy = 9533E16420F47E8200ADECFD /* PBXContainerItemProxy */;
 		};
 		958812752096C7190080D3D4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1533,59 +1176,24 @@
 			target = 958812652096C7190080D3D4 /* ScreamNetworkingExample-watch */;
 			targetProxy = 9588127E2096C71A0080D3D4 /* PBXContainerItemProxy */;
 		};
-		9588128A2096CA340080D3D4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 958812582096C3820080D3D4 /* ScreamNetworking-watch */;
-			targetProxy = 958812892096CA340080D3D4 /* PBXContainerItemProxy */;
-		};
-		958812A32096E9120080D3D4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 958812972096E8EB0080D3D4 /* ScreamNetworking-mac */;
-			targetProxy = 958812A22096E9120080D3D4 /* PBXContainerItemProxy */;
-		};
-		958812BC2096ED650080D3D4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 958812972096E8EB0080D3D4 /* ScreamNetworking-mac */;
-			targetProxy = 958812BB2096ED650080D3D4 /* PBXContainerItemProxy */;
-		};
-		958812DB209745FE0080D3D4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 958812972096E8EB0080D3D4 /* ScreamNetworking-mac */;
-			targetProxy = 958812DA209745FE0080D3D4 /* PBXContainerItemProxy */;
-		};
-		958812F32097F3090080D3D4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 95C591711F6F7A1100C4405A /* ScreamNetworking-ios */;
-			targetProxy = 958812F22097F3090080D3D4 /* PBXContainerItemProxy */;
-		};
-		958813082097F8B70080D3D4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 95AE3DD52092FC0F004D6773 /* ScreamNetworking-tv */;
-			targetProxy = 958813072097F8B70080D3D4 /* PBXContainerItemProxy */;
-		};
-		95BAAD641F70EE4B005F3D08 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 95C591711F6F7A1100C4405A /* ScreamNetworking-ios */;
-			targetProxy = 95BAAD631F70EE4B005F3D08 /* PBXContainerItemProxy */;
-		};
 		95D06B8A20AAB13A005D6947 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9549657A20A41AAD00BD6E16 /* ScreamNetworking-ios-d */;
+			target = 9549657A20A41AAD00BD6E16 /* ScreamNetworking-ios */;
 			targetProxy = 95D06B8920AAB13A005D6947 /* PBXContainerItemProxy */;
 		};
 		95D06B8C20AAB13A005D6947 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9549658C20A4230500BD6E16 /* ScreamNetworking-mac-d */;
+			target = 9549658C20A4230500BD6E16 /* ScreamNetworking-mac */;
 			targetProxy = 95D06B8B20AAB13A005D6947 /* PBXContainerItemProxy */;
 		};
 		95D06B8E20AAB13A005D6947 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 95D06B7320AAB08E005D6947 /* ScreamNetworking-tv-d */;
+			target = 95D06B7320AAB08E005D6947 /* ScreamNetworking-tv */;
 			targetProxy = 95D06B8D20AAB13A005D6947 /* PBXContainerItemProxy */;
 		};
 		95D06B9020AAB13A005D6947 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 95D06B8020AAB126005D6947 /* ScreamNetworking-watch-d */;
+			target = 95D06B8020AAB126005D6947 /* ScreamNetworking-watch */;
 			targetProxy = 95D06B8F20AAB13A005D6947 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1612,28 +1220,28 @@
 /* Begin XCBuildConfiguration section */
 		9549658120A41AAD00BD6E16 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 954965D220AAA5B900BD6E16 /* DynamicLibTarget-ios.xcconfig */;
+			baseConfigurationReference = 954965D220AAA5B900BD6E16 /* FrameworkTarget-ios.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		9549658220A41AAD00BD6E16 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 954965D220AAA5B900BD6E16 /* DynamicLibTarget-ios.xcconfig */;
+			baseConfigurationReference = 954965D220AAA5B900BD6E16 /* FrameworkTarget-ios.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		9549659320A4230500BD6E16 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 954965D320AAA5B900BD6E16 /* DynamicLibTarget-mac.xcconfig */;
+			baseConfigurationReference = 954965D320AAA5B900BD6E16 /* FrameworkTarget-mac.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		9549659420A4230500BD6E16 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 954965D320AAA5B900BD6E16 /* DynamicLibTarget-mac.xcconfig */;
+			baseConfigurationReference = 954965D320AAA5B900BD6E16 /* FrameworkTarget-mac.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
@@ -1668,20 +1276,6 @@
 			};
 			name = Release;
 		};
-		9588125D2096C3820080D3D4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 958812632096C4A10080D3D4 /* StaticLibTarget-watch.xcconfig */;
-			buildSettings = {
-			};
-			name = Debug;
-		};
-		9588125E2096C3820080D3D4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 958812632096C4A10080D3D4 /* StaticLibTarget-watch.xcconfig */;
-			buildSettings = {
-			};
-			name = Release;
-		};
 		958812822096C71A0080D3D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 958812932096DAED0080D3D4 /* ExampleTarget-watch-ext.xcconfig */;
@@ -1706,20 +1300,6 @@
 		958812872096C71A0080D3D4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 958812922096DAED0080D3D4 /* ExampleTarget-watch.xcconfig */;
-			buildSettings = {
-			};
-			name = Release;
-		};
-		9588129F2096E8EB0080D3D4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 958812A42096E9CD0080D3D4 /* StaticLibTarget-mac.xcconfig */;
-			buildSettings = {
-			};
-			name = Debug;
-		};
-		958812A02096E8EB0080D3D4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 958812A42096E9CD0080D3D4 /* StaticLibTarget-mac.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
@@ -1780,20 +1360,6 @@
 			};
 			name = Release;
 		};
-		95AE3DDB2092FC0F004D6773 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9588123420934F150080D3D4 /* StaticLibTarget-tv.xcconfig */;
-			buildSettings = {
-			};
-			name = Debug;
-		};
-		95AE3DDC2092FC0F004D6773 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9588123420934F150080D3D4 /* StaticLibTarget-tv.xcconfig */;
-			buildSettings = {
-			};
-			name = Release;
-		};
 		95C591791F6F7A1100C4405A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 95C591A41F6F909500C4405A /* Project-Debug.xcconfig */;
@@ -1804,20 +1370,6 @@
 		95C5917A1F6F7A1100C4405A /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 95C591A31F6F907300C4405A /* Project-Release.xcconfig */;
-			buildSettings = {
-			};
-			name = Release;
-		};
-		95C5917C1F6F7A1100C4405A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 95C591A11F6F873D00C4405A /* StaticLibTarget-ios.xcconfig */;
-			buildSettings = {
-			};
-			name = Debug;
-		};
-		95C5917D1F6F7A1100C4405A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 95C591A11F6F873D00C4405A /* StaticLibTarget-ios.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
@@ -1838,28 +1390,28 @@
 		};
 		95D06B7920AAB08E005D6947 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 954965D420AAA5B900BD6E16 /* DynamicLibTarget-tv.xcconfig */;
+			baseConfigurationReference = 954965D420AAA5B900BD6E16 /* FrameworkTarget-tv.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		95D06B7A20AAB08E005D6947 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 954965D420AAA5B900BD6E16 /* DynamicLibTarget-tv.xcconfig */;
+			baseConfigurationReference = 954965D420AAA5B900BD6E16 /* FrameworkTarget-tv.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
 		};
 		95D06B8720AAB126005D6947 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 954965D520AAA5B900BD6E16 /* DynamicLibTarget-watch.xcconfig */;
+			baseConfigurationReference = 954965D520AAA5B900BD6E16 /* FrameworkTarget-watch.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		95D06B8820AAB126005D6947 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 954965D520AAA5B900BD6E16 /* DynamicLibTarget-watch.xcconfig */;
+			baseConfigurationReference = 954965D520AAA5B900BD6E16 /* FrameworkTarget-watch.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
@@ -1867,7 +1419,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9549658020A41AAD00BD6E16 /* Build configuration list for PBXNativeTarget "ScreamNetworking-ios-d" */ = {
+		9549658020A41AAD00BD6E16 /* Build configuration list for PBXNativeTarget "ScreamNetworking-ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9549658120A41AAD00BD6E16 /* Debug */,
@@ -1876,7 +1428,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9549659220A4230500BD6E16 /* Build configuration list for PBXNativeTarget "ScreamNetworking-mac-d" */ = {
+		9549659220A4230500BD6E16 /* Build configuration list for PBXNativeTarget "ScreamNetworking-mac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9549659320A4230500BD6E16 /* Debug */,
@@ -1903,15 +1455,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9588125F2096C3820080D3D4 /* Build configuration list for PBXNativeTarget "ScreamNetworking-watch" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9588125D2096C3820080D3D4 /* Debug */,
-				9588125E2096C3820080D3D4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		958812812096C71A0080D3D4 /* Build configuration list for PBXNativeTarget "ScreamNetworkingExample-watch Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1926,15 +1469,6 @@
 			buildConfigurations = (
 				958812862096C71A0080D3D4 /* Debug */,
 				958812872096C71A0080D3D4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9588129E2096E8EB0080D3D4 /* Build configuration list for PBXNativeTarget "ScreamNetworking-mac" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9588129F2096E8EB0080D3D4 /* Debug */,
-				958812A02096E8EB0080D3D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1975,29 +1509,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		95AE3DDA2092FC0F004D6773 /* Build configuration list for PBXNativeTarget "ScreamNetworking-tv" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				95AE3DDB2092FC0F004D6773 /* Debug */,
-				95AE3DDC2092FC0F004D6773 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		95C5916D1F6F7A1100C4405A /* Build configuration list for PBXProject "ScreamNetworking" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				95C591791F6F7A1100C4405A /* Debug */,
 				95C5917A1F6F7A1100C4405A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		95C5917B1F6F7A1100C4405A /* Build configuration list for PBXNativeTarget "ScreamNetworking-ios" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				95C5917C1F6F7A1100C4405A /* Debug */,
-				95C5917D1F6F7A1100C4405A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2011,7 +1527,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		95D06B7B20AAB08E005D6947 /* Build configuration list for PBXNativeTarget "ScreamNetworking-tv-d" */ = {
+		95D06B7B20AAB08E005D6947 /* Build configuration list for PBXNativeTarget "ScreamNetworking-tv" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				95D06B7920AAB08E005D6947 /* Debug */,
@@ -2020,7 +1536,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		95D06B8620AAB126005D6947 /* Build configuration list for PBXNativeTarget "ScreamNetworking-watch-d" */ = {
+		95D06B8620AAB126005D6947 /* Build configuration list for PBXNativeTarget "ScreamNetworking-watch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				95D06B8720AAB126005D6947 /* Debug */,
