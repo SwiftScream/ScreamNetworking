@@ -46,6 +46,14 @@
 		9533E16620F47F0400ADECFD /* ScreamNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D06B7420AAB08E005D6947 /* ScreamNetworking.framework */; };
 		9533E16720F47F1200ADECFD /* ScreamNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9549657B20A41AAD00BD6E16 /* ScreamNetworking.framework */; };
 		9533E16820F47F1E00ADECFD /* ScreamNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9549658D20A4230500BD6E16 /* ScreamNetworking.framework */; };
+		9533E16B20F4D3B100ADECFD /* URITemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9533E16920F4D3B100ADECFD /* URITemplate.framework */; };
+		9533E16C20F4D3B100ADECFD /* URITemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9533E16920F4D3B100ADECFD /* URITemplate.framework */; };
+		9533E16F20F4D3C300ADECFD /* URITemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9533E16D20F4D3C300ADECFD /* URITemplate.framework */; };
+		9533E17020F4D3C300ADECFD /* URITemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9533E16D20F4D3C300ADECFD /* URITemplate.framework */; };
+		9533E17320F4D3E100ADECFD /* URITemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9533E17120F4D3E100ADECFD /* URITemplate.framework */; };
+		9533E17420F4D3E100ADECFD /* URITemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9533E17120F4D3E100ADECFD /* URITemplate.framework */; };
+		9533E17620F4D3FC00ADECFD /* URITemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9533E17520F4D3FC00ADECFD /* URITemplate.framework */; };
+		9533E17720F4D3FC00ADECFD /* URITemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9533E17520F4D3FC00ADECFD /* URITemplate.framework */; };
 		954999CC20E4C0B2002ED05D /* GitHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EF120D8825B001D36CE /* GitHubService.swift */; };
 		954999CD20E4C0B3002ED05D /* GitHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EF120D8825B001D36CE /* GitHubService.swift */; };
 		954999CE20E4C0BD002ED05D /* GitHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EF120D8825B001D36CE /* GitHubService.swift */; };
@@ -242,6 +250,10 @@
 		9518468C20DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionTaskAutoCancellable.swift; sourceTree = "<group>"; };
 		9518469520E0BF9C00F16EAC /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		9533E13920EFA1EF00ADECFD /* SessionQueuesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionQueuesTests.swift; sourceTree = "<group>"; };
+		9533E16920F4D3B100ADECFD /* URITemplate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = URITemplate.framework; path = Carthage/Build/iOS/Static/URITemplate.framework; sourceTree = "<group>"; };
+		9533E16D20F4D3C300ADECFD /* URITemplate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = URITemplate.framework; path = Carthage/Build/Mac/Static/URITemplate.framework; sourceTree = "<group>"; };
+		9533E17120F4D3E100ADECFD /* URITemplate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = URITemplate.framework; path = Carthage/Build/tvOS/Static/URITemplate.framework; sourceTree = "<group>"; };
+		9533E17520F4D3FC00ADECFD /* URITemplate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = URITemplate.framework; path = Carthage/Build/watchOS/Static/URITemplate.framework; sourceTree = "<group>"; };
 		9549657B20A41AAD00BD6E16 /* ScreamNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ScreamNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9549658D20A4230500BD6E16 /* ScreamNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ScreamNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		954965D220AAA5B900BD6E16 /* FrameworkTarget-ios.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "FrameworkTarget-ios.xcconfig"; sourceTree = "<group>"; };
@@ -323,6 +335,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9533E17320F4D3E100ADECFD /* URITemplate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +343,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9533E17720F4D3FC00ADECFD /* URITemplate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +351,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9533E16F20F4D3C300ADECFD /* URITemplate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9533E16820F47F1E00ADECFD /* ScreamNetworking.framework in Frameworks */,
+				9533E17020F4D3C300ADECFD /* URITemplate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9533E16720F47F1200ADECFD /* ScreamNetworking.framework in Frameworks */,
+				9533E16C20F4D3B100ADECFD /* URITemplate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9533E16620F47F0400ADECFD /* ScreamNetworking.framework in Frameworks */,
+				9533E17420F4D3E100ADECFD /* URITemplate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +386,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9533E16B20F4D3B100ADECFD /* URITemplate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +401,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9533E17620F4D3FC00ADECFD /* URITemplate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +469,10 @@
 		958812BD2096ED700080D3D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9533E17520F4D3FC00ADECFD /* URITemplate.framework */,
+				9533E17120F4D3E100ADECFD /* URITemplate.framework */,
+				9533E16D20F4D3C300ADECFD /* URITemplate.framework */,
+				9533E16920F4D3B100ADECFD /* URITemplate.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

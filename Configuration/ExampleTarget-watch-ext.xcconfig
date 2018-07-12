@@ -10,6 +10,7 @@ PRODUCT_BUNDLE_IDENTIFIER = com.swiftscream.ScreamNetworkingExample.watchkitapp.
 PRODUCT_NAME = $(TARGET_NAME)
 
 OTHER_LDFLAGS = -framework ScreamNetworking
+FRAMEWORK_SEARCH_PATHS = $(inherited) $(PROJECT_DIR)/Carthage/Build/watchOS/Static
 
 CODE_SIGN_IDENTITY = iOS Developer
 CODE_SIGN_STYLE = Automatic

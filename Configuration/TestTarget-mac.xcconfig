@@ -2,6 +2,7 @@ SDKROOT = macosx
 MACOSX_DEPLOYMENT_TARGET = 10.12
 
 LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/../Frameworks @loader_path/../Frameworks
+FRAMEWORK_SEARCH_PATHS = $(inherited) $(PROJECT_DIR)/Carthage/Build/Mac/Static
 INFOPLIST_FILE = Tests/Info.plist
 PRODUCT_BUNDLE_IDENTIFIER = com.swiftscream.ScreamNetworking.Tests-mac
 PRODUCT_NAME = $(TARGET_NAME)

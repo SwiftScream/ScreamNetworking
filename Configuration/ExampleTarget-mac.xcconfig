@@ -4,3 +4,4 @@ MACOSX_DEPLOYMENT_TARGET = 10.12
 PRODUCT_NAME = $(TARGET_NAME)
 
 OTHER_LDFLAGS = -framework ScreamNetworking
+FRAMEWORK_SEARCH_PATHS = $(inherited) $(PROJECT_DIR)/Carthage/Build/Mac/Static

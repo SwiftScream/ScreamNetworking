@@ -2,7 +2,13 @@ language: swift
 os: osx
 osx_image: xcode9.3
 
-install: gem install xcpretty
+install:
+  - gem install xcpretty
+  - brew update
+  - brew upgrade carthage
+
+before_script:
+  - carthage bootstrap
 
 jobs:
   include:
