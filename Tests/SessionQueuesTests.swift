@@ -39,13 +39,13 @@ class SessionQueuesTests: XCTestCase {
         DispatchQueue.main.setSpecific(key: queueMarkerKey, value: nil)
     }
 
-    func test_CallbackQueue_NotSpecifiedUsesMainQueue() {
+    func test_CallbackQueue_NotSpecifiedUsesMainQueue() throws {
         DispatchQueue.main.setSpecific(key: queueMarkerKey, value: "main")
         let session = Session()
         let mockResponseStore = session.startMocking()
         let expectation = self.expectation(description: "requestCompletion")
         let request = GitHubService.Empty()
-        let mockResponse = MockResponse.success(body: nil, url: request.generateURL())
+        let mockResponse = MockResponse.success(body: nil, url: try request.generateURL())
         mockResponseStore.mock(request: request, withResponse: mockResponse)
         var requestToken = session.enqueue(request) { response in
             XCTAssertEqual(DispatchQueue.getSpecific(key: queueMarkerKey), "main")
@@ -55,14 +55,14 @@ class SessionQueuesTests: XCTestCase {
         self.waitForExpectations(timeout: 1)
     }
 
-    func test_CallbackQueue_Specified() {
+    func test_CallbackQueue_Specified() throws {
         let callbackQueue = DispatchQueue(label: "callbackQueue")
         callbackQueue.setSpecific(key: queueMarkerKey, value: "callback")
         let session = Session(callbackQueue: callbackQueue)
         let mockResponseStore = session.startMocking()
         let expectation = self.expectation(description: "requestCompletion")
         let request = GitHubService.Organization()
-        let mockResponse = MockResponse.success(body: nil, url: request.generateURL())
+        let mockResponse = MockResponse.success(body: nil, url: try request.generateURL())
         mockResponseStore.mock(request: request, withResponse: mockResponse)
         var requestToken = session.enqueue(request) { response in
             XCTAssertEqual(DispatchQueue.getSpecific(key: queueMarkerKey), "callback")
@@ -72,13 +72,13 @@ class SessionQueuesTests: XCTestCase {
         self.waitForExpectations(timeout: 1)
     }
 
-    func test_ResponseDecodingQueue_NotSpecifiedDoesNotUseMainQueue() {
+    func test_ResponseDecodingQueue_NotSpecifiedDoesNotUseMainQueue() throws {
         DispatchQueue.main.setSpecific(key: queueMarkerKey, value: "main")
         let session = Session()
         let mockResponseStore = session.startMocking()
         let expectation = self.expectation(description: "requestCompletion")
         let request = SessionQueueTestsService.SessionQueueTest()
-        let mockResponse = MockResponse.success(body: "{}".data(using: .utf8), url: request.generateURL())
+        let mockResponse = MockResponse.success(body: "{}".data(using: .utf8), url: try request.generateURL())
         mockResponseStore.mock(request: request, withResponse: mockResponse)
         var requestToken = session.enqueue(request) { response in
             do {
@@ -93,14 +93,14 @@ class SessionQueuesTests: XCTestCase {
         self.waitForExpectations(timeout: 1)
     }
 
-    func test_ResponseDecodingQueue_Specified() {
+    func test_ResponseDecodingQueue_Specified() throws {
         let responseDecodingQueue = DispatchQueue(label: "responseDecodingQueue")
         responseDecodingQueue.setSpecific(key: queueMarkerKey, value: "responseDecoding")
         let session = Session(responseDecodingQueue: responseDecodingQueue)
         let mockResponseStore = session.startMocking()
         let expectation = self.expectation(description: "requestCompletion")
         let request = SessionQueueTestsService.SessionQueueTest()
-        let mockResponse = MockResponse.success(body: "{}".data(using: .utf8), url: request.generateURL())
+        let mockResponse = MockResponse.success(body: "{}".data(using: .utf8), url: try request.generateURL())
         mockResponseStore.mock(request: request, withResponse: mockResponse)
         var requestToken = session.enqueue(request) { response in
             do {

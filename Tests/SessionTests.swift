@@ -14,6 +14,7 @@
 
 import XCTest
 @testable import ScreamNetworking
+import URITemplate
 
 struct GitHubService {
     public struct Organization: Request {
@@ -74,11 +75,11 @@ class SessionTests: XCTestCase {
         self.waitForExpectations(timeout: 1)
     }
 
-    func testSuccessMock() {
+    func testSuccessMock() throws {
         let expectation = self.expectation(description: "requestCompletion")
         let request = GitHubService.Organization()
         let responseData: Data = ResponseData.organization
-        let mockResponse = MockResponse.success(body: responseData, url: request.generateURL())
+        let mockResponse = MockResponse.success(body: responseData, url: try request.generateURL())
         mockResponseStore.mock(request: request, withResponse: mockResponse)
         var requestToken = session.enqueue(request) { response in
             do {
@@ -95,11 +96,11 @@ class SessionTests: XCTestCase {
         self.waitForExpectations(timeout: 1)
     }
 
-    func testSuccessMockResponse() {
+    func testSuccessMockResponse() throws {
         let expectation = self.expectation(description: "requestCompletion")
         let request = GitHubService.Organization()
         let responseData: Data = ResponseData.organization
-        guard let response = HTTPURLResponse(url: request.generateURL(), statusCode: 200, httpVersion: nil, headerFields: nil) else {
+        guard let response = HTTPURLResponse(url: try request.generateURL(), statusCode: 200, httpVersion: nil, headerFields: nil) else {
             XCTFail("Error producing reponse")
             return
         }
@@ -113,6 +114,71 @@ class SessionTests: XCTestCase {
                 XCTAssertEqual(org.location, "Sydney, Australia")
             } catch {
                 XCTFail("Request Should Not Error")
+            }
+            expectation.fulfill()
+        }
+        requestToken.cancelOnDeinit = false
+        self.waitForExpectations(timeout: 1)
+    }
+
+    func testRequestEncodingFailure_ExpandedTemplateNotURL() {
+        struct TestRequest: Request {
+            public static let endpoint = Endpoint.template("{a}", [
+                "a": \TestRequest.a,
+                ])
+
+            let a: String
+        }
+
+        let expectation = self.expectation(description: "requestCompletion")
+        let request = TestRequest(a: "")
+        let mockResponse = MockResponse.failure(error: TestError.testErrorA)
+        mockResponseStore.mock(request: request, withResponse: mockResponse)
+        var requestToken = session.enqueue(request) { response in
+            do {
+                _ = try response.unwrap()
+                XCTFail("Request Should Error")
+            } catch Session.Error.requestEncoding(let embeddedError) where embeddedError as? RequestError == .invalidEndpoint {
+            } catch {
+                XCTFail("Request Errored in unexpected way")
+            }
+            expectation.fulfill()
+        }
+        requestToken.cancelOnDeinit = false
+        self.waitForExpectations(timeout: 1)
+    }
+
+    func testRequestEncodingFailure_FailedTemplateExpansion() {
+        struct NotSupported: VariableValue {
+        }
+
+        struct TestRequest: Request {
+            public static let endpoint = Endpoint.template("{unsupported}", [
+                "unsupported": \TestRequest.unsupported,
+                ])
+
+            let unsupported: NotSupported
+        }
+
+        let expectation = self.expectation(description: "requestCompletion")
+        let request = TestRequest(unsupported: NotSupported())
+        var requestToken = session.enqueue(request) { response in
+            do {
+                _ = try response.unwrap()
+                XCTFail("Request Should Error")
+            } catch Session.Error.requestEncoding(let embeddedError) {
+                guard let e = embeddedError as? URITemplate.Error else {
+                    XCTFail("Unexpected requestEncoding embeddedError")
+                    return
+                }
+                switch e {
+                case .expansionFailure(_, let reason):
+                    XCTAssertEqual(reason, "Failed expanding variable \"unsupported\": Invalid Value Type")
+                default:
+                    XCTFail("Unexpected URITemplate.Error")
+                }
+            } catch let e {
+                XCTFail("Request Errored in unexpected way: \(e)")
             }
             expectation.fulfill()
         }
@@ -139,11 +205,11 @@ class SessionTests: XCTestCase {
         self.waitForExpectations(timeout: 1)
     }
 
-    func testResponseDecodingFailure() {
+    func testResponseDecodingFailure() throws {
         let expectation = self.expectation(description: "requestCompletion")
         let request = GitHubService.Organization()
         let responseData: Data = "{}".data(using: .utf8)!
-        let mockResponse = MockResponse.success(body: responseData, url: request.generateURL())
+        let mockResponse = MockResponse.success(body: responseData, url: try request.generateURL())
         mockResponseStore.mock(request: request, withResponse: mockResponse)
         var requestToken = session.enqueue(request) { response in
             do {
@@ -165,10 +231,10 @@ class SessionTests: XCTestCase {
         self.waitForExpectations(timeout: 1)
     }
 
-    func testEmptyDataFailure() {
+    func testEmptyDataFailure() throws {
         let expectation = self.expectation(description: "requestCompletion")
         let request = GitHubService.Organization()
-        let mockResponse = MockResponse.success(body: nil, url: request.generateURL())
+        let mockResponse = MockResponse.success(body: nil, url: try request.generateURL())
         mockResponseStore.mock(request: request, withResponse: mockResponse)
         var requestToken = session.enqueue(request) { response in
             do {
@@ -190,10 +256,10 @@ class SessionTests: XCTestCase {
         self.waitForExpectations(timeout: 1)
     }
 
-    func testEmptyDataSuccess() {
+    func testEmptyDataSuccess() throws {
         let expectation = self.expectation(description: "requestCompletion")
         let request = GitHubService.Empty()
-        let mockResponse = MockResponse.success(body: nil, url: request.generateURL())
+        let mockResponse = MockResponse.success(body: nil, url: try request.generateURL())
         mockResponseStore.mock(request: request, withResponse: mockResponse)
         var requestToken = session.enqueue(request) { response in
             do {
@@ -208,12 +274,12 @@ class SessionTests: XCTestCase {
         self.waitForExpectations(timeout: 1)
     }
 
-    func testImmediateCancel() {
+    func testImmediateCancel() throws {
         let expectation = self.expectation(description: "requestCompletion")
         expectation.isInverted = true
         let request = GitHubService.Organization()
         let responseData: Data = ResponseData.organization
-        let mockResponse = MockResponse.success(body: responseData, url: request.generateURL(), latency: 0.02)
+        let mockResponse = MockResponse.success(body: responseData, url: try request.generateURL(), latency: 0.02)
         mockResponseStore.mock(request: request, withResponse: mockResponse)
         let requestToken = session.enqueue(request) { _ in
             expectation.fulfill()
@@ -222,12 +288,12 @@ class SessionTests: XCTestCase {
         self.waitForExpectations(timeout: 0.03)
     }
 
-    func testCancel() {
+    func testCancel() throws {
         let expectation = self.expectation(description: "requestCompletion")
         expectation.isInverted = true
         let request = GitHubService.Organization()
         let responseData: Data = ResponseData.organization
-        let mockResponse = MockResponse.success(body: responseData, url: request.generateURL(), latency: 0.02)
+        let mockResponse = MockResponse.success(body: responseData, url: try request.generateURL(), latency: 0.02)
         mockResponseStore.mock(request: request, withResponse: mockResponse)
         let requestToken = session.enqueue(request) { _ in
             expectation.fulfill()
@@ -238,6 +304,5 @@ class SessionTests: XCTestCase {
         self.waitForExpectations(timeout: 0.03)
     }
 
-    //TODO: Test Session.Error.requestEncoding when that's fallable
     //TODO: Test requestEncodingQueue is used when that's possible (currently we cannot inject anything into that process)
 }

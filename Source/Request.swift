@@ -13,12 +13,14 @@
 //   limitations under the License.
 
 import Foundation
+import URITemplate
 
 public struct EmptyResponse: Decodable {
 }
 
 public protocol Request {
     associatedtype ResponseBodyType: Decodable = EmptyResponse
+    typealias Endpoint = EndpointT<Self>
 
     static var endpoint: Endpoint { get }
     static var method: String { get }
@@ -30,18 +32,39 @@ extension Request {
     }
 }
 
+public enum RequestError: Error {
+    case invalidEndpoint
+}
+
 extension Request {
     internal func createURLRequest() throws -> URLRequest {
-        let url = generateURL()
+        let url = try generateURL()
         var r = URLRequest(url: url)
         r.httpMethod = Self.method
         return r
     }
 
-    internal func generateURL() -> URL {
+    internal func generateURL() throws -> URL {
         switch Self.endpoint {
         case .url(let u):
             return u
+        case .template(let template, let variableMap):
+            let variables = variableMap.mapValues { (keyPath) -> VariableValue in
+                let value = self[keyPath: keyPath]
+                switch value {
+                case let variableValue as VariableValue:
+                    return variableValue
+                case let stringValue as CustomStringConvertible:
+                    return stringValue.description
+                default:
+                    return String(describing: value)
+                }
+            }
+            let expandedTemplate = try template.process(variables: variables)
+            guard let url = URL(string: expandedTemplate) else {
+                throw RequestError.invalidEndpoint
+            }
+            return url
         }
     }
 }

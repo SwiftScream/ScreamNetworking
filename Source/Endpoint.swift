@@ -13,8 +13,11 @@
 //   limitations under the License.
 
 import Foundation
+import URITemplate
 
-public enum Endpoint {
-    //swiftlint:disable:next identifier_name superfluous_disable_command
+public enum EndpointT<R: Request> {
+    //swiftlint:disable identifier_name superfluous_disable_command
     case url(URL)
+    case template(URITemplate, [String: PartialKeyPath<R>])
+    //swiftlint:enable identifier_name superfluous_disable_command
 }

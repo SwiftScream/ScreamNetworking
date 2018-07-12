@@ -49,7 +49,6 @@ RunLoop.current.run(until: Date(timeIntervalSinceNow: 10))
 
 /*
  TODO:
- - Add uri-template + variables
  - Add entry relation
  - Add hal relation
  - Add headers

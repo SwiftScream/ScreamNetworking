@@ -53,4 +53,28 @@ class RequestTests: XCTestCase {
         XCTAssertEqual(request.allHTTPHeaderFields?.count, 0)
     }
 
+    func testTemplateRequestBuild() {
+        struct TestRequest: Request {
+            public static let endpoint = Endpoint.template("https://api.example.com{/path}{?a,b}", [
+                "path": \TestRequest.path,
+                "a": \TestRequest.a,
+                "b": \TestRequest.b,
+                ])
+            typealias ResponseBodyType = Empty
+
+            let path: String //treated as VariableValue
+            let a: Bool //treated as CustomStringConvertible
+            let b: CGPoint // neither VariableValue or CustomStringConvertible so treated as fallback
+        }
+
+        guard let request = try? TestRequest(path: "foo", a: true, b: CGPoint(x: 10, y: 20)).createURLRequest() else {
+            XCTFail("Fail to build request")
+            return
+        }
+        XCTAssertEqual(request.url, URL(string: "https://api.example.com/foo?a=true&b=%2810.0%2C%2020.0%29"))
+        XCTAssertEqual(request.httpMethod, "GET")
+        XCTAssertNil(request.httpBody)
+        XCTAssertEqual(request.allHTTPHeaderFields?.count, 0)
+    }
+
 }

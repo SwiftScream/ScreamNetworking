@@ -94,9 +94,6 @@
 		9588127C2096C71A0080D3D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9588127B2096C71A0080D3D4 /* Assets.xcassets */; };
 		958812802096C71A0080D3D4 /* ScreamNetworkingExample-watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 958812662096C7190080D3D4 /* ScreamNetworkingExample-watch.app */; };
 		958812B72096ED170080D3D4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958812B62096ED170080D3D4 /* main.swift */; };
-		958812D7209745FE0080D3D4 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958812D6209745FE0080D3D4 /* Tests.swift */; };
-		958812F72097F32D0080D3D4 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958812D6209745FE0080D3D4 /* Tests.swift */; };
-		9588130C2097F8CB0080D3D4 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958812D6209745FE0080D3D4 /* Tests.swift */; };
 		95C591891F6F7C1200C4405A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C591881F6F7C1200C4405A /* AppDelegate.swift */; };
 		95C5918B1F6F7C1200C4405A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C5918A1F6F7C1200C4405A /* ViewController.swift */; };
 		95C591901F6F7C1200C4405A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95C5918F1F6F7C1200C4405A /* Assets.xcassets */; };
@@ -289,7 +286,6 @@
 		958812B62096ED170080D3D4 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		958812BF2096EDBE0080D3D4 /* ExampleTarget-mac.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ExampleTarget-mac.xcconfig"; sourceTree = "<group>"; };
 		958812D4209745FE0080D3D4 /* Tests-mac.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests-mac.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		958812D6209745FE0080D3D4 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		958812D8209745FE0080D3D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		958812E72097D88D0080D3D4 /* TestTarget-mac.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "TestTarget-mac.xcconfig"; sourceTree = "<group>"; };
 		958812EC2097F3090080D3D4 /* Tests-ios.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests-ios.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -480,7 +476,6 @@
 		958812D5209745FE0080D3D4 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				958812D6209745FE0080D3D4 /* Tests.swift */,
 				954999E420E5DE3C002ED05D /* RequestTests.swift */,
 				95499A2D20EDE81E002ED05D /* EssentialsTests.swift */,
 				954999DC20E4FE66002ED05D /* ResultResponseBodyTests.swift */,
@@ -1148,7 +1143,6 @@
 				95499A2A20EDC1A0002ED05D /* SessionTests+ResponseData.swift in Sources */,
 				9533E13A20EFA1EF00ADECFD /* SessionQueuesTests.swift in Sources */,
 				954999DD20E4FE66002ED05D /* ResultResponseBodyTests.swift in Sources */,
-				958812D7209745FE0080D3D4 /* Tests.swift in Sources */,
 				954999E120E5A90A002ED05D /* URLSessionTaskAutoCancellableTests.swift in Sources */,
 				95499A2E20EDE81E002ED05D /* EssentialsTests.swift in Sources */,
 				95499A2620ECF3CD002ED05D /* SessionTests.swift in Sources */,
@@ -1163,7 +1157,6 @@
 				95499A2B20EDC1A0002ED05D /* SessionTests+ResponseData.swift in Sources */,
 				9533E13B20EFA1EF00ADECFD /* SessionQueuesTests.swift in Sources */,
 				954999DE20E4FE66002ED05D /* ResultResponseBodyTests.swift in Sources */,
-				958812F72097F32D0080D3D4 /* Tests.swift in Sources */,
 				954999E220E5A90A002ED05D /* URLSessionTaskAutoCancellableTests.swift in Sources */,
 				95499A2F20EDE81E002ED05D /* EssentialsTests.swift in Sources */,
 				95499A2720ECF3CD002ED05D /* SessionTests.swift in Sources */,
@@ -1178,7 +1171,6 @@
 				95499A2C20EDC1A0002ED05D /* SessionTests+ResponseData.swift in Sources */,
 				9533E13C20EFA1EF00ADECFD /* SessionQueuesTests.swift in Sources */,
 				954999DF20E4FE66002ED05D /* ResultResponseBodyTests.swift in Sources */,
-				9588130C2097F8CB0080D3D4 /* Tests.swift in Sources */,
 				954999E320E5A90A002ED05D /* URLSessionTaskAutoCancellableTests.swift in Sources */,
 				95499A3020EDE81E002ED05D /* EssentialsTests.swift in Sources */,
 				95499A2820ECF3CD002ED05D /* SessionTests.swift in Sources */,
