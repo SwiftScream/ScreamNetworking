@@ -30,7 +30,7 @@ let rootRequest = session.enqueue(GitHubService.Root()) { response in
     }
 }
 
-let orgRequest = session.enqueue(GitHubService.Organization()) { response in
+let orgRequest = session.enqueue(GitHubService.Organization(name: "SwiftScream")) { response in
     do {
         switch try response.unwrap() {
         case .error(let e):

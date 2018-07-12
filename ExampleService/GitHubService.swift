@@ -51,8 +51,12 @@ extension GitHubService {
 
 extension GitHubService {
     public struct Organization: Request {
-        public static let endpoint = Endpoint.url("https://api.github.com/orgs/SwiftScream")
+        public static let endpoint = Endpoint.template("https://api.github.com/orgs/{org}", [
+            "org": \Organization.name,
+            ])
         public typealias ResponseBodyType = ResponseBody<OrganizationResponse>
+
+        let name: String
     }
 
     public struct OrganizationResponse: Decodable {
