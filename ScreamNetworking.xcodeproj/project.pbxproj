@@ -251,6 +251,8 @@
 		9533E16D20F4D3C300ADECFD /* URITemplate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = URITemplate.framework; path = Carthage/Build/Mac/Static/URITemplate.framework; sourceTree = "<group>"; };
 		9533E17120F4D3E100ADECFD /* URITemplate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = URITemplate.framework; path = Carthage/Build/tvOS/Static/URITemplate.framework; sourceTree = "<group>"; };
 		9533E17520F4D3FC00ADECFD /* URITemplate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = URITemplate.framework; path = Carthage/Build/watchOS/Static/URITemplate.framework; sourceTree = "<group>"; };
+		953A282720FDA8E700B106D7 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		953A282820FE01AB00B106D7 /* SessionConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionConfiguration.swift; sourceTree = "<group>"; };
 		9549657B20A41AAD00BD6E16 /* ScreamNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ScreamNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9549658D20A4230500BD6E16 /* ScreamNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ScreamNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		954965D220AAA5B900BD6E16 /* FrameworkTarget-ios.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "FrameworkTarget-ios.xcconfig"; sourceTree = "<group>"; };
@@ -491,6 +493,7 @@
 		95C591691F6F7A1100C4405A = {
 			isa = PBXGroup;
 			children = (
+				953A282720FDA8E700B106D7 /* Playground.playground */,
 				95C591741F6F7A1100C4405A /* Source */,
 				954999CB20E3481A002ED05D /* ExampleService */,
 				95C591871F6F7C1200C4405A /* Example-ios */,
