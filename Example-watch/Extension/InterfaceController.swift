@@ -47,7 +47,7 @@ class InterfaceController: WKInterfaceController {
             self?.rootRequest = nil
         }
 
-        orgRequest = session.enqueue(GitHubService.Organization()) { [weak self] response in
+        orgRequest = session.enqueue(GitHubService.Organization(name: "SwiftScream")) { [weak self] response in
             do {
                 switch try response.unwrap() {
                 case .error(let e):
