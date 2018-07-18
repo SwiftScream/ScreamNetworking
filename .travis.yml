@@ -23,3 +23,11 @@ jobs:
       - bash <(curl -s https://codecov.io/bash) -J Tests-tv -F tv
     - script:
       - set -o pipefail && xcodebuild build -project ScreamNetworking.xcodeproj -scheme ScreamNetworking-watch | xcpretty -c
+    - script:
+      - set -o pipefail && xcodebuild build -project ScreamNetworking.xcodeproj -scheme ScreamNetworkingExample-ios -destination "platform=iOS Simulator,name=iPhone X" | xcpretty -c
+    - script:
+      - set -o pipefail && xcodebuild build -project ScreamNetworking.xcodeproj -scheme ScreamNetworkingExample-mac | xcpretty -c
+    - script:
+      - set -o pipefail && xcodebuild build -project ScreamNetworking.xcodeproj -scheme ScreamNetworkingExample-tv -destination "platform=tvOS Simulator,name=Apple TV 4K" | xcpretty -c
+    - script:
+      - set -o pipefail && xcodebuild build -project ScreamNetworking.xcodeproj -scheme ScreamNetworkingExample-watch -destination "platform=iOS Simulator,name=iPhone 8"| xcpretty -c
