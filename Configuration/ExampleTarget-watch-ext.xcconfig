@@ -9,9 +9,10 @@ INFOPLIST_FILE = Example-watch/Extension/Info.plist
 PRODUCT_BUNDLE_IDENTIFIER = com.swiftscream.ScreamNetworkingExample.watchkitapp.watchkitextension
 PRODUCT_NAME = $(TARGET_NAME)
 
-OTHER_LDFLAGS = -framework ScreamNetworking
+SIMULATOR_ONLY_ADDITIONAL_LDFLAGS[sdk=watchsimulator*] = -fprofile-instr-generate
+OTHER_LDFLAGS = -framework ScreamNetworking $(SIMULATOR_ONLY_ADDITIONAL_LDFLAGS)
 FRAMEWORK_SEARCH_PATHS = $(inherited) $(PROJECT_DIR)/Carthage/Build/watchOS/Static
 
-CODE_SIGN_IDENTITY = iOS Developer
+CODE_SIGN_IDENTITY = iPhone Developer
 CODE_SIGN_STYLE = Automatic
 DEVELOPMENT_TEAM =
