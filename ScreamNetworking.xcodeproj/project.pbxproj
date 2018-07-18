@@ -54,6 +54,10 @@
 		9533E17420F4D3E100ADECFD /* URITemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9533E17120F4D3E100ADECFD /* URITemplate.framework */; };
 		9533E17620F4D3FC00ADECFD /* URITemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9533E17520F4D3FC00ADECFD /* URITemplate.framework */; };
 		9533E17720F4D3FC00ADECFD /* URITemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9533E17520F4D3FC00ADECFD /* URITemplate.framework */; };
+		953A282920FE01AB00B106D7 /* SessionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953A282820FE01AB00B106D7 /* SessionConfiguration.swift */; };
+		953A282A20FE01AB00B106D7 /* SessionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953A282820FE01AB00B106D7 /* SessionConfiguration.swift */; };
+		953A282B20FE01AB00B106D7 /* SessionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953A282820FE01AB00B106D7 /* SessionConfiguration.swift */; };
+		953A282C20FE01AB00B106D7 /* SessionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953A282820FE01AB00B106D7 /* SessionConfiguration.swift */; };
 		954999CC20E4C0B2002ED05D /* GitHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EF120D8825B001D36CE /* GitHubService.swift */; };
 		954999CD20E4C0B3002ED05D /* GitHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EF120D8825B001D36CE /* GitHubService.swift */; };
 		954999CE20E4C0BD002ED05D /* GitHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EF120D8825B001D36CE /* GitHubService.swift */; };
@@ -534,6 +538,7 @@
 				9518469520E0BF9C00F16EAC /* Response.swift */,
 				9518467920DD206700F16EAC /* ResultResponseBody.swift */,
 				95E25EFB20D89FD0001D36CE /* Session.swift */,
+				953A282820FE01AB00B106D7 /* SessionConfiguration.swift */,
 				9518468220DD294400F16EAC /* Essentials.swift */,
 				95499A1C20EC51C5002ED05D /* MockResponseStore.swift */,
 				9518468B20DD29F500F16EAC /* Internal */,
@@ -1090,6 +1095,7 @@
 				95E25EE420D39008001D36CE /* Request.swift in Sources */,
 				95499A2120EC51C5002ED05D /* MockResponseStore.swift in Sources */,
 				9518467E20DD206700F16EAC /* ResultResponseBody.swift in Sources */,
+				953A282920FE01AB00B106D7 /* SessionConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1106,6 +1112,7 @@
 				95E25EE520D39008001D36CE /* Request.swift in Sources */,
 				95499A2220EC51C5002ED05D /* MockResponseStore.swift in Sources */,
 				9518467F20DD206700F16EAC /* ResultResponseBody.swift in Sources */,
+				953A282A20FE01AB00B106D7 /* SessionConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1203,6 +1210,7 @@
 				95E25EE620D39008001D36CE /* Request.swift in Sources */,
 				95499A2320EC51C5002ED05D /* MockResponseStore.swift in Sources */,
 				9518468020DD206700F16EAC /* ResultResponseBody.swift in Sources */,
+				953A282B20FE01AB00B106D7 /* SessionConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1219,6 +1227,7 @@
 				95E25EE720D39008001D36CE /* Request.swift in Sources */,
 				95499A2420EC51C5002ED05D /* MockResponseStore.swift in Sources */,
 				9518468120DD206700F16EAC /* ResultResponseBody.swift in Sources */,
+				953A282C20FE01AB00B106D7 /* SessionConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -41,7 +41,7 @@ class SessionQueuesTests: XCTestCase {
 
     func test_CallbackQueue_NotSpecifiedUsesMainQueue() throws {
         DispatchQueue.main.setSpecific(key: queueMarkerKey, value: "main")
-        let session = Session()
+        let session = DefaultSession()
         let mockResponseStore = session.startMocking()
         let expectation = self.expectation(description: "requestCompletion")
         let request = GitHubService.Empty()
@@ -58,7 +58,7 @@ class SessionQueuesTests: XCTestCase {
     func test_CallbackQueue_Specified() throws {
         let callbackQueue = DispatchQueue(label: "callbackQueue")
         callbackQueue.setSpecific(key: queueMarkerKey, value: "callback")
-        let session = Session(callbackQueue: callbackQueue)
+        let session = DefaultSession(callbackQueue: callbackQueue)
         let mockResponseStore = session.startMocking()
         let expectation = self.expectation(description: "requestCompletion")
         let request = GitHubService.Organization()
@@ -74,7 +74,7 @@ class SessionQueuesTests: XCTestCase {
 
     func test_ResponseDecodingQueue_NotSpecifiedDoesNotUseMainQueue() throws {
         DispatchQueue.main.setSpecific(key: queueMarkerKey, value: "main")
-        let session = Session()
+        let session = DefaultSession()
         let mockResponseStore = session.startMocking()
         let expectation = self.expectation(description: "requestCompletion")
         let request = SessionQueueTestsService.SessionQueueTest()
@@ -96,7 +96,7 @@ class SessionQueuesTests: XCTestCase {
     func test_ResponseDecodingQueue_Specified() throws {
         let responseDecodingQueue = DispatchQueue(label: "responseDecodingQueue")
         responseDecodingQueue.setSpecific(key: queueMarkerKey, value: "responseDecoding")
-        let session = Session(responseDecodingQueue: responseDecodingQueue)
+        let session = DefaultSession(responseDecodingQueue: responseDecodingQueue)
         let mockResponseStore = session.startMocking()
         let expectation = self.expectation(description: "requestCompletion")
         let request = SessionQueueTestsService.SessionQueueTest()

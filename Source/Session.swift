@@ -30,7 +30,9 @@ public enum SessionError: Error {
     //swiftlint:enable identifier_name superfluous_disable_command
 }
 
-public class Session {
+typealias DefaultSession = Session<DefaultSessionConfiguration>
+
+public class Session<ConfigurationType: SessionConfiguration> {
     private let session: URLSession
     private let requestEncodingQueue: DispatchQueue
     private let callbackQueue: DispatchQueue
@@ -55,7 +57,7 @@ public class Session {
         self.callbackQueue = callbackQueue ?? DispatchQueue.main
     }
 
-    public func enqueue<R: Request>(_ request: R, completion: @escaping (Response<R.ResponseBodyType>) -> Void) -> AutoCancellable {
+    public func enqueue<R: Request>(_ request: R, completion: @escaping (Response<R.ResponseBodyType>) -> Void) -> AutoCancellable where R.SessionConfigurationType == ConfigurationType {
         let cancellableAggregator = AutoCancellableAggregator()
         let encodingCancellable = requestEncodingQueue.asyncCancellable {
             let urlRequest: URLRequest

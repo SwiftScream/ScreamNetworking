@@ -39,7 +39,7 @@ public enum TestError: Swift.Error {
 }
 
 class SessionTests: XCTestCase {
-    var session: Session!
+    var session: DefaultSession!
     var mockResponseStore: MockResponseStore!
 
     override func setUp() {
@@ -65,7 +65,7 @@ class SessionTests: XCTestCase {
             do {
                 _ = try response.unwrap()
                 XCTFail("Request Should Error")
-            } catch Session.Error.network(let embeddedError) where embeddedError == nil {
+            } catch SessionError.network(let embeddedError) where embeddedError == nil {
             } catch {
                 XCTFail("Request Errored in unexpected way")
             }
@@ -138,7 +138,7 @@ class SessionTests: XCTestCase {
             do {
                 _ = try response.unwrap()
                 XCTFail("Request Should Error")
-            } catch Session.Error.requestEncoding(let embeddedError) where embeddedError as? RequestError == .invalidEndpoint {
+            } catch SessionError.requestEncoding(let embeddedError) where embeddedError as? RequestError == .invalidEndpoint {
             } catch {
                 XCTFail("Request Errored in unexpected way")
             }
@@ -166,7 +166,7 @@ class SessionTests: XCTestCase {
             do {
                 _ = try response.unwrap()
                 XCTFail("Request Should Error")
-            } catch Session.Error.requestEncoding(let embeddedError) {
+            } catch SessionError.requestEncoding(let embeddedError) {
                 guard let e = embeddedError as? URITemplate.Error else {
                     XCTFail("Unexpected requestEncoding embeddedError")
                     return
@@ -195,7 +195,7 @@ class SessionTests: XCTestCase {
             do {
                 _ = try response.unwrap()
                 XCTFail("Request Should Error")
-            } catch Session.Error.network(let embeddedError) where embeddedError as? TestError == .testErrorA {
+            } catch SessionError.network(let embeddedError) where embeddedError as? TestError == .testErrorA {
             } catch {
                 XCTFail("Request Errored in unexpected way")
             }
@@ -215,7 +215,7 @@ class SessionTests: XCTestCase {
             do {
                 _ = try response.unwrap()
                 XCTFail("Request Should Error")
-            } catch Session.Error.responseDecoding(let embeddedError) where embeddedError as? DecodingError != nil {
+            } catch SessionError.responseDecoding(let embeddedError) where embeddedError as? DecodingError != nil {
                 switch embeddedError as? DecodingError {
                 case .keyNotFound?:
                     break
@@ -240,7 +240,7 @@ class SessionTests: XCTestCase {
             do {
                 _ = try response.unwrap()
                 XCTFail("Request Should Error")
-            } catch Session.Error.responseDecoding(let embeddedError) where embeddedError as? DecodingError != nil {
+            } catch SessionError.responseDecoding(let embeddedError) where embeddedError as? DecodingError != nil {
                 switch embeddedError as? DecodingError {
                 case .keyNotFound?:
                     break

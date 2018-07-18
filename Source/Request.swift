@@ -19,6 +19,7 @@ public struct EmptyResponse: Decodable {
 }
 
 public protocol Request {
+    associatedtype SessionConfigurationType: SessionConfiguration = DefaultSessionConfiguration
     associatedtype ResponseBodyType: Decodable = EmptyResponse
     typealias Endpoint = EndpointT<Self>
 

@@ -21,47 +21,49 @@ extension URL: ExpressibleByStringLiteral {
     }
 }
 
-public struct GitHubService {
-    public struct ErrorResponse: Decodable {
-        enum CodingKeys: String, CodingKey {
-            case message
-            case documentationURL = "documentation_url"
-        }
-        let message: String
-        let documentationURL: URL
-    }
-
-    public typealias ResponseBody<SuccessType: Decodable> = ResultResponseBody<SuccessType, ErrorResponse>
+public struct GitHubSessionConfiguration: SessionConfiguration {
 }
 
-extension GitHubService {
-    public struct Root: Request {
-        public static let endpoint = Endpoint.url("https://api.github.com")
-        public typealias ResponseBodyType = ResponseBody<RootResponse>
+typealias GitHubSession = Session<GitHubSessionConfiguration>
+
+public struct GitHubErrorResponse: Decodable {
+    enum CodingKeys: String, CodingKey {
+        case message
+        case documentationURL = "documentation_url"
     }
+    let message: String
+    let documentationURL: URL
+}
 
-    public struct RootResponse: Decodable {
-        public let endpoints: [String: String]
+public typealias GitHubResponseBody<SuccessType: Decodable> = ResultResponseBody<SuccessType, GitHubErrorResponse>
 
-        public init(from decoder: Decoder) throws {
-            endpoints = try Dictionary(from: decoder)
-        }
+protocol GitHubRequest: Request where SessionConfigurationType == GitHubSessionConfiguration {
+}
+
+public struct GitHubRoot: GitHubRequest {
+    public static let endpoint = Endpoint.url("https://api.github.com")
+    public typealias ResponseBodyType = GitHubResponseBody<GitHubRootResponse>
+}
+
+public struct GitHubRootResponse: Decodable {
+    public let endpoints: [String: String]
+
+    public init(from decoder: Decoder) throws {
+        endpoints = try Dictionary(from: decoder)
     }
 }
 
-extension GitHubService {
-    public struct Organization: Request {
-        public static let endpoint = Endpoint.template("https://api.github.com/orgs/{org}", [
-            "org": \Organization.name,
-            ])
-        public typealias ResponseBodyType = ResponseBody<OrganizationResponse>
+public struct GitHubOrganization: GitHubRequest {
+    public static let endpoint = Endpoint.template("https://api.github.com/orgs/{org}", [
+        "org": \GitHubOrganization.name,
+        ])
+    public typealias ResponseBodyType = GitHubResponseBody<GitHubOrganizationResponse>
 
-        let name: String
-    }
+    let name: String
+}
 
-    public struct OrganizationResponse: Decodable {
-        public let name: String
-        public let description: String
-        public let location: String
-    }
+public struct GitHubOrganizationResponse: Decodable {
+    public let name: String
+    public let description: String
+    public let location: String
 }

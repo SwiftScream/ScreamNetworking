@@ -15,9 +15,9 @@
 import Foundation
 import ScreamNetworking
 
-let session = Session(description: "main session")
+let session = GitHubSession(description: "main session")
 
-let rootRequest = session.enqueue(GitHubService.Root()) { response in
+let rootRequest = session.enqueue(GitHubRoot()) { response in
     do {
         switch try response.unwrap() {
         case .error(let e):
@@ -30,7 +30,7 @@ let rootRequest = session.enqueue(GitHubService.Root()) { response in
     }
 }
 
-let orgRequest = session.enqueue(GitHubService.Organization(name: "SwiftScream")) { response in
+let orgRequest = session.enqueue(GitHubOrganization(name: "SwiftScream")) { response in
     do {
         switch try response.unwrap() {
         case .error(let e):

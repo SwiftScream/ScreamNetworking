@@ -16,7 +16,7 @@ import UIKit
 import ScreamNetworking
 
 class ViewController: UIViewController {
-    let session: Session
+    let session: GitHubSession
     var rootRequest: AutoCancellable?
     var orgRequest: AutoCancellable?
 
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        rootRequest = session.enqueue(GitHubService.Root()) { [weak self] response in
+        rootRequest = session.enqueue(GitHubRoot()) { [weak self] response in
             do {
                 switch try response.unwrap() {
                 case .error(let e):
@@ -47,7 +47,7 @@ class ViewController: UIViewController {
             self?.rootRequest = nil
         }
 
-        orgRequest = session.enqueue(GitHubService.Organization(name: "SwiftScream")) { [weak self] response in
+        orgRequest = session.enqueue(GitHubOrganization(name: "SwiftScream")) { [weak self] response in
             do {
                 switch try response.unwrap() {
                 case .error(let e):
