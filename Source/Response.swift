@@ -14,4 +14,4 @@
 
 import Foundation
 
-public typealias Response<ResponseBodyType> = Result<ResponseBodyType, Session.Error>
+public typealias Response<ResponseBodyType> = Result<ResponseBodyType, SessionError>

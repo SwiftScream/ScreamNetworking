@@ -22,15 +22,15 @@ extension Decoder {
     public var response: HTTPURLResponse? { return userInfo[.response] as? HTTPURLResponse }
 }
 
-public class Session {
-    public enum Error: Swift.Error {
-        //swiftlint:disable identifier_name superfluous_disable_command
-        case requestEncoding(embeddedError: Swift.Error)
-        case network(embeddedError: Swift.Error?)
-        case responseDecoding(embeddedError: Swift.Error)
-        //swiftlint:enable identifier_name superfluous_disable_command
-    }
+public enum SessionError: Error {
+    //swiftlint:disable identifier_name superfluous_disable_command
+    case requestEncoding(embeddedError: Swift.Error)
+    case network(embeddedError: Swift.Error?)
+    case responseDecoding(embeddedError: Swift.Error)
+    //swiftlint:enable identifier_name superfluous_disable_command
+}
 
+public class Session {
     private let session: URLSession
     private let requestEncodingQueue: DispatchQueue
     private let callbackQueue: DispatchQueue
@@ -89,10 +89,10 @@ public class Session {
 
     private func processResponse<ResponseBodyType: Decodable>(_ response: URLResponse?, data: Data?, error: Swift.Error?) throws -> ResponseBodyType {
         if let error = error {
-            throw Error.network(embeddedError: error)
+            throw SessionError.network(embeddedError: error)
         }
         guard let response = response as? HTTPURLResponse else {
-            throw Error.network(embeddedError: nil)
+            throw SessionError.network(embeddedError: nil)
         }
 
         let result: ResponseBodyType
@@ -102,7 +102,7 @@ public class Session {
             decoder.userInfo[.response] = response
             result = try decoder.decode(ResponseBodyType.self, from: data)
         } catch let error {
-            throw Error.responseDecoding(embeddedError: error)
+            throw SessionError.responseDecoding(embeddedError: error)
         }
 
         return result
