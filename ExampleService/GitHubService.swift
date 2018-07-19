@@ -23,6 +23,7 @@ extension URL: ExpressibleByStringLiteral {
 
 public struct GitHubSessionConfiguration: SessionConfiguration {
     public let description = "GitHub"
+    public let keyDecodingStrategy = JSONDecoder.KeyDecodingStrategy.convertFromSnakeCase
 }
 
 typealias GitHubSession = Session<GitHubSessionConfiguration>

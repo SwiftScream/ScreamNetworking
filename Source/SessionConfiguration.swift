@@ -20,6 +20,11 @@ public protocol SessionConfiguration {
     var requestEncodingQueue: DispatchQueue? { get }
     var responseDecodingQueue: DispatchQueue? { get }
     var callbackQueue: DispatchQueue? { get }
+
+    var keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy { get }
+    var dateDecodingStrategy: JSONDecoder.DateDecodingStrategy { get }
+    var dataDecodingStrategy: JSONDecoder.DataDecodingStrategy { get }
+    var nonConformingFloatDecodingStrategy: JSONDecoder.NonConformingFloatDecodingStrategy { get }
 }
 
 extension SessionConfiguration {
@@ -27,6 +32,11 @@ extension SessionConfiguration {
     public var requestEncodingQueue: DispatchQueue? { return nil }
     public var responseDecodingQueue: DispatchQueue? { return nil }
     public var callbackQueue: DispatchQueue? { return nil }
+
+    public var keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy { return .useDefaultKeys }
+    public var dateDecodingStrategy: JSONDecoder.DateDecodingStrategy { return .deferredToDate }
+    public var dataDecodingStrategy: JSONDecoder.DataDecodingStrategy { return .base64 }
+    public var nonConformingFloatDecodingStrategy: JSONDecoder.NonConformingFloatDecodingStrategy { return .throw }
 }
 
 public struct DefaultSessionConfiguration: SessionConfiguration {

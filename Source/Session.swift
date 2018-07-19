@@ -104,6 +104,10 @@ public class Session<ConfigurationType: SessionConfiguration> {
         do {
             let data = data ?? "{}".data(using: .utf8)!
             let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = configuration.keyDecodingStrategy
+            decoder.dateDecodingStrategy = configuration.dateDecodingStrategy
+            decoder.dataDecodingStrategy = configuration.dataDecodingStrategy
+            decoder.nonConformingFloatDecodingStrategy = configuration.nonConformingFloatDecodingStrategy
             decoder.userInfo[.response] = response
             result = try decoder.decode(ResponseBodyType.self, from: data)
         } catch let error {
