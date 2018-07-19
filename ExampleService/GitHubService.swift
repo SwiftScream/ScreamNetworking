@@ -22,9 +22,16 @@ extension URL: ExpressibleByStringLiteral {
 }
 
 public struct GitHubSessionConfiguration: SessionConfiguration {
+    public let description = "GitHub"
 }
 
 typealias GitHubSession = Session<GitHubSessionConfiguration>
+extension Session where ConfigurationType == GitHubSessionConfiguration {
+    convenience init() {
+        self.init(configuration: GitHubSessionConfiguration())
+    }
+}
+
 
 public struct GitHubErrorResponse: Decodable {
     enum CodingKeys: String, CodingKey {

@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     var orgRequest: AutoCancellable?
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        session = Session(description: "GitHubSession")
+        session = GitHubSession()
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
 

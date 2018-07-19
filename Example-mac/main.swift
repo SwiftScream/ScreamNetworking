@@ -15,7 +15,7 @@
 import Foundation
 import ScreamNetworking
 
-let session = GitHubSession(description: "main session")
+let session = GitHubSession()
 
 let rootRequest = session.enqueue(GitHubRoot()) { response in
     do {

@@ -22,7 +22,7 @@ class InterfaceController: WKInterfaceController {
     var orgRequest: AutoCancellable?
 
     override init() {
-        session = Session(description: "GitHubSession")
+        session = GitHubSession()
         super.init()
     }
 

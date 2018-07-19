@@ -15,7 +15,20 @@
 import Foundation
 
 public protocol SessionConfiguration {
+    var urlSessionConfiguration: URLSessionConfiguration { get }
+    var description: String { get }
+    var requestEncodingQueue: DispatchQueue? { get }
+    var responseDecodingQueue: DispatchQueue? { get }
+    var callbackQueue: DispatchQueue? { get }
+}
+
+extension SessionConfiguration {
+    public var urlSessionConfiguration: URLSessionConfiguration { return URLSessionConfiguration.default }
+    public var requestEncodingQueue: DispatchQueue? { return nil }
+    public var responseDecodingQueue: DispatchQueue? { return nil }
+    public var callbackQueue: DispatchQueue? { return nil }
 }
 
 public struct DefaultSessionConfiguration: SessionConfiguration {
+    public let description = "Default"
 }

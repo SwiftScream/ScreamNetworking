@@ -31,30 +31,33 @@ public enum SessionError: Error {
 }
 
 typealias DefaultSession = Session<DefaultSessionConfiguration>
+extension Session where ConfigurationType == DefaultSessionConfiguration {
+    convenience init() {
+        self.init(configuration: DefaultSessionConfiguration())
+    }
+}
 
 public class Session<ConfigurationType: SessionConfiguration> {
     private let session: URLSession
+    private let configuration: SessionConfiguration
     private let requestEncodingQueue: DispatchQueue
     private let callbackQueue: DispatchQueue
     private var mockSession: MockURLSession?
 
-    public init(configuration: URLSessionConfiguration = URLSessionConfiguration.default,
-                description: String = "session",
-                requestEncodingQueue: DispatchQueue? = nil,
-                responseDecodingQueue: DispatchQueue? = nil,
-                callbackQueue: DispatchQueue? = nil) {
+    public init(configuration: ConfigurationType) {
+        self.configuration = configuration
         var sessionDelegateQueue: OperationQueue? = nil
-        if let responseDecodingQueue = responseDecodingQueue {
+        if let responseDecodingQueue = configuration.responseDecodingQueue {
             sessionDelegateQueue = OperationQueue()
             sessionDelegateQueue?.underlyingQueue = responseDecodingQueue
         }
-        let session = URLSession(configuration: configuration, delegate: nil, delegateQueue: sessionDelegateQueue)
-        let sessionDescription = "com.swiftscream.networking.\(description)"
+        let session = URLSession(configuration: configuration.urlSessionConfiguration, delegate: nil, delegateQueue: sessionDelegateQueue)
+        let sessionDescription = "com.swiftscream.networking.\(configuration.description)"
         session.sessionDescription = sessionDescription
         self.session = session
 
-        self.requestEncodingQueue = requestEncodingQueue ?? DispatchQueue(label: sessionDescription + ".encoding-queue")
-        self.callbackQueue = callbackQueue ?? DispatchQueue.main
+        self.requestEncodingQueue = configuration.requestEncodingQueue ?? DispatchQueue(label: sessionDescription + ".encoding-queue")
+        self.callbackQueue = configuration.callbackQueue ?? DispatchQueue.main
     }
 
     public func enqueue<R: Request>(_ request: R, completion: @escaping (Response<R.ResponseBodyType>) -> Void) -> AutoCancellable where R.SessionConfigurationType == ConfigurationType {
