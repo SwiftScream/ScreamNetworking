@@ -56,15 +56,18 @@ extension Request {
         case .url(let u):
             return u
         case .template(let template, let variableMap):
-            let variables = variableMap.mapValues { (keyPath) -> VariableValue in
+            let variables = variableMap.compactMapValues { (keyPath) -> VariableValue? in
                 let value = self[keyPath: keyPath]
                 switch value {
                 case let variableValue as VariableValue:
                     return variableValue
                 case let stringValue as CustomStringConvertible:
                     return stringValue.description
+                case let any as Any? where any == nil:
+                    return nil
                 default:
-                    return String(describing: value)
+                    assertionFailure("Failed to render template variable")
+                    return nil
                 }
             }
             let expandedTemplate = try template.process(variables: variables)

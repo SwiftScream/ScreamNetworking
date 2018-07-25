@@ -64,14 +64,14 @@ class RequestTests: XCTestCase {
 
             let path: String //treated as VariableValue
             let a: Bool //treated as CustomStringConvertible
-            let b: CGPoint // neither VariableValue or CustomStringConvertible so treated as fallback
+            let b: String? //testing nil removal
         }
 
-        guard let request = try? TestRequest(path: "foo", a: true, b: CGPoint(x: 10, y: 20)).createURLRequest() else {
+        guard let request = try? TestRequest(path: "foo", a: true, b: nil).createURLRequest() else {
             XCTFail("Fail to build request")
             return
         }
-        XCTAssertEqual(request.url, URL(string: "https://api.example.com/foo?a=true&b=%2810.0%2C%2020.0%29"))
+        XCTAssertEqual(request.url, URL(string: "https://api.example.com/foo?a=true"))
         XCTAssertEqual(request.httpMethod, "GET")
         XCTAssertNil(request.httpBody)
         XCTAssertEqual(request.allHTTPHeaderFields?.count, 0)
