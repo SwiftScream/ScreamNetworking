@@ -22,14 +22,19 @@ public protocol Request {
     associatedtype SessionConfigurationType: SessionConfiguration = DefaultSessionConfiguration
     associatedtype ResponseBodyType: Decodable = EmptyResponse
     typealias Endpoint = EndpointT<Self>
+    typealias HeaderMap = [String: PartialKeyPath<Self>]
 
     static var endpoint: Endpoint { get }
     static var method: String { get }
+    static var headers: HeaderMap { get }
 }
 
 extension Request {
     public static var method: String {
         return "GET"
+    }
+    public static var headers: HeaderMap {
+        return [:]
     }
 }
 
@@ -42,6 +47,7 @@ extension Request {
         let url = try generateURL()
         var r = URLRequest(url: url)
         r.httpMethod = Self.method
+        r.allHTTPHeaderFields = generateHeaders()
         return r
     }
 
@@ -67,5 +73,21 @@ extension Request {
             }
             return url
         }
+    }
+
+    internal func generateHeaders() -> [String: String] {
+        let variables = Self.headers.compactMapValues { (keyPath) -> String? in
+            let value: Any = self[keyPath: keyPath]
+            switch value {
+            case let stringValue as CustomStringConvertible:
+                return stringValue.description
+            case let any as Any? where any == nil:
+                return nil
+            default:
+                assertionFailure("Failed to render request header value")
+                return nil
+            }
+        }
+        return variables
     }
 }

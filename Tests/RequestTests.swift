@@ -77,4 +77,43 @@ class RequestTests: XCTestCase {
         XCTAssertEqual(request.allHTTPHeaderFields?.count, 0)
     }
 
+    func testRequestWithHeadersBuild() {
+        struct TestRequest: Request {
+            public static let endpoint = Endpoint.url(URL(string: "https://api.example.com")!)
+            typealias ResponseBodyType = Empty
+            public static let headers: HeaderMap = ["Accept": \TestRequest.accept]
+            public let accept = "accept header value"
+        }
+
+        guard let request = try? TestRequest().createURLRequest() else {
+            XCTFail("Fail to build request")
+            return
+        }
+        XCTAssertEqual(request.url, URL(string: "https://api.example.com"))
+        XCTAssertEqual(request.httpMethod, "GET")
+        XCTAssertNil(request.httpBody)
+        XCTAssertEqual(request.allHTTPHeaderFields?.count, 1)
+        XCTAssertEqual(request.allHTTPHeaderFields?["Accept"], "accept header value")
+    }
+
+    func testRequestWithNilHeadersBuild() {
+        struct TestRequest: Request {
+            public static let endpoint = Endpoint.url(URL(string: "https://api.example.com")!)
+            typealias ResponseBodyType = Empty
+            public static let headers: HeaderMap = ["Accept": \TestRequest.accept]
+            public let accept: String? = nil
+        }
+
+        guard let request = try? TestRequest().createURLRequest() else {
+            XCTFail("Fail to build request")
+            return
+        }
+        XCTAssertEqual(request.url, URL(string: "https://api.example.com"))
+        XCTAssertEqual(request.httpMethod, "GET")
+        XCTAssertNil(request.httpBody)
+        XCTAssertEqual(request.allHTTPHeaderFields?.count, 0)
+        XCTAssertNil(request.allHTTPHeaderFields?["Accept"])
+    }
+
+
 }
