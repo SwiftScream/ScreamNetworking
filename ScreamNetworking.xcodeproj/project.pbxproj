@@ -58,6 +58,9 @@
 		953A282A20FE01AB00B106D7 /* SessionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953A282820FE01AB00B106D7 /* SessionConfiguration.swift */; };
 		953A282B20FE01AB00B106D7 /* SessionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953A282820FE01AB00B106D7 /* SessionConfiguration.swift */; };
 		953A282C20FE01AB00B106D7 /* SessionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953A282820FE01AB00B106D7 /* SessionConfiguration.swift */; };
+		953ED955210AE98B00219C6D /* TestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953ED954210AE98B00219C6D /* TestService.swift */; };
+		953ED956210AE98B00219C6D /* TestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953ED954210AE98B00219C6D /* TestService.swift */; };
+		953ED957210AE98B00219C6D /* TestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953ED954210AE98B00219C6D /* TestService.swift */; };
 		954999CC20E4C0B2002ED05D /* GitHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EF120D8825B001D36CE /* GitHubService.swift */; };
 		954999CD20E4C0B3002ED05D /* GitHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EF120D8825B001D36CE /* GitHubService.swift */; };
 		954999CE20E4C0BD002ED05D /* GitHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EF120D8825B001D36CE /* GitHubService.swift */; };
@@ -257,6 +260,7 @@
 		9533E17520F4D3FC00ADECFD /* URITemplate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = URITemplate.framework; path = Carthage/Build/watchOS/Static/URITemplate.framework; sourceTree = "<group>"; };
 		953A282720FDA8E700B106D7 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		953A282820FE01AB00B106D7 /* SessionConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionConfiguration.swift; sourceTree = "<group>"; };
+		953ED954210AE98B00219C6D /* TestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestService.swift; sourceTree = "<group>"; };
 		9549657B20A41AAD00BD6E16 /* ScreamNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ScreamNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9549658D20A4230500BD6E16 /* ScreamNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ScreamNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		954965D220AAA5B900BD6E16 /* FrameworkTarget-ios.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "FrameworkTarget-ios.xcconfig"; sourceTree = "<group>"; };
@@ -482,12 +486,13 @@
 		958812D5209745FE0080D3D4 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				954999E420E5DE3C002ED05D /* Session+CreateURLRequestTests.swift */,
+				953ED954210AE98B00219C6D /* TestService.swift */,
 				95499A2D20EDE81E002ED05D /* EssentialsTests.swift */,
 				954999DC20E4FE66002ED05D /* ResultResponseBodyTests.swift */,
 				954999E020E5A90A002ED05D /* URLSessionTaskAutoCancellableTests.swift */,
 				95499A2520ECF3CD002ED05D /* SessionTests.swift */,
 				9533E13920EFA1EF00ADECFD /* SessionQueuesTests.swift */,
+				954999E420E5DE3C002ED05D /* Session+CreateURLRequestTests.swift */,
 				95499A2920EDC1A0002ED05D /* SessionTests+ResponseData.swift */,
 				958812D8209745FE0080D3D4 /* Info.plist */,
 			);
@@ -1154,6 +1159,7 @@
 				9533E13A20EFA1EF00ADECFD /* SessionQueuesTests.swift in Sources */,
 				954999DD20E4FE66002ED05D /* ResultResponseBodyTests.swift in Sources */,
 				954999E120E5A90A002ED05D /* URLSessionTaskAutoCancellableTests.swift in Sources */,
+				953ED955210AE98B00219C6D /* TestService.swift in Sources */,
 				95499A2E20EDE81E002ED05D /* EssentialsTests.swift in Sources */,
 				95499A2620ECF3CD002ED05D /* SessionTests.swift in Sources */,
 			);
@@ -1168,6 +1174,7 @@
 				9533E13B20EFA1EF00ADECFD /* SessionQueuesTests.swift in Sources */,
 				954999DE20E4FE66002ED05D /* ResultResponseBodyTests.swift in Sources */,
 				954999E220E5A90A002ED05D /* URLSessionTaskAutoCancellableTests.swift in Sources */,
+				953ED956210AE98B00219C6D /* TestService.swift in Sources */,
 				95499A2F20EDE81E002ED05D /* EssentialsTests.swift in Sources */,
 				95499A2720ECF3CD002ED05D /* SessionTests.swift in Sources */,
 			);
@@ -1182,6 +1189,7 @@
 				9533E13C20EFA1EF00ADECFD /* SessionQueuesTests.swift in Sources */,
 				954999DF20E4FE66002ED05D /* ResultResponseBodyTests.swift in Sources */,
 				954999E320E5A90A002ED05D /* URLSessionTaskAutoCancellableTests.swift in Sources */,
+				953ED957210AE98B00219C6D /* TestService.swift in Sources */,
 				95499A3020EDE81E002ED05D /* EssentialsTests.swift in Sources */,
 				95499A2820ECF3CD002ED05D /* SessionTests.swift in Sources */,
 			);

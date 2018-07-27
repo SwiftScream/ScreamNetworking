@@ -16,34 +16,12 @@ import XCTest
 @testable import ScreamNetworking
 import URITemplate
 
-struct GitHubService {
-    public struct Organization: Request {
-        public static let endpoint = Endpoint.url(URL(string: "https://api.github.com/orgs/SwiftScream")!)
-        public typealias ResponseBodyType = OrganizationResponse
-    }
-
-    public struct OrganizationResponse: Decodable {
-        public let name: String
-        public let description: String
-        public let location: String
-    }
-
-    public struct Empty: Request {
-        public static let endpoint = Endpoint.url(URL(string: "https://api.example.com/empty")!)
-    }
-}
-
-public enum TestError: Swift.Error {
-    case testErrorA
-    case testErrorB
-}
-
 class SessionTests: XCTestCase {
-    var session: DefaultSession!
-    var mockResponseStore: DefaultSession.MockResponseStoreType!
+    var session: GitHubSession!
+    var mockResponseStore: GitHubSession.MockResponseStoreType!
 
     override func setUp() {
-        session = Session()
+        session = GitHubSession()
         mockResponseStore = session.startMocking()
     }
 
@@ -60,7 +38,7 @@ class SessionTests: XCTestCase {
 
     func testNoMock() {
         let expectation = self.expectation(description: "requestCompletion")
-        let request = GitHubService.Organization()
+        let request = OrganizationRequest()
         var requestToken = session.enqueue(request) { response in
             do {
                 _ = try response.unwrap()
@@ -77,7 +55,7 @@ class SessionTests: XCTestCase {
 
     func testSuccessMock() throws {
         let expectation = self.expectation(description: "requestCompletion")
-        let request = GitHubService.Organization()
+        let request = OrganizationRequest()
         let responseData: Data = ResponseData.organization
         let mockResponse = MockResponse.success(body: responseData, url: try request.generateURL())
         mockResponseStore.mock(request: request, withResponse: mockResponse)
@@ -98,7 +76,7 @@ class SessionTests: XCTestCase {
 
     func testSuccessMockResponse() throws {
         let expectation = self.expectation(description: "requestCompletion")
-        let request = GitHubService.Organization()
+        let request = OrganizationRequest()
         let responseData: Data = ResponseData.organization
         guard let response = HTTPURLResponse(url: try request.generateURL(), statusCode: 200, httpVersion: nil, headerFields: nil) else {
             XCTFail("Error producing reponse")
@@ -122,7 +100,7 @@ class SessionTests: XCTestCase {
     }
 
     func testRequestEncodingFailure_ExpandedTemplateNotURL() {
-        struct TestRequest: Request {
+        struct TestRequest: GitHubRequest {
             public static let endpoint = Endpoint.template("{a}", [
                 "a": \TestRequest.a,
                 ])
@@ -152,7 +130,7 @@ class SessionTests: XCTestCase {
         struct NotSupported: VariableValue {
         }
 
-        struct TestRequest: Request {
+        struct TestRequest: GitHubRequest {
             public static let endpoint = Endpoint.template("{unsupported}", [
                 "unsupported": \TestRequest.unsupported,
                 ])
@@ -188,7 +166,7 @@ class SessionTests: XCTestCase {
 
     func testNetworkFailure() {
         let expectation = self.expectation(description: "requestCompletion")
-        let request = GitHubService.Organization()
+        let request = OrganizationRequest()
         let mockResponse = MockResponse.failure(error: TestError.testErrorA)
         mockResponseStore.mock(request: request, withResponse: mockResponse)
         var requestToken = session.enqueue(request) { response in
@@ -207,7 +185,7 @@ class SessionTests: XCTestCase {
 
     func testResponseDecodingFailure() throws {
         let expectation = self.expectation(description: "requestCompletion")
-        let request = GitHubService.Organization()
+        let request = OrganizationRequest()
         let responseData: Data = "{}".data(using: .utf8)!
         let mockResponse = MockResponse.success(body: responseData, url: try request.generateURL())
         mockResponseStore.mock(request: request, withResponse: mockResponse)
@@ -233,7 +211,7 @@ class SessionTests: XCTestCase {
 
     func testEmptyDataFailure() throws {
         let expectation = self.expectation(description: "requestCompletion")
-        let request = GitHubService.Organization()
+        let request = OrganizationRequest()
         let mockResponse = MockResponse.success(body: nil, url: try request.generateURL())
         mockResponseStore.mock(request: request, withResponse: mockResponse)
         var requestToken = session.enqueue(request) { response in
@@ -258,7 +236,7 @@ class SessionTests: XCTestCase {
 
     func testEmptyDataSuccess() throws {
         let expectation = self.expectation(description: "requestCompletion")
-        let request = GitHubService.Empty()
+        let request = EmptyRequest()
         let mockResponse = MockResponse.success(body: nil, url: try request.generateURL())
         mockResponseStore.mock(request: request, withResponse: mockResponse)
         var requestToken = session.enqueue(request) { response in
@@ -277,7 +255,7 @@ class SessionTests: XCTestCase {
     func testImmediateCancel() throws {
         let expectation = self.expectation(description: "requestCompletion")
         expectation.isInverted = true
-        let request = GitHubService.Organization()
+        let request = OrganizationRequest()
         let responseData: Data = ResponseData.organization
         let mockResponse = MockResponse.success(body: responseData, url: try request.generateURL(), latency: 0.02)
         mockResponseStore.mock(request: request, withResponse: mockResponse)
@@ -291,7 +269,7 @@ class SessionTests: XCTestCase {
     func testCancel() throws {
         let expectation = self.expectation(description: "requestCompletion")
         expectation.isInverted = true
-        let request = GitHubService.Organization()
+        let request = OrganizationRequest()
         let responseData: Data = ResponseData.organization
         let mockResponse = MockResponse.success(body: responseData, url: try request.generateURL(), latency: 0.02)
         mockResponseStore.mock(request: request, withResponse: mockResponse)
