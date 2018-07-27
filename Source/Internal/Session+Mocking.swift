@@ -37,36 +37,18 @@ extension URLSession: URLSessionProtocol {
     }
 }
 
-internal class MockURLSession: URLSessionProtocol, MockResponseStore {
-    private var enqueuedResponses: [URLRequest: [MockResponse]] = [:]
-    internal let sessionDelegateQueue: DispatchQueue
+internal class MockURLSession<ConfigurationType: SessionConfiguration>: URLSessionProtocol {
+    internal let mockResponseStore: MockResponseStore<ConfigurationType>
+    private let sessionDelegateQueue: DispatchQueue
 
-    init(session: URLSession) {
-        sessionDelegateQueue = session.delegateQueue.underlyingQueue ?? DispatchQueue(label: "mockSessionDelegateQueue")
+    init(session: Session<ConfigurationType>, urlSession: URLSession) {
+        mockResponseStore = MockResponseStore(session: session)
+        sessionDelegateQueue = urlSession.delegateQueue.underlyingQueue ?? DispatchQueue(label: "mockSessionDelegateQueue")
     }
 
     func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTaskProtocol {
-        let mockResponse = self.mockResponse(forRequest: request)
-        return MockURLSessionDataTask(session: self, response: mockResponse, completionHandler: completionHandler)
-    }
-
-    func mock<R>(request: R, withResponse mockResponse: MockResponse) where R: Request {
-        guard let urlRequest = try? request.createURLRequest() else {
-            return
-        }
-        var mockedResponses = enqueuedResponses[urlRequest] ?? []
-        mockedResponses.append(mockResponse)
-        enqueuedResponses[urlRequest] = mockedResponses
-    }
-
-    private func mockResponse(forRequest request: URLRequest) -> MockResponse? {
-        guard var mockedResponses = enqueuedResponses[request],
-              mockedResponses.count > 0 else {
-                return nil
-        }
-        let response = mockedResponses.removeFirst()
-        enqueuedResponses[request] = mockedResponses
-        return response
+        let mockResponse = mockResponseStore.mockResponse(forRequest: request)
+        return MockURLSessionDataTask(sessionDelegateQueue: self.sessionDelegateQueue, response: mockResponse, completionHandler: completionHandler)
     }
 }
 
@@ -76,8 +58,8 @@ internal class MockURLSessionDataTask: URLSessionDataTaskProtocol {
     let completion: (Data?, URLResponse?, Error?) -> Void
     var cancellable: AutoCancellable?
 
-    init(session: MockURLSession, response: MockResponse?, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
-        self.sessionDelegateQueue = session.sessionDelegateQueue
+    init(sessionDelegateQueue: DispatchQueue, response: MockResponse?, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
+        self.sessionDelegateQueue = sessionDelegateQueue
         self.response = response
         self.completion = completionHandler
     }

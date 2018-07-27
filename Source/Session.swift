@@ -39,10 +39,10 @@ extension Session where ConfigurationType == DefaultSessionConfiguration {
 
 public class Session<ConfigurationType: SessionConfiguration> {
     private let session: URLSession
-    private let configuration: SessionConfiguration
+    private let configuration: ConfigurationType
     private let requestEncodingQueue: DispatchQueue
     private let callbackQueue: DispatchQueue
-    private var mockSession: MockURLSession?
+    private var mockSession: MockURLSession<ConfigurationType>?
 
     public init(configuration: ConfigurationType) {
         self.configuration = configuration
@@ -120,13 +120,15 @@ public class Session<ConfigurationType: SessionConfiguration> {
 }
 
 extension Session {
-    internal func startMocking() -> MockResponseStore {
+    internal typealias MockResponseStoreType = MockResponseStore<ConfigurationType>
+
+    internal func startMocking() -> MockResponseStoreType {
         if let mockSession = self.mockSession {
-            return mockSession
+            return mockSession.mockResponseStore
         }
-        let mockSession = MockURLSession(session: session)
+        let mockSession = MockURLSession(session: self, urlSession: session)
         self.mockSession = mockSession
-        return mockSession
+        return mockSession.mockResponseStore
     }
 
     internal func stopMocking() {

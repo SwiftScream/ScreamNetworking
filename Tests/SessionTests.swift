@@ -40,7 +40,7 @@ public enum TestError: Swift.Error {
 
 class SessionTests: XCTestCase {
     var session: DefaultSession!
-    var mockResponseStore: MockResponseStore!
+    var mockResponseStore: DefaultSession.MockResponseStoreType!
 
     override func setUp() {
         session = Session()

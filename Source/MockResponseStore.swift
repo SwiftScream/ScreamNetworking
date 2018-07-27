@@ -34,6 +34,30 @@ internal struct MockResponse {
     }
 }
 
-internal protocol MockResponseStore: class {
-    func mock<R: Request>(request: R, withResponse: MockResponse)
+internal class MockResponseStore<SessionConfigurationType: SessionConfiguration> {
+    private unowned let session: Session<SessionConfigurationType>
+    private var enqueuedResponses: [URLRequest: [MockResponse]] = [:]
+
+    init(session: Session<SessionConfigurationType>) {
+        self.session = session
+    }
+
+    func mock<R: Request>(request: R, withResponse mockResponse: MockResponse) where R.SessionConfigurationType == SessionConfigurationType {
+        guard let urlRequest = try? request.createURLRequest() else {
+            return
+        }
+        var mockedResponses = enqueuedResponses[urlRequest] ?? []
+        mockedResponses.append(mockResponse)
+        enqueuedResponses[urlRequest] = mockedResponses
+    }
+
+    func mockResponse(forRequest request: URLRequest) -> MockResponse? {
+        guard var mockedResponses = enqueuedResponses[request],
+            mockedResponses.count > 0 else {
+                return nil
+        }
+        let response = mockedResponses.removeFirst()
+        enqueuedResponses[request] = mockedResponses
+        return response
+    }
 }
