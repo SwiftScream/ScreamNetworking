@@ -25,6 +25,9 @@ public protocol SessionConfiguration {
     var dateDecodingStrategy: JSONDecoder.DateDecodingStrategy { get }
     var dataDecodingStrategy: JSONDecoder.DataDecodingStrategy { get }
     var nonConformingFloatDecodingStrategy: JSONDecoder.NonConformingFloatDecodingStrategy { get }
+
+    typealias HeaderMap = [String: PartialKeyPath<Self>]
+    static var requestHeaders: HeaderMap { get }
 }
 
 extension SessionConfiguration {
@@ -37,6 +40,8 @@ extension SessionConfiguration {
     public var dateDecodingStrategy: JSONDecoder.DateDecodingStrategy { return .deferredToDate }
     public var dataDecodingStrategy: JSONDecoder.DataDecodingStrategy { return .base64 }
     public var nonConformingFloatDecodingStrategy: JSONDecoder.NonConformingFloatDecodingStrategy { return .throw }
+
+    public static var requestHeaders: HeaderMap { return [:] }
 }
 
 public struct DefaultSessionConfiguration: SessionConfiguration {

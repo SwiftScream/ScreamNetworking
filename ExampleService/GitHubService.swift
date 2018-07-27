@@ -24,6 +24,9 @@ extension URL: ExpressibleByStringLiteral {
 public struct GitHubSessionConfiguration: SessionConfiguration {
     public let description = "GitHub"
     public let keyDecodingStrategy = JSONDecoder.KeyDecodingStrategy.convertFromSnakeCase
+
+    public static let requestHeaders: HeaderMap = ["Accept": \GitHubSessionConfiguration.accept]
+    public let accept = "application/vnd.github.v3+json"
 }
 
 typealias GitHubSession = Session<GitHubSessionConfiguration>
@@ -51,8 +54,6 @@ protocol GitHubRequest: Request where SessionConfigurationType == GitHubSessionC
 public struct GitHubRoot: GitHubRequest {
     public static let endpoint = Endpoint.url("https://api.github.com")
     public typealias ResponseBodyType = GitHubResponseBody<GitHubRootResponse>
-    public static let headers: HeaderMap = ["Accept": \GitHubRoot.accept]
-    public let accept = "application/vnd.github.v3+json"
 }
 
 public struct GitHubRootResponse: Decodable {
@@ -68,8 +69,6 @@ public struct GitHubOrganization: GitHubRequest {
         "org": \GitHubOrganization.name,
         ])
     public typealias ResponseBodyType = GitHubResponseBody<GitHubOrganizationResponse>
-    public static let headers: HeaderMap = ["Accept": \GitHubOrganization.accept]
-    public let accept = "application/vnd.github.v3+json"
 
     let name: String
 }

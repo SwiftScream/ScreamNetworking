@@ -19,6 +19,11 @@ import Foundation
 struct GitHubSessionConfiguration: SessionConfiguration {
     public let description = "GitHub"
     public let keyDecodingStrategy = JSONDecoder.KeyDecodingStrategy.convertFromSnakeCase
+
+    public static let requestHeaders: HeaderMap = ["Accept": \GitHubSessionConfiguration.accept,
+                                                   "ShouldNotAppear": \GitHubSessionConfiguration.nilHeaderValue]
+    public let accept = "application/vnd.github.v3+json"
+    public let nilHeaderValue: String? = nil
 }
 
 typealias GitHubSession = Session<GitHubSessionConfiguration>

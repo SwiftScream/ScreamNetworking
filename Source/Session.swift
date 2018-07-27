@@ -124,9 +124,29 @@ extension Session {
         let url = try request.generateURL()
         var r = URLRequest(url: url)
         r.httpMethod = R.method
-        r.allHTTPHeaderFields = request.generateHeaders()
+        let sessionHeaders = self.generateHeaders()
+        let requestHeaders = request.generateHeaders()
+        let headers = sessionHeaders.merging(requestHeaders) { (_, request) in request }
+        r.allHTTPHeaderFields = headers
         return r
     }
+
+    internal func generateHeaders() -> [String: String] {
+        let variables = ConfigurationType.requestHeaders.compactMapValues { (keyPath) -> String? in
+            let value: Any = self.configuration[keyPath: keyPath]
+            switch value {
+            case let stringValue as CustomStringConvertible:
+                return stringValue.description
+            case let any as Any? where any == nil:
+                return nil
+            default:
+                assertionFailure("Failed to render request header value")
+                return nil
+            }
+        }
+        return variables
+    }
+
 }
 
 extension Session {

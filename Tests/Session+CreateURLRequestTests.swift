@@ -19,10 +19,12 @@ private class Empty: Decodable {
 }
 
 class RequestTests: XCTestCase {
-    var session: DefaultSession!
+    var defaultSession: DefaultSession!
+    var gitHubSession: GitHubSession!
 
     override func setUp() {
-        session = DefaultSession()
+        defaultSession = DefaultSession()
+        gitHubSession = GitHubSession()
     }
 
     func testMinimalRequestBuild() {
@@ -31,7 +33,7 @@ class RequestTests: XCTestCase {
             typealias ResponseBodyType = Empty
         }
 
-        guard let request = try? session.createURLRequest(request: TestRequest()) else {
+        guard let request = try? defaultSession.createURLRequest(request: TestRequest()) else {
             XCTFail("Fail to build request")
             return
         }
@@ -48,7 +50,7 @@ class RequestTests: XCTestCase {
             typealias ResponseBodyType = Empty
         }
 
-        guard let request = try? session.createURLRequest(request: TestRequest()) else {
+        guard let request = try? defaultSession.createURLRequest(request: TestRequest()) else {
             XCTFail("Fail to build request")
             return
         }
@@ -72,7 +74,7 @@ class RequestTests: XCTestCase {
             let b: String? //testing nil removal
         }
 
-        guard let request = try? session.createURLRequest(request: TestRequest(path: "foo", a: true, b: nil)) else {
+        guard let request = try? defaultSession.createURLRequest(request: TestRequest(path: "foo", a: true, b: nil)) else {
             XCTFail("Fail to build request")
             return
         }
@@ -90,7 +92,7 @@ class RequestTests: XCTestCase {
             public let accept = "accept header value"
         }
 
-        guard let request = try? session.createURLRequest(request: TestRequest()) else {
+        guard let request = try? defaultSession.createURLRequest(request: TestRequest()) else {
             XCTFail("Fail to build request")
             return
         }
@@ -109,7 +111,7 @@ class RequestTests: XCTestCase {
             public let accept: String? = nil
         }
 
-        guard let request = try? session.createURLRequest(request: TestRequest()) else {
+        guard let request = try? defaultSession.createURLRequest(request: TestRequest()) else {
             XCTFail("Fail to build request")
             return
         }
@@ -120,5 +122,34 @@ class RequestTests: XCTestCase {
         XCTAssertNil(request.allHTTPHeaderFields?["Accept"])
     }
 
+    func testRequestWithSessionHeadersBuild() {
+        guard let request = try? gitHubSession.createURLRequest(request: EmptyRequest()) else {
+            XCTFail("Fail to build request")
+            return
+        }
+        XCTAssertEqual(request.url, URL(string: "https://api.example.com/empty"))
+        XCTAssertEqual(request.httpMethod, "GET")
+        XCTAssertNil(request.httpBody)
+        XCTAssertEqual(request.allHTTPHeaderFields?.count, 1)
+        XCTAssertEqual(request.allHTTPHeaderFields?["Accept"], "application/vnd.github.v3+json")
+    }
 
+    func testRequestWithRequestHeaderOverrideSessionHeaderBuild() {
+        struct TestRequest: GitHubRequest {
+            public static let endpoint = Endpoint.url(URL(string: "https://api.example.com")!)
+            typealias ResponseBodyType = Empty
+            public static let headers: HeaderMap = ["Accept": \TestRequest.accept]
+            public let accept = "accept header value"
+        }
+
+        guard let request = try? gitHubSession.createURLRequest(request: TestRequest()) else {
+            XCTFail("Fail to build request")
+            return
+        }
+        XCTAssertEqual(request.url, URL(string: "https://api.example.com"))
+        XCTAssertEqual(request.httpMethod, "GET")
+        XCTAssertNil(request.httpBody)
+        XCTAssertEqual(request.allHTTPHeaderFields?.count, 1)
+        XCTAssertEqual(request.allHTTPHeaderFields?["Accept"], "accept header value")
+    }
 }
