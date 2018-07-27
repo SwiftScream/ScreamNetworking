@@ -67,9 +67,9 @@
 		954999E120E5A90A002ED05D /* URLSessionTaskAutoCancellableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954999E020E5A90A002ED05D /* URLSessionTaskAutoCancellableTests.swift */; };
 		954999E220E5A90A002ED05D /* URLSessionTaskAutoCancellableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954999E020E5A90A002ED05D /* URLSessionTaskAutoCancellableTests.swift */; };
 		954999E320E5A90A002ED05D /* URLSessionTaskAutoCancellableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954999E020E5A90A002ED05D /* URLSessionTaskAutoCancellableTests.swift */; };
-		954999E520E5DE3C002ED05D /* RequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954999E420E5DE3C002ED05D /* RequestTests.swift */; };
-		954999E620E5DE3C002ED05D /* RequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954999E420E5DE3C002ED05D /* RequestTests.swift */; };
-		954999E720E5DE3C002ED05D /* RequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954999E420E5DE3C002ED05D /* RequestTests.swift */; };
+		954999E520E5DE3C002ED05D /* Session+CreateURLRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954999E420E5DE3C002ED05D /* Session+CreateURLRequestTests.swift */; };
+		954999E620E5DE3C002ED05D /* Session+CreateURLRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954999E420E5DE3C002ED05D /* Session+CreateURLRequestTests.swift */; };
+		954999E720E5DE3C002ED05D /* Session+CreateURLRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954999E420E5DE3C002ED05D /* Session+CreateURLRequestTests.swift */; };
 		954999ED20E899DC002ED05D /* Session+Mocking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954999E820E899DC002ED05D /* Session+Mocking.swift */; };
 		954999EE20E899DC002ED05D /* Session+Mocking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954999E820E899DC002ED05D /* Session+Mocking.swift */; };
 		954999EF20E899DC002ED05D /* Session+Mocking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954999E820E899DC002ED05D /* Session+Mocking.swift */; };
@@ -265,7 +265,7 @@
 		954965D520AAA5B900BD6E16 /* FrameworkTarget-watch.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "FrameworkTarget-watch.xcconfig"; sourceTree = "<group>"; };
 		954999DC20E4FE66002ED05D /* ResultResponseBodyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultResponseBodyTests.swift; sourceTree = "<group>"; };
 		954999E020E5A90A002ED05D /* URLSessionTaskAutoCancellableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionTaskAutoCancellableTests.swift; sourceTree = "<group>"; };
-		954999E420E5DE3C002ED05D /* RequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTests.swift; sourceTree = "<group>"; };
+		954999E420E5DE3C002ED05D /* Session+CreateURLRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+CreateURLRequestTests.swift"; sourceTree = "<group>"; };
 		954999E820E899DC002ED05D /* Session+Mocking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+Mocking.swift"; sourceTree = "<group>"; };
 		95499A1C20EC51C5002ED05D /* MockResponseStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockResponseStore.swift; sourceTree = "<group>"; };
 		95499A2520ECF3CD002ED05D /* SessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTests.swift; sourceTree = "<group>"; };
@@ -482,7 +482,7 @@
 		958812D5209745FE0080D3D4 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				954999E420E5DE3C002ED05D /* RequestTests.swift */,
+				954999E420E5DE3C002ED05D /* Session+CreateURLRequestTests.swift */,
 				95499A2D20EDE81E002ED05D /* EssentialsTests.swift */,
 				954999DC20E4FE66002ED05D /* ResultResponseBodyTests.swift */,
 				954999E020E5A90A002ED05D /* URLSessionTaskAutoCancellableTests.swift */,
@@ -1149,7 +1149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				954999E520E5DE3C002ED05D /* RequestTests.swift in Sources */,
+				954999E520E5DE3C002ED05D /* Session+CreateURLRequestTests.swift in Sources */,
 				95499A2A20EDC1A0002ED05D /* SessionTests+ResponseData.swift in Sources */,
 				9533E13A20EFA1EF00ADECFD /* SessionQueuesTests.swift in Sources */,
 				954999DD20E4FE66002ED05D /* ResultResponseBodyTests.swift in Sources */,
@@ -1163,7 +1163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				954999E620E5DE3C002ED05D /* RequestTests.swift in Sources */,
+				954999E620E5DE3C002ED05D /* Session+CreateURLRequestTests.swift in Sources */,
 				95499A2B20EDC1A0002ED05D /* SessionTests+ResponseData.swift in Sources */,
 				9533E13B20EFA1EF00ADECFD /* SessionQueuesTests.swift in Sources */,
 				954999DE20E4FE66002ED05D /* ResultResponseBodyTests.swift in Sources */,
@@ -1177,7 +1177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				954999E720E5DE3C002ED05D /* RequestTests.swift in Sources */,
+				954999E720E5DE3C002ED05D /* Session+CreateURLRequestTests.swift in Sources */,
 				95499A2C20EDC1A0002ED05D /* SessionTests+ResponseData.swift in Sources */,
 				9533E13C20EFA1EF00ADECFD /* SessionQueuesTests.swift in Sources */,
 				954999DF20E4FE66002ED05D /* ResultResponseBodyTests.swift in Sources */,

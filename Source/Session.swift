@@ -65,7 +65,7 @@ public class Session<ConfigurationType: SessionConfiguration> {
         let encodingCancellable = requestEncodingQueue.asyncCancellable {
             let urlRequest: URLRequest
             do {
-                urlRequest = try request.createURLRequest()
+                urlRequest = try self.createURLRequest(request: request)
             } catch let error {
                 let c = self.callbackQueue.asyncCancellable {
                     completion(.error(.requestEncoding(embeddedError: error)))
@@ -117,6 +117,16 @@ public class Session<ConfigurationType: SessionConfiguration> {
         return result
     }
 
+}
+
+extension Session {
+    internal func createURLRequest<R: Request>(request: R) throws -> URLRequest where R.SessionConfigurationType == ConfigurationType {
+        let url = try request.generateURL()
+        var r = URLRequest(url: url)
+        r.httpMethod = R.method
+        r.allHTTPHeaderFields = request.generateHeaders()
+        return r
+    }
 }
 
 extension Session {

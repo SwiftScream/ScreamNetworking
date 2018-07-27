@@ -43,14 +43,6 @@ public enum RequestError: Error {
 }
 
 extension Request {
-    internal func createURLRequest() throws -> URLRequest {
-        let url = try generateURL()
-        var r = URLRequest(url: url)
-        r.httpMethod = Self.method
-        r.allHTTPHeaderFields = generateHeaders()
-        return r
-    }
-
     internal func generateURL() throws -> URL {
         switch Self.endpoint {
         case .url(let u):

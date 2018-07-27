@@ -43,7 +43,7 @@ internal class MockResponseStore<SessionConfigurationType: SessionConfiguration>
     }
 
     func mock<R: Request>(request: R, withResponse mockResponse: MockResponse) where R.SessionConfigurationType == SessionConfigurationType {
-        guard let urlRequest = try? request.createURLRequest() else {
+        guard let urlRequest = try? session.createURLRequest(request: request) else {
             return
         }
         var mockedResponses = enqueuedResponses[urlRequest] ?? []

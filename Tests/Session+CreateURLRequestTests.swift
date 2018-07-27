@@ -19,6 +19,11 @@ private class Empty: Decodable {
 }
 
 class RequestTests: XCTestCase {
+    var session: DefaultSession!
+
+    override func setUp() {
+        session = DefaultSession()
+    }
 
     func testMinimalRequestBuild() {
         struct TestRequest: Request {
@@ -26,7 +31,7 @@ class RequestTests: XCTestCase {
             typealias ResponseBodyType = Empty
         }
 
-        guard let request = try? TestRequest().createURLRequest() else {
+        guard let request = try? session.createURLRequest(request: TestRequest()) else {
             XCTFail("Fail to build request")
             return
         }
@@ -43,7 +48,7 @@ class RequestTests: XCTestCase {
             typealias ResponseBodyType = Empty
         }
 
-        guard let request = try? TestRequest().createURLRequest() else {
+        guard let request = try? session.createURLRequest(request: TestRequest()) else {
             XCTFail("Fail to build request")
             return
         }
@@ -67,7 +72,7 @@ class RequestTests: XCTestCase {
             let b: String? //testing nil removal
         }
 
-        guard let request = try? TestRequest(path: "foo", a: true, b: nil).createURLRequest() else {
+        guard let request = try? session.createURLRequest(request: TestRequest(path: "foo", a: true, b: nil)) else {
             XCTFail("Fail to build request")
             return
         }
@@ -85,7 +90,7 @@ class RequestTests: XCTestCase {
             public let accept = "accept header value"
         }
 
-        guard let request = try? TestRequest().createURLRequest() else {
+        guard let request = try? session.createURLRequest(request: TestRequest()) else {
             XCTFail("Fail to build request")
             return
         }
@@ -104,7 +109,7 @@ class RequestTests: XCTestCase {
             public let accept: String? = nil
         }
 
-        guard let request = try? TestRequest().createURLRequest() else {
+        guard let request = try? session.createURLRequest(request: TestRequest()) else {
             XCTFail("Fail to build request")
             return
         }
