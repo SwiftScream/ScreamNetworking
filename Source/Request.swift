@@ -43,30 +43,37 @@ public enum RequestError: Error {
 }
 
 extension Request {
-    internal func generateURL() throws -> URL {
+    internal func generateURL(variables: [String: VariableValue]?) throws -> URL {
         switch Self.endpoint {
         case .url(let u):
             return u
-        case .template(let template, let variableMap):
-            let variables = variableMap.compactMapValues { (keyPath) -> VariableValue? in
-                let value = self[keyPath: keyPath]
-                switch value {
-                case let variableValue as VariableValue:
-                    return variableValue
-                case let stringValue as CustomStringConvertible:
-                    return stringValue.description
-                case let any as Any? where any == nil:
-                    return nil
-                default:
-                    assertionFailure("Failed to render template variable")
-                    return nil
-                }
-            }
-            let expandedTemplate = try template.process(variables: variables)
+        case .template(let template, _):
+            let expandedTemplate = try template.process(variables: variables ?? [:])
             guard let url = URL(string: expandedTemplate) else {
                 throw RequestError.invalidEndpoint
             }
             return url
+        }
+    }
+
+    internal func generateVariables() -> [String: VariableValue]? {
+        guard Self.endpoint.requiresVariables,
+            let variableMap = Self.endpoint.variableMap else {
+                return nil
+        }
+        return variableMap.compactMapValues { (keyPath) -> VariableValue? in
+            let value = self[keyPath: keyPath]
+            switch value {
+            case let variableValue as VariableValue:
+                return variableValue
+            case let stringValue as CustomStringConvertible:
+                return stringValue.description
+            case let any as Any? where any == nil:
+                return nil
+            default:
+                assertionFailure("Failed to render template variable")
+                return nil
+            }
         }
     }
 

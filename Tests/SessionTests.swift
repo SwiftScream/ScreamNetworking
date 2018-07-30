@@ -57,7 +57,7 @@ class SessionTests: XCTestCase {
         let expectation = self.expectation(description: "requestCompletion")
         let request = OrganizationRequest()
         let responseData: Data = ResponseData.organization
-        let mockResponse = MockResponse.success(body: responseData, url: try request.generateURL())
+        let mockResponse = MockResponse.success(body: responseData, url: try session.generateURL(request: request))
         mockResponseStore.mock(request: request, withResponse: mockResponse)
         var requestToken = session.enqueue(request) { response in
             do {
@@ -78,7 +78,7 @@ class SessionTests: XCTestCase {
         let expectation = self.expectation(description: "requestCompletion")
         let request = OrganizationRequest()
         let responseData: Data = ResponseData.organization
-        guard let response = HTTPURLResponse(url: try request.generateURL(), statusCode: 200, httpVersion: nil, headerFields: nil) else {
+        guard let response = HTTPURLResponse(url: try session.generateURL(request: request), statusCode: 200, httpVersion: nil, headerFields: nil) else {
             XCTFail("Error producing reponse")
             return
         }
@@ -187,7 +187,7 @@ class SessionTests: XCTestCase {
         let expectation = self.expectation(description: "requestCompletion")
         let request = OrganizationRequest()
         let responseData: Data = "{}".data(using: .utf8)!
-        let mockResponse = MockResponse.success(body: responseData, url: try request.generateURL())
+        let mockResponse = MockResponse.success(body: responseData, url: try session.generateURL(request: request))
         mockResponseStore.mock(request: request, withResponse: mockResponse)
         var requestToken = session.enqueue(request) { response in
             do {
@@ -212,7 +212,7 @@ class SessionTests: XCTestCase {
     func testEmptyDataFailure() throws {
         let expectation = self.expectation(description: "requestCompletion")
         let request = OrganizationRequest()
-        let mockResponse = MockResponse.success(body: nil, url: try request.generateURL())
+        let mockResponse = MockResponse.success(body: nil, url: try session.generateURL(request: request))
         mockResponseStore.mock(request: request, withResponse: mockResponse)
         var requestToken = session.enqueue(request) { response in
             do {
@@ -237,7 +237,7 @@ class SessionTests: XCTestCase {
     func testEmptyDataSuccess() throws {
         let expectation = self.expectation(description: "requestCompletion")
         let request = EmptyRequest()
-        let mockResponse = MockResponse.success(body: nil, url: try request.generateURL())
+        let mockResponse = MockResponse.success(body: nil, url: try session.generateURL(request: request))
         mockResponseStore.mock(request: request, withResponse: mockResponse)
         var requestToken = session.enqueue(request) { response in
             do {
@@ -257,7 +257,7 @@ class SessionTests: XCTestCase {
         expectation.isInverted = true
         let request = OrganizationRequest()
         let responseData: Data = ResponseData.organization
-        let mockResponse = MockResponse.success(body: responseData, url: try request.generateURL(), latency: 0.02)
+        let mockResponse = MockResponse.success(body: responseData, url: try session.generateURL(request: request), latency: 0.02)
         mockResponseStore.mock(request: request, withResponse: mockResponse)
         let requestToken = session.enqueue(request) { _ in
             expectation.fulfill()
@@ -271,7 +271,7 @@ class SessionTests: XCTestCase {
         expectation.isInverted = true
         let request = OrganizationRequest()
         let responseData: Data = ResponseData.organization
-        let mockResponse = MockResponse.success(body: responseData, url: try request.generateURL(), latency: 0.02)
+        let mockResponse = MockResponse.success(body: responseData, url: try session.generateURL(request: request), latency: 0.02)
         mockResponseStore.mock(request: request, withResponse: mockResponse)
         let requestToken = session.enqueue(request) { _ in
             expectation.fulfill()

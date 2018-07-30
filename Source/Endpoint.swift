@@ -16,8 +16,30 @@ import Foundation
 import URITemplate
 
 public enum EndpointT<R: Request> {
+    public typealias VariableMap = [String: PartialKeyPath<R>]
+
     //swiftlint:disable identifier_name superfluous_disable_command
     case url(URL)
-    case template(URITemplate, [String: PartialKeyPath<R>])
+    case template(URITemplate, VariableMap)
     //swiftlint:enable identifier_name superfluous_disable_command
+}
+
+extension EndpointT {
+    var requiresVariables: Bool {
+        switch self {
+        case .url:
+            return false
+        case .template:
+            return true
+        }
+    }
+
+    var variableMap: VariableMap? {
+        switch self {
+        case .url:
+            return nil
+        case .template(_, let variableMap):
+            return variableMap
+        }
+    }
 }

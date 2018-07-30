@@ -13,6 +13,7 @@
 //   limitations under the License.
 
 import Foundation
+import URITemplate
 
 internal extension CodingUserInfoKey {
     internal static let response: CodingUserInfoKey = CodingUserInfoKey(rawValue: "ScreamNetworking.HTTPURLResponse")!
@@ -121,17 +122,32 @@ public class Session<ConfigurationType: SessionConfiguration> {
 
 extension Session {
     internal func createURLRequest<R: Request>(request: R) throws -> URLRequest where R.SessionConfigurationType == ConfigurationType {
-        let url = try request.generateURL()
+        let url = try generateURL(request: request)
         var r = URLRequest(url: url)
         r.httpMethod = R.method
-        let sessionHeaders = self.generateHeaders()
-        let requestHeaders = request.generateHeaders()
-        let headers = sessionHeaders.merging(requestHeaders) { (_, request) in request }
-        r.allHTTPHeaderFields = headers
+        r.allHTTPHeaderFields = generateHeaders(request: request)
         return r
     }
 
-    internal func generateHeaders() -> [String: String] {
+    internal func generateURL<R: Request>(request: R) throws -> URL {
+        let variables = generateVariables(request: request)
+        return try request.generateURL(variables: variables)
+    }
+
+    private func generateVariables<R: Request>(request: R) -> [String: VariableValue]? {
+        if !R.endpoint.requiresVariables {
+            return nil
+        }
+        return request.generateVariables() ?? [:]
+    }
+
+    private func generateHeaders<R: Request>(request: R) -> [String: String] {
+        let sessionHeaders = self.generateHeaders()
+        let requestHeaders = request.generateHeaders()
+        return sessionHeaders.merging(requestHeaders) { (_, request) in request }
+    }
+
+    private func generateHeaders() -> [String: String] {
         let variables = ConfigurationType.requestHeaders.compactMapValues { (keyPath) -> String? in
             let value: Any = self.configuration[keyPath: keyPath]
             switch value {

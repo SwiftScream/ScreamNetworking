@@ -18,7 +18,7 @@ import XCTest
 private class Empty: Decodable {
 }
 
-class RequestTests: XCTestCase {
+class SessionCreateURLRequestTests: XCTestCase {
     var defaultSession: DefaultSession!
     var gitHubSession: GitHubSession!
 

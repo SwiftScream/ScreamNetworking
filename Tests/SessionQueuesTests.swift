@@ -57,7 +57,7 @@ class SessionQueuesTests: XCTestCase {
         let mockResponseStore = session.startMocking()
         let expectation = self.expectation(description: "requestCompletion")
         let request = SessionQueueTestRequest()
-        let mockResponse = MockResponse.success(body: nil, url: try request.generateURL())
+        let mockResponse = MockResponse.success(body: nil, url: try session.generateURL(request: request))
         mockResponseStore.mock(request: request, withResponse: mockResponse)
         var requestToken = session.enqueue(request) { response in
             XCTAssertEqual(DispatchQueue.getSpecific(key: queueMarkerKey), "main")
@@ -76,7 +76,7 @@ class SessionQueuesTests: XCTestCase {
         let mockResponseStore = session.startMocking()
         let expectation = self.expectation(description: "requestCompletion")
         let request = SessionQueueTestRequest()
-        let mockResponse = MockResponse.success(body: nil, url: try request.generateURL())
+        let mockResponse = MockResponse.success(body: nil, url: try session.generateURL(request: request))
         mockResponseStore.mock(request: request, withResponse: mockResponse)
         var requestToken = session.enqueue(request) { response in
             XCTAssertEqual(DispatchQueue.getSpecific(key: queueMarkerKey), "callback")
@@ -92,7 +92,7 @@ class SessionQueuesTests: XCTestCase {
         let mockResponseStore = session.startMocking()
         let expectation = self.expectation(description: "requestCompletion")
         let request = SessionQueueTestRequest()
-        let mockResponse = MockResponse.success(body: "{}".data(using: .utf8), url: try request.generateURL())
+        let mockResponse = MockResponse.success(body: "{}".data(using: .utf8), url: try session.generateURL(request: request))
         mockResponseStore.mock(request: request, withResponse: mockResponse)
         var requestToken = session.enqueue(request) { response in
             do {
@@ -116,7 +116,7 @@ class SessionQueuesTests: XCTestCase {
         let mockResponseStore = session.startMocking()
         let expectation = self.expectation(description: "requestCompletion")
         let request = SessionQueueTestRequest()
-        let mockResponse = MockResponse.success(body: "{}".data(using: .utf8), url: try request.generateURL())
+        let mockResponse = MockResponse.success(body: "{}".data(using: .utf8), url: try session.generateURL(request: request))
         mockResponseStore.mock(request: request, withResponse: mockResponse)
         var requestToken = session.enqueue(request) { response in
             do {
