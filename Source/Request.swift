@@ -40,6 +40,7 @@ extension Request {
 
 public enum RequestError: Error {
     case invalidEndpoint
+    case endpointUnavailable
 }
 
 extension Request {
@@ -48,12 +49,24 @@ extension Request {
         case .url(let u):
             return u
         case .template(let template, _):
-            let expandedTemplate = try template.process(variables: variables ?? [:])
-            guard let url = URL(string: expandedTemplate) else {
-                throw RequestError.invalidEndpoint
+            return try generateURL(template: template, variables: variables)
+        case .relationship(let templateKeyPath, _):
+            let template = self[keyPath: templateKeyPath]
+            return try generateURL(template: template, variables: variables)
+        case .optionalRelationship(let templateKeyPath, _):
+            guard let template = self[keyPath: templateKeyPath] else {
+                throw RequestError.endpointUnavailable
             }
-            return url
+            return try generateURL(template: template, variables: variables)
         }
+    }
+
+    private func generateURL(template: URITemplate, variables: [String: VariableValue]?) throws -> URL {
+        let expandedTemplate = try template.process(variables: variables ?? [:])
+        guard let url = URL(string: expandedTemplate) else {
+            throw RequestError.invalidEndpoint
+        }
+        return url
     }
 
     internal func generateVariables() -> [String: VariableValue]? {

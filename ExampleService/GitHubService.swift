@@ -14,6 +14,7 @@
 
 import Foundation
 import ScreamNetworking
+import URITemplate
 
 extension URL: ExpressibleByStringLiteral {
     public init(stringLiteral value: StaticString) {
@@ -77,4 +78,20 @@ public struct GitHubOrganizationResponse: Decodable {
     public let name: String
     public let description: String
     public let location: String
+    public let reposUrl: URITemplate
+}
+
+public struct GitHubOrganizationRepos: GitHubRequest {
+    public static let endpoint = Endpoint.relationship(\.organization.reposUrl, [:])
+    public typealias ResponseBodyType = GitHubResponseBody<[GitHubRepository]>
+
+    let organization: GitHubOrganizationResponse
+}
+
+public struct GitHubRepository: Decodable {
+    public let name: String
+    public let description: String?
+    public let fork: Bool
+    public let stargazersCount: Int
+    public let language: String
 }

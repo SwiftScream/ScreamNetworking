@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     let session: GitHubSession
     var rootRequest: AutoCancellable?
     var orgRequest: AutoCancellable?
+    var reposRequest: AutoCancellable?
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         session = GitHubSession()
@@ -56,11 +57,27 @@ class ViewController: UIViewController {
                     print(org.name)
                     print(org.description)
                     print(org.location)
+                    self?.requestRepos(org: org)
                 }
             } catch let e {
                 print("Networking Error: \(e)")
             }
             self?.orgRequest = nil
+        }
+    }
+
+    func requestRepos(org: GitHubOrganizationResponse) {
+        reposRequest = session.enqueue(GitHubOrganizationRepos(organization: org)) { response in
+            do {
+                switch try response.unwrap() {
+                case .error(let e):
+                    print("Domain Error: \(e.message)")
+                case .success(let repos):
+                    print("Repositories: \(repos.count)")
+                }
+            } catch let e {
+                print("Networking Error: \(e)")
+            }
         }
     }
 

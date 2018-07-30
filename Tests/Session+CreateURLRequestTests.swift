@@ -14,6 +14,7 @@
 
 import XCTest
 @testable import ScreamNetworking
+import URITemplate
 
 private class Empty: Decodable {
 }
@@ -192,4 +193,68 @@ class SessionCreateURLRequestTests: XCTestCase {
         XCTAssertEqual(request.httpMethod, "GET")
         XCTAssertNil(request.httpBody)
     }
+
+    func testRequestWithRelationshipBuild() {
+        struct TestRequest: Request {
+            public static let endpoint = Endpoint.relationship(\.relationship, [
+                "path": \TestRequest.path,
+                ])
+            typealias ResponseBodyType = Empty
+
+            let relationship: URITemplate
+            let path: String //treated as VariableValue
+        }
+
+        guard let request = try? defaultSession.createURLRequest(request: TestRequest(relationship: "https://api.example.com{/path}", path: "foo")) else {
+            XCTFail("Fail to build request")
+            return
+        }
+        XCTAssertEqual(request.url, URL(string: "https://api.example.com/foo"))
+        XCTAssertEqual(request.httpMethod, "GET")
+        XCTAssertNil(request.httpBody)
+        XCTAssertEqual(request.allHTTPHeaderFields?.count, 0)
+    }
+
+    func testRequestWithOptionalRelationshipBuild() {
+        struct TestRequest: Request {
+            public static let endpoint = Endpoint.optionalRelationship(\.relationship, [
+                "path": \TestRequest.path,
+                ])
+            typealias ResponseBodyType = Empty
+
+            let relationship: URITemplate?
+            let path: String //treated as VariableValue
+        }
+
+        guard let request = try? defaultSession.createURLRequest(request: TestRequest(relationship: "https://api.example.com{/path}", path: "foo")) else {
+            XCTFail("Fail to build request")
+            return
+        }
+        XCTAssertEqual(request.url, URL(string: "https://api.example.com/foo"))
+        XCTAssertEqual(request.httpMethod, "GET")
+        XCTAssertNil(request.httpBody)
+        XCTAssertEqual(request.allHTTPHeaderFields?.count, 0)
+    }
+
+    func testRequestWithNilRelationshipBuild() {
+        struct TestRequest: Request {
+            public static let endpoint = Endpoint.optionalRelationship(\.relationship, [
+                "path": \TestRequest.path,
+                ])
+            typealias ResponseBodyType = Empty
+
+            let relationship: URITemplate?
+            let path: String //treated as VariableValue
+        }
+
+        do {
+            _ = try defaultSession.createURLRequest(request: TestRequest(relationship: nil, path: "foo"))
+        } catch RequestError.endpointUnavailable {
+            return
+        } catch {
+            XCTFail("Request build failed with unexpected error")
+        }
+        XCTFail("Request build passed unexpectedly")
+    }
+
 }

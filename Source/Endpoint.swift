@@ -21,6 +21,8 @@ public enum EndpointT<R: Request> {
     //swiftlint:disable identifier_name superfluous_disable_command
     case url(URL)
     case template(URITemplate, VariableMap)
+    case relationship(KeyPath<R, URITemplate>, VariableMap)
+    case optionalRelationship(KeyPath<R, URITemplate?>, VariableMap)
     //swiftlint:enable identifier_name superfluous_disable_command
 }
 
@@ -29,7 +31,7 @@ extension EndpointT {
         switch self {
         case .url:
             return false
-        case .template:
+        case .template, .relationship, .optionalRelationship:
             return true
         }
     }
@@ -38,7 +40,9 @@ extension EndpointT {
         switch self {
         case .url:
             return nil
-        case .template(_, let variableMap):
+        case .template(_, let variableMap),
+             .relationship(_, let variableMap),
+             .optionalRelationship(_, let variableMap):
             return variableMap
         }
     }
