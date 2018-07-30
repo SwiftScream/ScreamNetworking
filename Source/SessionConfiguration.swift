@@ -28,6 +28,9 @@ public protocol SessionConfiguration {
 
     typealias HeaderMap = [String: PartialKeyPath<Self>]
     static var requestHeaders: HeaderMap { get }
+
+    typealias VariableMap = [String: PartialKeyPath<Self>]
+    static var templateVariables: VariableMap { get }
 }
 
 extension SessionConfiguration {
@@ -42,6 +45,7 @@ extension SessionConfiguration {
     public var nonConformingFloatDecodingStrategy: JSONDecoder.NonConformingFloatDecodingStrategy { return .throw }
 
     public static var requestHeaders: HeaderMap { return [:] }
+    public static var templateVariables: VariableMap { return [:] }
 }
 
 public struct DefaultSessionConfiguration: SessionConfiguration {

@@ -138,7 +138,9 @@ extension Session {
         if !R.endpoint.requiresVariables {
             return nil
         }
-        return request.generateVariables() ?? [:]
+        let sessionVariables = self.generateVariables()
+        let requestVariables = request.generateVariables() ?? [:]
+        return sessionVariables.merging(requestVariables) { (_, request) in request }
     }
 
     private func generateHeaders<R: Request>(request: R) -> [String: String] {
@@ -163,6 +165,22 @@ extension Session {
         return variables
     }
 
+    private func generateVariables() -> [String: VariableValue] {
+        return ConfigurationType.templateVariables.compactMapValues { (keyPath) -> VariableValue? in
+            let value = self.configuration[keyPath: keyPath]
+            switch value {
+            case let variableValue as VariableValue:
+                return variableValue
+            case let stringValue as CustomStringConvertible:
+                return stringValue.description
+            case let any as Any? where any == nil:
+                return nil
+            default:
+                assertionFailure("Failed to render template variable")
+                return nil
+            }
+        }
+    }
 }
 
 extension Session {

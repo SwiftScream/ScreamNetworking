@@ -152,4 +152,44 @@ class SessionCreateURLRequestTests: XCTestCase {
         XCTAssertEqual(request.allHTTPHeaderFields?.count, 1)
         XCTAssertEqual(request.allHTTPHeaderFields?["Accept"], "accept header value")
     }
+
+    func testRequestWithSessionVariablesBuild() {
+        struct TestRequest: GitHubRequest {
+            public static let endpoint = Endpoint.template("https://api.example.com{/path}{?sessionID}", [
+                "path": \TestRequest.path
+                ])
+            typealias ResponseBodyType = Empty
+
+            let path: String
+        }
+
+        guard let request = try? gitHubSession.createURLRequest(request: TestRequest(path: "foo")) else {
+            XCTFail("Fail to build request")
+            return
+        }
+        XCTAssertEqual(request.url, URL(string: "https://api.example.com/foo?sessionID=asd"))
+        XCTAssertEqual(request.httpMethod, "GET")
+        XCTAssertNil(request.httpBody)
+    }
+
+    func testRequestWithRequestVariableOverrideSessionVariableBuild() {
+        struct TestRequest: GitHubRequest {
+            public static let endpoint = Endpoint.template("https://api.example.com{/path}{?sessionID}", [
+                "path": \TestRequest.path,
+                "sessionID": \TestRequest.sessionID
+                ])
+            typealias ResponseBodyType = Empty
+
+            let path: String
+            let sessionID: String
+        }
+
+        guard let request = try? gitHubSession.createURLRequest(request: TestRequest(path: "foo", sessionID: "123")) else {
+            XCTFail("Fail to build request")
+            return
+        }
+        XCTAssertEqual(request.url, URL(string: "https://api.example.com/foo?sessionID=123"))
+        XCTAssertEqual(request.httpMethod, "GET")
+        XCTAssertNil(request.httpBody)
+    }
 }

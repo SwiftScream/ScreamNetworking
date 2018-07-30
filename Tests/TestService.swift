@@ -24,6 +24,13 @@ struct GitHubSessionConfiguration: SessionConfiguration {
                                                    "ShouldNotAppear": \GitHubSessionConfiguration.nilHeaderValue]
     public let accept = "application/vnd.github.v3+json"
     public let nilHeaderValue: String? = nil
+
+    public static let templateVariables: VariableMap = ["sessionID": \GitHubSessionConfiguration.sessionID,
+                                                        "a": \GitHubSessionConfiguration.a,
+                                                        "b": \GitHubSessionConfiguration.b]
+    public let sessionID = "asd" //treated as VariableValue
+    public let a: Bool = true //treated as CustomStringConvertible
+    public let b: String? = nil //testing nil removal
 }
 
 typealias GitHubSession = Session<GitHubSessionConfiguration>
