@@ -129,7 +129,7 @@ extension Session {
         return r
     }
 
-    internal func generateURL<R: Request>(request: R) throws -> URL {
+    internal func generateURL<R: Request>(request: R) throws -> URL where R.SessionConfigurationType == ConfigurationType {
         let variables = generateVariables(request: request)
         switch R.endpoint {
         case .url(let u):
@@ -141,6 +141,14 @@ extension Session {
             return try generateURL(template: template, variables: variables)
         case .optionalRelationship(let templateKeyPath, _):
             guard let template = request[keyPath: templateKeyPath] else {
+                throw RequestError.endpointUnavailable
+            }
+            return try generateURL(template: template, variables: variables)
+        case .rootRelationship(let templateKeyPath, _):
+            let template = self.configuration[keyPath: templateKeyPath]
+            return try generateURL(template: template, variables: variables)
+        case .optionalRootRelationship(let templateKeyPath, _):
+            guard let template = self.configuration[keyPath: templateKeyPath] else {
                 throw RequestError.endpointUnavailable
             }
             return try generateURL(template: template, variables: variables)

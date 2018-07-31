@@ -257,4 +257,62 @@ class SessionCreateURLRequestTests: XCTestCase {
         XCTFail("Request build passed unexpectedly")
     }
 
+    func testRequestWithRootRelationshipBuild() {
+        struct TestRequest: GitHubRequest {
+            public static let endpoint = Endpoint.rootRelationship(\.relationship, [
+                "org": \TestRequest.org,
+                ])
+            typealias ResponseBodyType = Empty
+
+            let org: String
+        }
+
+        guard let request = try? gitHubSession.createURLRequest(request: TestRequest(org: "foo")) else {
+            XCTFail("Fail to build request")
+            return
+        }
+        XCTAssertEqual(request.url, URL(string: "https://api.github.com/orgs/foo"))
+        XCTAssertEqual(request.httpMethod, "GET")
+        XCTAssertNil(request.httpBody)
+    }
+
+    func testRequestWithOptionalRootRelationshipBuild() {
+        struct TestRequest: GitHubRequest {
+            public static let endpoint = Endpoint.optionalRootRelationship(\.optionalRelationship, [
+                "org": \TestRequest.org,
+                ])
+            typealias ResponseBodyType = Empty
+
+            let org: String
+        }
+
+        guard let request = try? gitHubSession.createURLRequest(request: TestRequest(org: "foo")) else {
+            XCTFail("Fail to build request")
+            return
+        }
+        XCTAssertEqual(request.url, URL(string: "https://api.github.com/orgs/foo"))
+        XCTAssertEqual(request.httpMethod, "GET")
+        XCTAssertNil(request.httpBody)
+    }
+
+    func testRequestWithNilRootRelationshipBuild() {
+        struct TestRequest: GitHubRequest {
+            public static let endpoint = Endpoint.optionalRootRelationship(\.nilRelationship, [
+                "org": \TestRequest.org,
+                ])
+            typealias ResponseBodyType = Empty
+
+            let org: String
+        }
+
+        do {
+            _ = try gitHubSession.createURLRequest(request: TestRequest(org: "foo"))
+        } catch RequestError.endpointUnavailable {
+            return
+        } catch {
+            XCTFail("Request build failed with unexpected error")
+        }
+        XCTFail("Request build passed unexpectedly")
+    }
+
 }
