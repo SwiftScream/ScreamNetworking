@@ -131,7 +131,28 @@ extension Session {
 
     internal func generateURL<R: Request>(request: R) throws -> URL {
         let variables = generateVariables(request: request)
-        return try request.generateURL(variables: variables)
+        switch R.endpoint {
+        case .url(let u):
+            return u
+        case .template(let template, _):
+            return try generateURL(template: template, variables: variables)
+        case .relationship(let templateKeyPath, _):
+            let template = request[keyPath: templateKeyPath]
+            return try generateURL(template: template, variables: variables)
+        case .optionalRelationship(let templateKeyPath, _):
+            guard let template = request[keyPath: templateKeyPath] else {
+                throw RequestError.endpointUnavailable
+            }
+            return try generateURL(template: template, variables: variables)
+        }
+    }
+
+    private func generateURL(template: URITemplate, variables: [String: VariableValue]?) throws -> URL {
+        let expandedTemplate = try template.process(variables: variables ?? [:])
+        guard let url = URL(string: expandedTemplate) else {
+            throw RequestError.invalidEndpoint
+        }
+        return url
     }
 
     private func generateVariables<R: Request>(request: R) -> [String: VariableValue]? {

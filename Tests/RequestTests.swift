@@ -17,21 +17,6 @@ import XCTest
 
 class RequestTests: XCTestCase {
 
-    func test_generateURL_NilVariablesAssumesEmpty() {
-        struct TestRequest: GitHubRequest {
-            public static let endpoint = Endpoint.template("http://www.example.com{/a}", [
-                "a": \TestRequest.a,
-                ])
-
-            let a: String
-        }
-
-        let request = TestRequest(a: "a")
-        let url = try? request.generateURL(variables: nil)
-        XCTAssert(url != nil)
-        XCTAssertEqual(url, URL(string: "http://www.example.com"))
-    }
-
     func test_generateVariables_WithURLReturnsNil() {
         struct TestRequest: GitHubRequest {
             public static let endpoint = Endpoint.url(URL(string: "http://www.example.com")!)
