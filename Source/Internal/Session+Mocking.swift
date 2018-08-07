@@ -14,6 +14,7 @@
 
 import Foundation
 import Dispatch
+import ScreamEssentials
 
 internal protocol URLSessionTaskProtocol {
     func resume()

@@ -15,6 +15,7 @@
 import WatchKit
 import Foundation
 import ScreamNetworking
+import ScreamEssentials
 
 class InterfaceController: WKInterfaceController {
     let session: GitHubSession

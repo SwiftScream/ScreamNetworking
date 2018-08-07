@@ -14,6 +14,7 @@
 
 import Foundation
 import URITemplate
+import ScreamEssentials
 
 public struct EmptyResponse: Decodable {
 }

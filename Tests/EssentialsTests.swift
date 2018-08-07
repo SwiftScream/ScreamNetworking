@@ -15,6 +15,7 @@
 import XCTest
 import Dispatch
 import ScreamNetworking
+import ScreamEssentials
 
 class EssentialsTests: XCTestCase {
 

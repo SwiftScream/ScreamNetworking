@@ -14,6 +14,7 @@
 
 import Foundation
 import URITemplate
+import ScreamEssentials
 
 internal extension CodingUserInfoKey {
     internal static let response: CodingUserInfoKey = CodingUserInfoKey(rawValue: "ScreamNetworking.HTTPURLResponse")!

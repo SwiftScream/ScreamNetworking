@@ -28,10 +28,6 @@
 		9518467F20DD206700F16EAC /* ResultResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518467920DD206700F16EAC /* ResultResponseBody.swift */; };
 		9518468020DD206700F16EAC /* ResultResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518467920DD206700F16EAC /* ResultResponseBody.swift */; };
 		9518468120DD206700F16EAC /* ResultResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518467920DD206700F16EAC /* ResultResponseBody.swift */; };
-		9518468720DD294400F16EAC /* Essentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518468220DD294400F16EAC /* Essentials.swift */; };
-		9518468820DD294400F16EAC /* Essentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518468220DD294400F16EAC /* Essentials.swift */; };
-		9518468920DD294400F16EAC /* Essentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518468220DD294400F16EAC /* Essentials.swift */; };
-		9518468A20DD294400F16EAC /* Essentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518468220DD294400F16EAC /* Essentials.swift */; };
 		9518469120DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518468C20DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift */; };
 		9518469220DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518468C20DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift */; };
 		9518469320DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518468C20DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift */; };
@@ -40,6 +36,14 @@
 		9518469B20E0BF9C00F16EAC /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518469520E0BF9C00F16EAC /* Response.swift */; };
 		9518469C20E0BF9C00F16EAC /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518469520E0BF9C00F16EAC /* Response.swift */; };
 		9518469D20E0BF9C00F16EAC /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518469520E0BF9C00F16EAC /* Response.swift */; };
+		951B1624211A993900566525 /* ScreamEssentials.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951B1623211A993900566525 /* ScreamEssentials.framework */; };
+		951B1625211A993900566525 /* ScreamEssentials.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951B1623211A993900566525 /* ScreamEssentials.framework */; };
+		951B1628211A995A00566525 /* ScreamEssentials.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951B1626211A994900566525 /* ScreamEssentials.framework */; };
+		951B1629211A995C00566525 /* ScreamEssentials.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951B1626211A994900566525 /* ScreamEssentials.framework */; };
+		951B162B211A997000566525 /* ScreamEssentials.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951B162A211A997000566525 /* ScreamEssentials.framework */; };
+		951B162C211A997000566525 /* ScreamEssentials.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951B162A211A997000566525 /* ScreamEssentials.framework */; };
+		951B162E211A998B00566525 /* ScreamEssentials.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951B162D211A998B00566525 /* ScreamEssentials.framework */; };
+		951B162F211A998B00566525 /* ScreamEssentials.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951B162D211A998B00566525 /* ScreamEssentials.framework */; };
 		9533E13A20EFA1EF00ADECFD /* SessionQueuesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9533E13920EFA1EF00ADECFD /* SessionQueuesTests.swift */; };
 		9533E13B20EFA1EF00ADECFD /* SessionQueuesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9533E13920EFA1EF00ADECFD /* SessionQueuesTests.swift */; };
 		9533E13C20EFA1EF00ADECFD /* SessionQueuesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9533E13920EFA1EF00ADECFD /* SessionQueuesTests.swift */; };
@@ -253,9 +257,12 @@
 
 /* Begin PBXFileReference section */
 		9518467920DD206700F16EAC /* ResultResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultResponseBody.swift; sourceTree = "<group>"; };
-		9518468220DD294400F16EAC /* Essentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Essentials.swift; sourceTree = "<group>"; };
 		9518468C20DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionTaskAutoCancellable.swift; sourceTree = "<group>"; };
 		9518469520E0BF9C00F16EAC /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		951B1623211A993900566525 /* ScreamEssentials.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScreamEssentials.framework; path = Carthage/Build/watchOS/Static/ScreamEssentials.framework; sourceTree = "<group>"; };
+		951B1626211A994900566525 /* ScreamEssentials.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScreamEssentials.framework; path = Carthage/Build/tvOS/Static/ScreamEssentials.framework; sourceTree = "<group>"; };
+		951B162A211A997000566525 /* ScreamEssentials.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScreamEssentials.framework; path = Carthage/Build/Mac/Static/ScreamEssentials.framework; sourceTree = "<group>"; };
+		951B162D211A998B00566525 /* ScreamEssentials.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScreamEssentials.framework; path = Carthage/Build/iOS/Static/ScreamEssentials.framework; sourceTree = "<group>"; };
 		9533E13920EFA1EF00ADECFD /* SessionQueuesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionQueuesTests.swift; sourceTree = "<group>"; };
 		9533E16920F4D3B100ADECFD /* URITemplate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = URITemplate.framework; path = Carthage/Build/iOS/Static/URITemplate.framework; sourceTree = "<group>"; };
 		9533E16D20F4D3C300ADECFD /* URITemplate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = URITemplate.framework; path = Carthage/Build/Mac/Static/URITemplate.framework; sourceTree = "<group>"; };
@@ -345,6 +352,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				951B1628211A995A00566525 /* ScreamEssentials.framework in Frameworks */,
 				9533E17320F4D3E100ADECFD /* URITemplate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,6 +361,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				951B1625211A993900566525 /* ScreamEssentials.framework in Frameworks */,
 				9533E17720F4D3FC00ADECFD /* URITemplate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,6 +370,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				951B162B211A997000566525 /* ScreamEssentials.framework in Frameworks */,
 				9533E16F20F4D3C300ADECFD /* URITemplate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9533E16820F47F1E00ADECFD /* ScreamNetworking.framework in Frameworks */,
+				951B162C211A997000566525 /* ScreamEssentials.framework in Frameworks */,
 				9533E17020F4D3C300ADECFD /* URITemplate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,6 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9533E16720F47F1200ADECFD /* ScreamNetworking.framework in Frameworks */,
+				951B162F211A998B00566525 /* ScreamEssentials.framework in Frameworks */,
 				9533E16C20F4D3B100ADECFD /* URITemplate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,6 +400,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9533E16620F47F0400ADECFD /* ScreamNetworking.framework in Frameworks */,
+				951B1629211A995C00566525 /* ScreamEssentials.framework in Frameworks */,
 				9533E17420F4D3E100ADECFD /* URITemplate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,6 +409,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				951B162E211A998B00566525 /* ScreamEssentials.framework in Frameworks */,
 				9533E16B20F4D3B100ADECFD /* URITemplate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +425,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				951B1624211A993900566525 /* ScreamEssentials.framework in Frameworks */,
 				9533E17620F4D3FC00ADECFD /* URITemplate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,6 +494,10 @@
 		958812BD2096ED700080D3D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				951B1623211A993900566525 /* ScreamEssentials.framework */,
+				951B1626211A994900566525 /* ScreamEssentials.framework */,
+				951B162A211A997000566525 /* ScreamEssentials.framework */,
+				951B162D211A998B00566525 /* ScreamEssentials.framework */,
 				9533E17520F4D3FC00ADECFD /* URITemplate.framework */,
 				9533E17120F4D3E100ADECFD /* URITemplate.framework */,
 				9533E16D20F4D3C300ADECFD /* URITemplate.framework */,
@@ -549,7 +568,6 @@
 				9518467920DD206700F16EAC /* ResultResponseBody.swift */,
 				95E25EFB20D89FD0001D36CE /* Session.swift */,
 				953A282820FE01AB00B106D7 /* SessionConfiguration.swift */,
-				9518468220DD294400F16EAC /* Essentials.swift */,
 				95499A1C20EC51C5002ED05D /* MockResponseStore.swift */,
 				9518468B20DD29F500F16EAC /* Internal */,
 				95D06BA120AAB407005D6947 /* FrameworkInfo.plist */,
@@ -1097,7 +1115,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9518469A20E0BF9C00F16EAC /* Response.swift in Sources */,
-				9518468720DD294400F16EAC /* Essentials.swift in Sources */,
 				9518469120DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift in Sources */,
 				954999ED20E899DC002ED05D /* Session+Mocking.swift in Sources */,
 				95E25F0020D89FD0001D36CE /* Session.swift in Sources */,
@@ -1114,7 +1131,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9518469B20E0BF9C00F16EAC /* Response.swift in Sources */,
-				9518468820DD294400F16EAC /* Essentials.swift in Sources */,
 				9518469220DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift in Sources */,
 				954999EE20E899DC002ED05D /* Session+Mocking.swift in Sources */,
 				95E25F0120D89FD0001D36CE /* Session.swift in Sources */,
@@ -1218,7 +1234,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9518469C20E0BF9C00F16EAC /* Response.swift in Sources */,
-				9518468920DD294400F16EAC /* Essentials.swift in Sources */,
 				9518469320DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift in Sources */,
 				954999EF20E899DC002ED05D /* Session+Mocking.swift in Sources */,
 				95E25F0220D89FD0001D36CE /* Session.swift in Sources */,
@@ -1235,7 +1250,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9518469D20E0BF9C00F16EAC /* Response.swift in Sources */,
-				9518468A20DD294400F16EAC /* Essentials.swift in Sources */,
 				9518469420DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift in Sources */,
 				954999F020E899DC002ED05D /* Session+Mocking.swift in Sources */,
 				95E25F0320D89FD0001D36CE /* Session.swift in Sources */,

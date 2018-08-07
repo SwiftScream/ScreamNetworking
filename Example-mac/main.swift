@@ -14,6 +14,7 @@
 
 import Foundation
 import ScreamNetworking
+import ScreamEssentials
 
 let session = GitHubSession()
 

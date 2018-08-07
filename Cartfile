@@ -1,1 +1,2 @@
 github "SwiftScream/URITemplate" ~> 2.0
+github "SwiftScream/ScreamEssentials" ~> 1.0

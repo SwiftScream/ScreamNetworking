@@ -13,6 +13,7 @@
 //   limitations under the License.
 
 import Foundation
+import ScreamEssentials
 
 internal class URLSessionTaskAutoCancellable: AutoCancellable {
     private let task: URLSessionTaskProtocol

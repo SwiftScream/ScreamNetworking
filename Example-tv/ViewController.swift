@@ -14,6 +14,7 @@
 
 import UIKit
 import ScreamNetworking
+import ScreamEssentials
 
 class ViewController: UIViewController {
     let session: GitHubSession

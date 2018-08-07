@@ -13,5 +13,6 @@
 //   limitations under the License.
 
 import Foundation
+import ScreamEssentials
 
 public typealias Response<ResponseBodyType> = Result<ResponseBodyType, SessionError>
