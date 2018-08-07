@@ -25,11 +25,9 @@ extension Decoder {
 }
 
 public enum SessionError: Error {
-    //swiftlint:disable identifier_name superfluous_disable_command
     case requestEncoding(embeddedError: Swift.Error)
     case network(embeddedError: Swift.Error?)
     case responseDecoding(embeddedError: Swift.Error)
-    //swiftlint:enable identifier_name superfluous_disable_command
 }
 
 typealias DefaultSession = Session<DefaultSessionConfiguration>

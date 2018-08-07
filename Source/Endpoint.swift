@@ -18,14 +18,12 @@ import URITemplate
 public enum EndpointT<R: Request> {
     public typealias VariableMap = [String: PartialKeyPath<R>]
 
-    //swiftlint:disable identifier_name superfluous_disable_command
     case url(URL)
     case template(URITemplate, VariableMap)
     case relationship(KeyPath<R, URITemplate>, VariableMap)
     case optionalRelationship(KeyPath<R, URITemplate?>, VariableMap)
     case rootRelationship(KeyPath<R.SessionConfigurationType, URITemplate>, VariableMap)
     case optionalRootRelationship(KeyPath<R.SessionConfigurationType, URITemplate?>, VariableMap)
-    //swiftlint:enable identifier_name superfluous_disable_command
 }
 
 extension EndpointT {

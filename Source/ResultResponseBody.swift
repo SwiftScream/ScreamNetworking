@@ -24,8 +24,6 @@ public enum ResultResponseBody<SuccessType: Decodable, ErrorType: Decodable>: De
         }
     }
 
-    //swiftlint:disable identifier_name superfluous_disable_command
     case success(SuccessType)
     case error(ErrorType)
-    //swiftlint:enable identifier_name superfluous_disable_command
 }
