@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "URITemplate",
+        "repositoryURL": "git@github.com:SwiftScream/URITemplate.git",
+        "state": {
+          "branch": null,
+          "revision": "9e8180566a283da5cb4cb5ecf417e7582449d901",
+          "version": "2.0.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -10,11 +10,12 @@ let package = Package(
             targets: ["ScreamNetworking"]),
     ],
     dependencies: [
+        .package(url: "git@github.com:SwiftScream/URITemplate.git", from: "2.0.0"),
     ],
     targets: [
         .target(
             name: "ScreamNetworking",
-            dependencies: [],
+            dependencies: ["URITemplate"],
             path: "Source"),
     ]
 )
