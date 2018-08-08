@@ -12,11 +12,6 @@ A HTTP Networking library in Swift 4.1
 
 This project is under active development and isn't production-ready.
 
-We currently only support performing a GET request to a hardcoded URL that responds with a JSON payload.
-More coming soon.
-
-NB: essentials.swift is likely to become it's own library in future
-
 ## Getting Started
 
 ### Manual
