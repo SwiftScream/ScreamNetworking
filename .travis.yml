@@ -2,26 +2,40 @@ language: swift
 os: osx
 osx_image: xcode9.3
 
-install: gem install xcpretty
+install:
+  - gem install xcpretty
+  - brew update
+  - brew upgrade carthage
+
+before_script:
+  - carthage bootstrap
 
 jobs:
   include:
     - script:
       - set -o pipefail && xcodebuild test -project ScreamNetworking.xcodeproj -scheme ScreamNetworking-ios -destination "platform=iOS Simulator,name=iPhone X"  | xcpretty -c
       - bash <(curl -s https://codecov.io/bash) -J Tests-ios -F ios
+      name: "iOS"
     - script:
       - set -o pipefail && xcodebuild test -project ScreamNetworking.xcodeproj -scheme ScreamNetworking-mac -destination "platform=macos"  | xcpretty -c
       - bash <(curl -s https://codecov.io/bash) -J Tests-mac -F mac
+      name: "mac"
     - script:
       - set -o pipefail && xcodebuild test -project ScreamNetworking.xcodeproj -scheme ScreamNetworking-tv -destination "platform=tvOS Simulator,name=Apple TV 4K"  | xcpretty -c
       - bash <(curl -s https://codecov.io/bash) -J Tests-tv -F tv
+      name: "tv"
     - script:
       - set -o pipefail && xcodebuild build -project ScreamNetworking.xcodeproj -scheme ScreamNetworking-watch | xcpretty -c
+      name: "watch"
     - script:
-      - set -o pipefail && xcodebuild build -project ScreamNetworking.xcodeproj -scheme ScreamNetworking-ios-d | xcpretty -c
+      - set -o pipefail && xcodebuild build -project ScreamNetworking.xcodeproj -scheme ScreamNetworkingExample-ios -destination "platform=iOS Simulator,name=iPhone X" | xcpretty -c
+      name: "iOS Example"
     - script:
-      - set -o pipefail && xcodebuild build -project ScreamNetworking.xcodeproj -scheme ScreamNetworking-mac-d | xcpretty -c
+      - set -o pipefail && xcodebuild build -project ScreamNetworking.xcodeproj -scheme ScreamNetworkingExample-mac | xcpretty -c
+      name: "mac Example"
     - script:
-      - set -o pipefail && xcodebuild build -project ScreamNetworking.xcodeproj -scheme ScreamNetworking-tv-d | xcpretty -c
+      - set -o pipefail && xcodebuild build -project ScreamNetworking.xcodeproj -scheme ScreamNetworkingExample-tv -destination "platform=tvOS Simulator,name=Apple TV 4K" | xcpretty -c
+      name: "tv Example"
     - script:
-      - set -o pipefail && xcodebuild build -project ScreamNetworking.xcodeproj -scheme ScreamNetworking-watch-d | xcpretty -c
+      - set -o pipefail && xcodebuild build -project ScreamNetworking.xcodeproj -scheme ScreamNetworkingExample-watch -destination "platform=iOS Simulator,name=iPhone 8"| xcpretty -c
+      name: "watch Example"

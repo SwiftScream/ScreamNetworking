@@ -8,8 +8,10 @@ PRODUCT_BUNDLE_IDENTIFIER = com.swiftscream.ScreamNetworkingExample
 PRODUCT_NAME = $(TARGET_NAME)
 ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon
 
-OTHER_LDFLAGS = -lScreamNetworking-ios
+SIMULATOR_ONLY_ADDITIONAL_LDFLAGS[sdk=iphonesimulator*] = -fprofile-instr-generate
+OTHER_LDFLAGS = -framework ScreamNetworking $(SIMULATOR_ONLY_ADDITIONAL_LDFLAGS)
+FRAMEWORK_SEARCH_PATHS = $(inherited) $(PROJECT_DIR)/Carthage/Build/iOS/Static
 
-CODE_SIGN_IDENTITY = iOS Developer
+CODE_SIGN_IDENTITY = iPhone Developer
 CODE_SIGN_STYLE = Automatic
 DEVELOPMENT_TEAM =

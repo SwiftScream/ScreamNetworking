@@ -13,10 +13,20 @@
 //   limitations under the License.
 
 import XCTest
+@testable import ScreamNetworking
 
-class Tests: XCTestCase {
+class RequestTests: XCTestCase {
 
-    func testExample() {
+    func test_generateVariables_WithURLReturnsNil() {
+        struct TestRequest: GitHubRequest {
+            public static let endpoint = Endpoint.url(URL(string: "http://www.example.com")!)
+        }
+
+        let request = TestRequest()
+        let variables = request.generateVariables()
+        XCTAssertNil(variables)
+
+        XCTAssertNil(TestRequest.endpoint.variableMap)
     }
 
 }

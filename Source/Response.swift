@@ -13,6 +13,6 @@
 //   limitations under the License.
 
 import Foundation
+import ScreamEssentials
 
-public struct ScreamNetworking {
-}
+public typealias Response<ResponseBodyType> = Result<ResponseBodyType, SessionError>

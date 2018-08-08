@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "ScreamEssentials",
+        "repositoryURL": "git@github.com:SwiftScream/ScreamEssentials.git",
+        "state": {
+          "branch": null,
+          "revision": "b603cbcd25f7adf5f20d744e426b7d0fd359f858",
+          "version": "1.0.0"
+        }
+      },
+      {
+        "package": "URITemplate",
+        "repositoryURL": "git@github.com:SwiftScream/URITemplate.git",
+        "state": {
+          "branch": null,
+          "revision": "9e8180566a283da5cb4cb5ecf417e7582449d901",
+          "version": "2.0.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

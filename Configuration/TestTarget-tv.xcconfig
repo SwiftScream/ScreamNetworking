@@ -3,6 +3,7 @@ TVOS_DEPLOYMENT_TARGET = 9.0
 TARGETED_DEVICE_FAMILY = 3
 
 LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/Frameworks @loader_path/Frameworks
+FRAMEWORK_SEARCH_PATHS = $(inherited) $(PROJECT_DIR)/Carthage/Build/tvOS/Static
 
 INFOPLIST_FILE = Tests/Info.plist
 PRODUCT_BUNDLE_IDENTIFIER = com.swiftscream.ScreamNetworking.Tests-tv

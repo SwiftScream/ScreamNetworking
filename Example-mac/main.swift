@@ -13,3 +13,54 @@
 //   limitations under the License.
 
 import Foundation
+import ScreamNetworking
+import ScreamEssentials
+
+let session = GitHubSession()
+
+func requestRepos(org: GitHubOrganizationResponse) -> AutoCancellable {
+    return session.enqueue(GitHubOrganizationRepos(organization: org)) { response in
+        do {
+            switch try response.unwrap() {
+            case .error(let e):
+                print("Domain Error: \(e.message)")
+            case .success(let repos):
+                print("Repositories: \(repos.count)")
+            }
+        } catch let e {
+            print("Networking Error: \(e)")
+        }
+    }
+}
+
+let rootRequest = session.enqueue(GitHubRoot()) { response in
+    do {
+        switch try response.unwrap() {
+        case .error(let e):
+            print("Domain Error: \(e.message)")
+        case .success(let root):
+            print("\(root.endpoints.count) Endpoints")
+        }
+    } catch let e {
+        print("Networking Error: \(e)")
+    }
+}
+
+var reposRequest: AutoCancellable?
+let orgRequest = session.enqueue(GitHubOrganization(name: "SwiftScream")) { response in
+    do {
+        switch try response.unwrap() {
+        case .error(let e):
+            print("Domain Error: \(e.message)")
+        case .success(let org):
+            print(org.name)
+            print(org.description)
+            print(org.location)
+            reposRequest = requestRepos(org: org)
+        }
+    } catch let e {
+        print("Networking Error: \(e)")
+    }
+}
+
+RunLoop.current.run(until: Date(timeIntervalSinceNow: 10))

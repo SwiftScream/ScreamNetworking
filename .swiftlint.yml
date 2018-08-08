@@ -2,12 +2,22 @@ disabled_rules:
   - line_length
   - function_body_length
   - trailing_comma
+  - vertical_whitespace
 
 opt_in_rules:
 
 included:
 
 excluded:
+  - Carthage
   
 identifier_name:
   min_length: 1
+
+nesting:
+  type_level:
+    warning: 3
+    
+generic_type_name:
+  max_length:
+    warning: 30
