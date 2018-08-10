@@ -71,7 +71,7 @@ class SessionCreateURLRequestTests: XCTestCase {
             typealias ResponseBodyType = Empty
 
             let path: String //treated as VariableValue
-            let a: Bool //treated as CustomStringConvertible
+            let a: Bool? //treated as CustomStringConvertible
             let b: String? //testing nil removal
         }
 
@@ -89,8 +89,10 @@ class SessionCreateURLRequestTests: XCTestCase {
         struct TestRequest: Request {
             public static let endpoint = Endpoint.url(URL(string: "https://api.example.com")!)
             typealias ResponseBodyType = Empty
-            public static let headers: HeaderMap = ["Accept": \TestRequest.accept]
+            public static let headers: HeaderMap = ["Accept": \TestRequest.accept,
+                                                    "Accept-Charset": \TestRequest.acceptCharset]
             public let accept = "accept header value"
+            public let acceptCharset: String? = "accept charset header value"
         }
 
         guard let request = try? defaultSession.createURLRequest(request: TestRequest()) else {
@@ -100,8 +102,9 @@ class SessionCreateURLRequestTests: XCTestCase {
         XCTAssertEqual(request.url, URL(string: "https://api.example.com"))
         XCTAssertEqual(request.httpMethod, "GET")
         XCTAssertNil(request.httpBody)
-        XCTAssertEqual(request.allHTTPHeaderFields?.count, 1)
+        XCTAssertEqual(request.allHTTPHeaderFields?.count, 2)
         XCTAssertEqual(request.allHTTPHeaderFields?["Accept"], "accept header value")
+        XCTAssertEqual(request.allHTTPHeaderFields?["Accept-Charset"], "accept charset header value")
     }
 
     func testRequestWithNilHeadersBuild() {
@@ -131,8 +134,9 @@ class SessionCreateURLRequestTests: XCTestCase {
         XCTAssertEqual(request.url, URL(string: "https://api.example.com/empty"))
         XCTAssertEqual(request.httpMethod, "GET")
         XCTAssertNil(request.httpBody)
-        XCTAssertEqual(request.allHTTPHeaderFields?.count, 1)
+        XCTAssertEqual(request.allHTTPHeaderFields?.count, 2)
         XCTAssertEqual(request.allHTTPHeaderFields?["Accept"], "application/vnd.github.v3+json")
+        XCTAssertEqual(request.allHTTPHeaderFields?["Accept-Charset"], "utf-8")
     }
 
     func testRequestWithRequestHeaderOverrideSessionHeaderBuild() {
@@ -150,14 +154,15 @@ class SessionCreateURLRequestTests: XCTestCase {
         XCTAssertEqual(request.url, URL(string: "https://api.example.com"))
         XCTAssertEqual(request.httpMethod, "GET")
         XCTAssertNil(request.httpBody)
-        XCTAssertEqual(request.allHTTPHeaderFields?.count, 1)
+        XCTAssertEqual(request.allHTTPHeaderFields?.count, 2)
         XCTAssertEqual(request.allHTTPHeaderFields?["Accept"], "accept header value")
+        XCTAssertEqual(request.allHTTPHeaderFields?["Accept-Charset"], "utf-8")
     }
 
     func testRequestWithSessionVariablesBuild() {
         struct TestRequest: GitHubRequest {
-            public static let endpoint = Endpoint.template("https://api.example.com{/path}{?sessionID}", [
-                "path": \TestRequest.path
+            public static let endpoint = Endpoint.template("https://api.example.com{/path}{?sessionID,a,b}", [
+                "path": \TestRequest.path,
                 ])
             typealias ResponseBodyType = Empty
 
@@ -168,14 +173,14 @@ class SessionCreateURLRequestTests: XCTestCase {
             XCTFail("Fail to build request")
             return
         }
-        XCTAssertEqual(request.url, URL(string: "https://api.example.com/foo?sessionID=asd"))
+        XCTAssertEqual(request.url, URL(string: "https://api.example.com/foo?sessionID=asd&a=true"))
         XCTAssertEqual(request.httpMethod, "GET")
         XCTAssertNil(request.httpBody)
     }
 
     func testRequestWithRequestVariableOverrideSessionVariableBuild() {
         struct TestRequest: GitHubRequest {
-            public static let endpoint = Endpoint.template("https://api.example.com{/path}{?sessionID}", [
+            public static let endpoint = Endpoint.template("https://api.example.com{/path}{?sessionID,a,b}", [
                 "path": \TestRequest.path,
                 "sessionID": \TestRequest.sessionID
                 ])
@@ -189,7 +194,7 @@ class SessionCreateURLRequestTests: XCTestCase {
             XCTFail("Fail to build request")
             return
         }
-        XCTAssertEqual(request.url, URL(string: "https://api.example.com/foo?sessionID=123"))
+        XCTAssertEqual(request.url, URL(string: "https://api.example.com/foo?sessionID=123&a=true"))
         XCTAssertEqual(request.httpMethod, "GET")
         XCTAssertNil(request.httpBody)
     }
