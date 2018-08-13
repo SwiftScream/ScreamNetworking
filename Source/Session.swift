@@ -74,10 +74,12 @@ public class Session<ConfigurationType: SessionConfiguration> {
                 return
             }
 
+            self.log("Request: \(urlRequest.url?.absoluteString ?? "")", option: .request, request: request)
+
             let session: URLSessionProtocol = self.mockSession ?? self.session
             let task = session.dataTask(with: urlRequest) { (data, response, error) in
                 let result = Response<R.ResponseBodyType> {
-                    try self.processResponse(response, data: data, error: error)
+                    try self.processResponse(response, request: request, data: data, error: error)
                 }
                 self.callbackQueue.async {
                     completion(result)
@@ -92,25 +94,29 @@ public class Session<ConfigurationType: SessionConfiguration> {
         return cancellableAggregator
     }
 
-    private func processResponse<ResponseBodyType: Decodable>(_ response: URLResponse?, data: Data?, error: Swift.Error?) throws -> ResponseBodyType {
+    private func processResponse<R: Request>(_ response: URLResponse?, request: R, data: Data?, error: Swift.Error?) throws -> R.ResponseBodyType {
         if let error = error {
+            log("Request Failed (network): \(error.localizedDescription)", option: .response, request: request)
             throw SessionError.network(embeddedError: error)
         }
         guard let response = response as? HTTPURLResponse else {
+            log("Request Failed (network): unknown", option: .response, request: request)
             throw SessionError.network(embeddedError: nil)
         }
 
-        let result: ResponseBodyType
+        let result: R.ResponseBodyType
         do {
             let data = data ?? "{}".data(using: .utf8)!
+            log("Response: \(String(data: data, encoding: .utf8) ?? "")", option: .response, request: request)
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = configuration.keyDecodingStrategy
             decoder.dateDecodingStrategy = configuration.dateDecodingStrategy
             decoder.dataDecodingStrategy = configuration.dataDecodingStrategy
             decoder.nonConformingFloatDecodingStrategy = configuration.nonConformingFloatDecodingStrategy
             decoder.userInfo[.response] = response
-            result = try decoder.decode(ResponseBodyType.self, from: data)
+            result = try decoder.decode(R.ResponseBodyType.self, from: data)
         } catch let error {
+            log("Request Failed (decoding): \(error)", option: .response, request: request)
             throw SessionError.responseDecoding(embeddedError: error)
         }
 
@@ -231,5 +237,21 @@ extension Session {
 
     internal func stopMocking() {
         self.mockSession = nil
+    }
+}
+
+extension Session {
+    private func log(_ string: @autoclosure () -> String) {
+        #if DEBUG
+        print("[\(configuration.description)] \(string())")
+        #endif
+    }
+
+    private func log<R: Request>(_ string: @autoclosure () -> String, option: LoggingOptions, request: R) {
+        #if DEBUG
+        if self.configuration.loggingOptions.contains(option) || request.loggingOptions.contains(option) {
+            log(string)
+        }
+        #endif
     }
 }

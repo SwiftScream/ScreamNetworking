@@ -28,6 +28,7 @@ public protocol Request {
     static var endpoint: Endpoint { get }
     static var method: String { get }
     static var headers: HeaderMap { get }
+    var loggingOptions: LoggingOptions { get }
 }
 
 extension Request {
@@ -36,6 +37,9 @@ extension Request {
     }
     public static var headers: HeaderMap {
         return [:]
+    }
+    public var loggingOptions: LoggingOptions {
+        return []
     }
 }
 

@@ -31,6 +31,8 @@ public protocol SessionConfiguration {
 
     typealias VariableMap = [String: PartialKeyPath<Self>]
     static var templateVariables: VariableMap { get }
+
+    var loggingOptions: LoggingOptions { get }
 }
 
 extension SessionConfiguration {
@@ -46,6 +48,8 @@ extension SessionConfiguration {
 
     public static var requestHeaders: HeaderMap { return [:] }
     public static var templateVariables: VariableMap { return [:] }
+
+    public var loggingOptions: LoggingOptions { return [] }
 }
 
 public struct DefaultSessionConfiguration: SessionConfiguration {

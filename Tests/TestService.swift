@@ -41,6 +41,8 @@ struct GitHubSessionConfiguration: SessionConfiguration {
     public let relationship: URITemplate = "https://api.github.com/orgs/{org}"
     public let optionalRelationship: URITemplate? = "https://api.github.com/orgs/{org}"
     public let nilRelationship: URITemplate? = nil
+
+    public let loggingOptions: LoggingOptions = [.request]
 }
 
 typealias GitHubSession = Session<GitHubSessionConfiguration>
@@ -56,6 +58,7 @@ protocol GitHubRequest: Request where SessionConfigurationType == GitHubSessionC
 struct OrganizationRequest: GitHubRequest {
     public static let endpoint = Endpoint.url(URL(string: "https://api.github.com/orgs/SwiftScream")!)
     public typealias ResponseBodyType = OrganizationResponse
+    public let loggingOptions: LoggingOptions = [.request, .response]
 }
 
 struct OrganizationResponse: Decodable {
