@@ -23,7 +23,9 @@ struct GitHubSessionConfiguration: SessionConfiguration {
 
     // Headers
     public static let requestHeaders: HeaderMap = ["Accept": \GitHubSessionConfiguration.accept,
+                                                   "Accept-Charset": \GitHubSessionConfiguration.acceptCharset,
                                                    "ShouldNotAppear": \GitHubSessionConfiguration.nilHeaderValue]
+    public let acceptCharset: String? = "utf-8"
     public let accept = "application/vnd.github.v3+json"
     public let nilHeaderValue: String? = nil
 
@@ -32,13 +34,15 @@ struct GitHubSessionConfiguration: SessionConfiguration {
                                                         "a": \GitHubSessionConfiguration.a,
                                                         "b": \GitHubSessionConfiguration.b]
     public let sessionID = "asd" //treated as VariableValue
-    public let a: Bool = true //treated as CustomStringConvertible
+    public let a: Bool? = true //treated as CustomStringConvertible
     public let b: String? = nil //testing nil removal
 
     // Relationships
     public let relationship: URITemplate = "https://api.github.com/orgs/{org}"
     public let optionalRelationship: URITemplate? = "https://api.github.com/orgs/{org}"
     public let nilRelationship: URITemplate? = nil
+
+    public let loggingOptions: LoggingOptions = [.request]
 }
 
 typealias GitHubSession = Session<GitHubSessionConfiguration>
@@ -54,6 +58,7 @@ protocol GitHubRequest: Request where SessionConfigurationType == GitHubSessionC
 struct OrganizationRequest: GitHubRequest {
     public static let endpoint = Endpoint.url(URL(string: "https://api.github.com/orgs/SwiftScream")!)
     public typealias ResponseBodyType = OrganizationResponse
+    public let loggingOptions: LoggingOptions = [.request, .response]
 }
 
 struct OrganizationResponse: Decodable {

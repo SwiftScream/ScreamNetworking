@@ -105,6 +105,10 @@
 		9588127C2096C71A0080D3D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9588127B2096C71A0080D3D4 /* Assets.xcassets */; };
 		958812802096C71A0080D3D4 /* ScreamNetworkingExample-watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 958812662096C7190080D3D4 /* ScreamNetworkingExample-watch.app */; };
 		958812B72096ED170080D3D4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958812B62096ED170080D3D4 /* main.swift */; };
+		95B27C232120FFD20008A519 /* LoggingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B27C222120FFD20008A519 /* LoggingOptions.swift */; };
+		95B27C242120FFD20008A519 /* LoggingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B27C222120FFD20008A519 /* LoggingOptions.swift */; };
+		95B27C252120FFD20008A519 /* LoggingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B27C222120FFD20008A519 /* LoggingOptions.swift */; };
+		95B27C262120FFD20008A519 /* LoggingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B27C222120FFD20008A519 /* LoggingOptions.swift */; };
 		95B622F1210EB48700CF8E7F /* RequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B622F0210EB48700CF8E7F /* RequestTests.swift */; };
 		95B622F2210EB48700CF8E7F /* RequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B622F0210EB48700CF8E7F /* RequestTests.swift */; };
 		95B622F3210EB48700CF8E7F /* RequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B622F0210EB48700CF8E7F /* RequestTests.swift */; };
@@ -312,6 +316,7 @@
 		958812FC2097F5470080D3D4 /* TestTarget-ios.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "TestTarget-ios.xcconfig"; sourceTree = "<group>"; };
 		958813012097F8B70080D3D4 /* Tests-tv.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests-tv.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		958813112097FB130080D3D4 /* TestTarget-tv.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "TestTarget-tv.xcconfig"; sourceTree = "<group>"; };
+		95B27C222120FFD20008A519 /* LoggingOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingOptions.swift; sourceTree = "<group>"; };
 		95B622F0210EB48700CF8E7F /* RequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTests.swift; sourceTree = "<group>"; };
 		95C591861F6F7C1200C4405A /* ScreamNetworkingExample-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ScreamNetworkingExample-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C591881F6F7C1200C4405A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -568,6 +573,7 @@
 				9518467920DD206700F16EAC /* ResultResponseBody.swift */,
 				95E25EFB20D89FD0001D36CE /* Session.swift */,
 				953A282820FE01AB00B106D7 /* SessionConfiguration.swift */,
+				95B27C222120FFD20008A519 /* LoggingOptions.swift */,
 				95499A1C20EC51C5002ED05D /* MockResponseStore.swift */,
 				9518468B20DD29F500F16EAC /* Internal */,
 				95D06BA120AAB407005D6947 /* FrameworkInfo.plist */,
@@ -1114,6 +1120,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95B27C232120FFD20008A519 /* LoggingOptions.swift in Sources */,
 				9518469A20E0BF9C00F16EAC /* Response.swift in Sources */,
 				9518469120DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift in Sources */,
 				954999ED20E899DC002ED05D /* Session+Mocking.swift in Sources */,
@@ -1130,6 +1137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95B27C242120FFD20008A519 /* LoggingOptions.swift in Sources */,
 				9518469B20E0BF9C00F16EAC /* Response.swift in Sources */,
 				9518469220DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift in Sources */,
 				954999EE20E899DC002ED05D /* Session+Mocking.swift in Sources */,
@@ -1233,6 +1241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95B27C252120FFD20008A519 /* LoggingOptions.swift in Sources */,
 				9518469C20E0BF9C00F16EAC /* Response.swift in Sources */,
 				9518469320DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift in Sources */,
 				954999EF20E899DC002ED05D /* Session+Mocking.swift in Sources */,
@@ -1249,6 +1258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95B27C262120FFD20008A519 /* LoggingOptions.swift in Sources */,
 				9518469D20E0BF9C00F16EAC /* Response.swift in Sources */,
 				9518469420DD2A1300F16EAC /* URLSessionTaskAutoCancellable.swift in Sources */,
 				954999F020E899DC002ED05D /* Session+Mocking.swift in Sources */,

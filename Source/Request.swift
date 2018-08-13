@@ -16,8 +16,7 @@ import Foundation
 import URITemplate
 import ScreamEssentials
 
-public struct EmptyResponse: Decodable {
-}
+public struct EmptyResponse: Decodable { }
 
 public protocol Request {
     associatedtype SessionConfigurationType: SessionConfiguration = DefaultSessionConfiguration
@@ -28,15 +27,13 @@ public protocol Request {
     static var endpoint: Endpoint { get }
     static var method: String { get }
     static var headers: HeaderMap { get }
+    var loggingOptions: LoggingOptions { get }
 }
 
 extension Request {
-    public static var method: String {
-        return "GET"
-    }
-    public static var headers: HeaderMap {
-        return [:]
-    }
+    public static var method: String { return "GET" }
+    public static var headers: HeaderMap { return [:] }
+    public var loggingOptions: LoggingOptions { return [] }
 }
 
 public enum RequestError: Error {
@@ -53,15 +50,18 @@ extension Request {
         return variableMap.compactMapValues { (keyPath) -> VariableValue? in
             let value = self[keyPath: keyPath]
             switch value {
-            case let variableValue as VariableValue:
-                return variableValue
-            case let stringValue as CustomStringConvertible:
-                return stringValue.description
             case let any as Any? where any == nil:
                 return nil
-            default:
-                assertionFailure("Failed to render template variable")
-                return nil
+            case let any as Any?:
+                switch any {
+                case let variableValue as VariableValue:
+                    return variableValue
+                case let stringValue as CustomStringConvertible:
+                    return stringValue.description
+                default:
+                    assertionFailure("Failed to render template variable")
+                    return nil
+                }
             }
         }
     }
@@ -70,13 +70,16 @@ extension Request {
         let variables = Self.headers.compactMapValues { (keyPath) -> String? in
             let value: Any = self[keyPath: keyPath]
             switch value {
-            case let stringValue as CustomStringConvertible:
-                return stringValue.description
             case let any as Any? where any == nil:
                 return nil
-            default:
-                assertionFailure("Failed to render request header value")
-                return nil
+            case let any as Any?:
+                switch any {
+                case let stringValue as CustomStringConvertible:
+                    return stringValue.description
+                default:
+                    assertionFailure("Failed to render request header value")
+                    return nil
+                }
             }
         }
         return variables

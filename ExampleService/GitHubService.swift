@@ -55,6 +55,7 @@ protocol GitHubRequest: Request where SessionConfigurationType == GitHubSessionC
 public struct GitHubRoot: GitHubRequest {
     public static let endpoint = Endpoint.url("https://api.github.com")
     public typealias ResponseBodyType = GitHubResponseBody<GitHubRootResponse>
+    public let loggingOptions: LoggingOptions = [.request, .response]
 }
 
 public struct GitHubRootResponse: Decodable {
@@ -70,6 +71,7 @@ public struct GitHubOrganization: GitHubRequest {
         "org": \GitHubOrganization.name,
         ])
     public typealias ResponseBodyType = GitHubResponseBody<GitHubOrganizationResponse>
+    public let loggingOptions: LoggingOptions = [.request]
 
     let name: String
 }
