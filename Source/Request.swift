@@ -16,8 +16,7 @@ import Foundation
 import URITemplate
 import ScreamEssentials
 
-public struct EmptyResponse: Decodable {
-}
+public struct EmptyResponse: Decodable { }
 
 public protocol Request {
     associatedtype SessionConfigurationType: SessionConfiguration = DefaultSessionConfiguration
@@ -32,15 +31,9 @@ public protocol Request {
 }
 
 extension Request {
-    public static var method: String {
-        return "GET"
-    }
-    public static var headers: HeaderMap {
-        return [:]
-    }
-    public var loggingOptions: LoggingOptions {
-        return []
-    }
+    public static var method: String { return "GET" }
+    public static var headers: HeaderMap { return [:] }
+    public var loggingOptions: LoggingOptions { return [] }
 }
 
 public enum RequestError: Error {
