@@ -16,7 +16,7 @@ let package = Package(
     targets: [
         .target(
             name: "ScreamNetworking",
-            dependencies: ["URITemplate","ScreamEssentials"],
+            dependencies: ["URITemplate", "ScreamEssentials"],
             path: "Source"),
     ]
 )

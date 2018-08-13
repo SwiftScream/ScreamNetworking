@@ -59,7 +59,7 @@ class SessionQueuesTests: XCTestCase {
         let request = SessionQueueTestRequest()
         let mockResponse = MockResponse.success(body: nil, url: try session.generateURL(request: request))
         mockResponseStore.mock(request: request, withResponse: mockResponse)
-        var requestToken = session.enqueue(request) { response in
+        var requestToken = session.enqueue(request) { _ in
             XCTAssertEqual(DispatchQueue.getSpecific(key: queueMarkerKey), "main")
             expectation.fulfill()
         }
@@ -78,7 +78,7 @@ class SessionQueuesTests: XCTestCase {
         let request = SessionQueueTestRequest()
         let mockResponse = MockResponse.success(body: nil, url: try session.generateURL(request: request))
         mockResponseStore.mock(request: request, withResponse: mockResponse)
-        var requestToken = session.enqueue(request) { response in
+        var requestToken = session.enqueue(request) { _ in
             XCTAssertEqual(DispatchQueue.getSpecific(key: queueMarkerKey), "callback")
             expectation.fulfill()
         }

@@ -46,7 +46,7 @@ public class Session<ConfigurationType: SessionConfiguration> {
 
     public init(configuration: ConfigurationType) {
         self.configuration = configuration
-        var sessionDelegateQueue: OperationQueue? = nil
+        var sessionDelegateQueue: OperationQueue?
         if let responseDecodingQueue = configuration.responseDecodingQueue {
             sessionDelegateQueue = OperationQueue()
             sessionDelegateQueue?.underlyingQueue = responseDecodingQueue
