@@ -18,10 +18,10 @@ This project is under active development and isn't production-ready.
 Static Framework targets are provided for iOS, MacOS, tvOS, and watchOS; integrate them as you normally would.
 
 ### Carthage
-Add `github "SwiftScream/ScreamNetworking" ~> 0.1` to your Cartfile
+Add `github "SwiftScream/ScreamNetworking" ~> 0.2` to your Cartfile
 
 ### Swift Package Manager
-Add `.package(url: "https://github.com/SwiftScream/ScreamNetworking.git", from: "0.1.0")` to your package.swift dependencies
+Add `.package(url: "https://github.com/SwiftScream/ScreamNetworking.git", from: "0.2.0")` to your package.swift dependencies
 
 ## Usage
 

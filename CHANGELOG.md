@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+<a name="0.2"></a>
+# 0.2.0 (2018-08-14)
+
+- FIX: Support optional variable and header types
+- Add configurable debug logging
+
+
 <a name="0.1"></a>
 # 0.1.0 (2018-08-08)
 
