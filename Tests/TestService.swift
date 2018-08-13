@@ -23,7 +23,9 @@ struct GitHubSessionConfiguration: SessionConfiguration {
 
     // Headers
     public static let requestHeaders: HeaderMap = ["Accept": \GitHubSessionConfiguration.accept,
+                                                   "Accept-Charset": \GitHubSessionConfiguration.acceptCharset,
                                                    "ShouldNotAppear": \GitHubSessionConfiguration.nilHeaderValue]
+    public let acceptCharset: String? = "utf-8"
     public let accept = "application/vnd.github.v3+json"
     public let nilHeaderValue: String? = nil
 
@@ -32,7 +34,7 @@ struct GitHubSessionConfiguration: SessionConfiguration {
                                                         "a": \GitHubSessionConfiguration.a,
                                                         "b": \GitHubSessionConfiguration.b]
     public let sessionID = "asd" //treated as VariableValue
-    public let a: Bool = true //treated as CustomStringConvertible
+    public let a: Bool? = true //treated as CustomStringConvertible
     public let b: String? = nil //testing nil removal
 
     // Relationships
