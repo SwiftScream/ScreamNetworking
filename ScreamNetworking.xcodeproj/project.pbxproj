@@ -91,9 +91,6 @@
 		95499A2A20EDC1A0002ED05D /* SessionTests+ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95499A2920EDC1A0002ED05D /* SessionTests+ResponseData.swift */; };
 		95499A2B20EDC1A0002ED05D /* SessionTests+ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95499A2920EDC1A0002ED05D /* SessionTests+ResponseData.swift */; };
 		95499A2C20EDC1A0002ED05D /* SessionTests+ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95499A2920EDC1A0002ED05D /* SessionTests+ResponseData.swift */; };
-		95499A2E20EDE81E002ED05D /* EssentialsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95499A2D20EDE81E002ED05D /* EssentialsTests.swift */; };
-		95499A2F20EDE81E002ED05D /* EssentialsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95499A2D20EDE81E002ED05D /* EssentialsTests.swift */; };
-		95499A3020EDE81E002ED05D /* EssentialsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95499A2D20EDE81E002ED05D /* EssentialsTests.swift */; };
 		958812462096A0980080D3D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958812452096A0980080D3D4 /* AppDelegate.swift */; };
 		958812482096A0980080D3D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958812472096A0980080D3D4 /* ViewController.swift */; };
 		9588124D2096A09A0080D3D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9588124C2096A09A0080D3D4 /* Assets.xcassets */; };
@@ -288,7 +285,6 @@
 		95499A1C20EC51C5002ED05D /* MockResponseStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockResponseStore.swift; sourceTree = "<group>"; };
 		95499A2520ECF3CD002ED05D /* SessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTests.swift; sourceTree = "<group>"; };
 		95499A2920EDC1A0002ED05D /* SessionTests+ResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SessionTests+ResponseData.swift"; sourceTree = "<group>"; };
-		95499A2D20EDE81E002ED05D /* EssentialsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialsTests.swift; sourceTree = "<group>"; };
 		958812432096A0980080D3D4 /* ScreamNetworkingExample-tv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ScreamNetworkingExample-tv.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		958812452096A0980080D3D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		958812472096A0980080D3D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -515,7 +511,6 @@
 			isa = PBXGroup;
 			children = (
 				953ED954210AE98B00219C6D /* TestService.swift */,
-				95499A2D20EDE81E002ED05D /* EssentialsTests.swift */,
 				95B622F0210EB48700CF8E7F /* RequestTests.swift */,
 				954999DC20E4FE66002ED05D /* ResultResponseBodyTests.swift */,
 				954999E020E5A90A002ED05D /* URLSessionTaskAutoCancellableTests.swift */,
@@ -1190,7 +1185,6 @@
 				954999DD20E4FE66002ED05D /* ResultResponseBodyTests.swift in Sources */,
 				954999E120E5A90A002ED05D /* URLSessionTaskAutoCancellableTests.swift in Sources */,
 				953ED955210AE98B00219C6D /* TestService.swift in Sources */,
-				95499A2E20EDE81E002ED05D /* EssentialsTests.swift in Sources */,
 				95499A2620ECF3CD002ED05D /* SessionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1206,7 +1200,6 @@
 				954999DE20E4FE66002ED05D /* ResultResponseBodyTests.swift in Sources */,
 				954999E220E5A90A002ED05D /* URLSessionTaskAutoCancellableTests.swift in Sources */,
 				953ED956210AE98B00219C6D /* TestService.swift in Sources */,
-				95499A2F20EDE81E002ED05D /* EssentialsTests.swift in Sources */,
 				95499A2720ECF3CD002ED05D /* SessionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1222,7 +1215,6 @@
 				954999DF20E4FE66002ED05D /* ResultResponseBodyTests.swift in Sources */,
 				954999E320E5A90A002ED05D /* URLSessionTaskAutoCancellableTests.swift in Sources */,
 				953ED957210AE98B00219C6D /* TestService.swift in Sources */,
-				95499A3020EDE81E002ED05D /* EssentialsTests.swift in Sources */,
 				95499A2820ECF3CD002ED05D /* SessionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
