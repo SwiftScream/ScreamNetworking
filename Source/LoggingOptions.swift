@@ -22,4 +22,5 @@ public struct LoggingOptions: OptionSet {
 
     public static let request = LoggingOptions(rawValue: 1 << 0)
     public static let response = LoggingOptions(rawValue: 1 << 1)
+    public static let requestBody = LoggingOptions(rawValue: 1 << 2)
 }

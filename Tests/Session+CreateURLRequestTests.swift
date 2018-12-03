@@ -19,6 +19,11 @@ import URITemplate
 private class Empty: Decodable {
 }
 
+private struct TestRequestBody: Encodable {
+    let a: String
+    let b: String
+}
+
 class SessionCreateURLRequestTests: XCTestCase {
     var defaultSession: DefaultSession!
     var gitHubSession: GitHubSession!
@@ -48,17 +53,22 @@ class SessionCreateURLRequestTests: XCTestCase {
         struct TestRequest: Request {
             public static let endpoint = Endpoint.url(URL(string: "https://api.example.com")!)
             public static let method = "POST"
+            public static let body = Optional(\TestRequest.bodyObject)
             typealias ResponseBodyType = Empty
+            public let bodyObject: TestRequestBody
+            public let loggingOptions: LoggingOptions = [.requestBody]
         }
 
-        guard let request = try? defaultSession.createURLRequest(request: TestRequest()) else {
+        let bodyObject = TestRequestBody(a: "Ardvark", b: "Banana")
+        let expectedBodyData = "{\"a\":\"Ardvark\",\"b\":\"Banana\"}".data(using: .utf8) ?? Data()
+        guard let request = try? defaultSession.createURLRequest(request: TestRequest(bodyObject: bodyObject)) else {
             XCTFail("Fail to build request")
             return
         }
         XCTAssertEqual(request.url, URL(string: "https://api.example.com"))
         XCTAssertEqual(request.httpMethod, "POST")
-        XCTAssertNil(request.httpBody)
-        XCTAssertEqual(request.allHTTPHeaderFields?.count, 0)
+        XCTAssertEqual(request.httpBody, expectedBodyData)
+        XCTAssertEqual(request.allHTTPHeaderFields?.count, 1)
     }
 
     func testTemplateRequestBuild() {

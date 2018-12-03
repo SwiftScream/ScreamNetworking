@@ -131,6 +131,12 @@ extension Session {
         var r = URLRequest(url: url)
         r.httpMethod = R.method
         r.allHTTPHeaderFields = generateHeaders(request: request)
+        if let (body, contentType) = try encodeRequestBody(request: request) {
+            r.httpBody = body
+            if r.value(forHTTPHeaderField: "Content-Type") == nil {
+                r.setValue(contentType, forHTTPHeaderField: "Content-Type")
+            }
+        }
         return r
     }
 
@@ -220,6 +226,21 @@ extension Session {
                 }
             }
         }
+    }
+
+    private func encodeRequestBody<R: Request>(request: R) throws -> (body: Data, contentType: String)? {
+        guard let bodyKeyPath = R.body else {
+            return nil
+        }
+        let body = request[keyPath: bodyKeyPath]
+        let encoder = JSONEncoder()
+        encoder.keyEncodingStrategy = configuration.keyEncodingStrategy
+        encoder.dateEncodingStrategy = configuration.dateEncodingStrategy
+        encoder.dataEncodingStrategy = configuration.dataEncodingStrategy
+        encoder.nonConformingFloatEncodingStrategy = configuration.nonConformingFloatEncodingStrategy
+        let data = try encoder.encode(body)
+        log("Request Body: \(String(data: data, encoding: .utf8) ?? "")", option: .requestBody, request: request)
+        return (data, "application/json")
     }
 }
 

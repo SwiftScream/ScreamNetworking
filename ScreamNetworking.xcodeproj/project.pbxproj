@@ -121,12 +121,17 @@
 		95E25EEE20D39364001D36CE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EE820D39364001D36CE /* Endpoint.swift */; };
 		95E25EEF20D39364001D36CE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EE820D39364001D36CE /* Endpoint.swift */; };
 		95E25EF020D39364001D36CE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EE820D39364001D36CE /* Endpoint.swift */; };
-		95E25EFA20D8826B001D36CE /* GitHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EF120D8825B001D36CE /* GitHubService.swift */; };
 		95E25F0020D89FD0001D36CE /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EFB20D89FD0001D36CE /* Session.swift */; };
 		95E25F0120D89FD0001D36CE /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EFB20D89FD0001D36CE /* Session.swift */; };
 		95E25F0220D89FD0001D36CE /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EFB20D89FD0001D36CE /* Session.swift */; };
 		95E25F0320D89FD0001D36CE /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EFB20D89FD0001D36CE /* Session.swift */; };
-		95EE90E521B4C6D2003969F9 /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EE90E421B4C6D2003969F9 /* GitHub.swift */; };
+		95EE90E721B4C9E7003969F9 /* ReqRes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EE90E621B4C9E7003969F9 /* ReqRes.swift */; };
+		95EE90E921B4CA53003969F9 /* ReqResService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EE90E821B4CA53003969F9 /* ReqResService.swift */; };
+		95EE90EA21B4CA5C003969F9 /* ReqResService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EE90E821B4CA53003969F9 /* ReqResService.swift */; };
+		95EE90EB21B4CA5C003969F9 /* ReqResService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EE90E821B4CA53003969F9 /* ReqResService.swift */; };
+		95EE90EC21B4CA5D003969F9 /* ReqResService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EE90E821B4CA53003969F9 /* ReqResService.swift */; };
+		95EE90ED21B4F5C3003969F9 /* GitHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E25EF120D8825B001D36CE /* GitHubService.swift */; };
+		95EE90EF21B4F718003969F9 /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EE90E421B4C6D2003969F9 /* GitHub.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -334,6 +339,8 @@
 		95E25EF120D8825B001D36CE /* GitHubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubService.swift; sourceTree = "<group>"; };
 		95E25EFB20D89FD0001D36CE /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		95EE90E421B4C6D2003969F9 /* GitHub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
+		95EE90E621B4C9E7003969F9 /* ReqRes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReqRes.swift; sourceTree = "<group>"; };
+		95EE90E821B4CA53003969F9 /* ReqResService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReqResService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -449,6 +456,7 @@
 			isa = PBXGroup;
 			children = (
 				95E25EF120D8825B001D36CE /* GitHubService.swift */,
+				95EE90E821B4CA53003969F9 /* ReqResService.swift */,
 			);
 			path = ExampleService;
 			sourceTree = "<group>";
@@ -491,6 +499,7 @@
 			children = (
 				958812B62096ED170080D3D4 /* main.swift */,
 				95EE90E421B4C6D2003969F9 /* GitHub.swift */,
+				95EE90E621B4C9E7003969F9 /* ReqRes.swift */,
 			);
 			path = "Example-mac";
 			sourceTree = "<group>";
@@ -1153,6 +1162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				958812482096A0980080D3D4 /* ViewController.swift in Sources */,
+				95EE90EB21B4CA5C003969F9 /* ReqResService.swift in Sources */,
 				954999CD20E4C0B3002ED05D /* GitHubService.swift in Sources */,
 				958812462096A0980080D3D4 /* AppDelegate.swift in Sources */,
 			);
@@ -1163,6 +1173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9588127A2096C7190080D3D4 /* ExtensionDelegate.swift in Sources */,
+				95EE90EC21B4CA5D003969F9 /* ReqResService.swift in Sources */,
 				954999CE20E4C0BD002ED05D /* GitHubService.swift in Sources */,
 				958812782096C7190080D3D4 /* InterfaceController.swift in Sources */,
 			);
@@ -1172,9 +1183,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95EE90E521B4C6D2003969F9 /* GitHub.swift in Sources */,
-				95E25EFA20D8826B001D36CE /* GitHubService.swift in Sources */,
+				95EE90EF21B4F718003969F9 /* GitHub.swift in Sources */,
+				95EE90E721B4C9E7003969F9 /* ReqRes.swift in Sources */,
 				958812B72096ED170080D3D4 /* main.swift in Sources */,
+				95EE90ED21B4F5C3003969F9 /* GitHubService.swift in Sources */,
+				95EE90E921B4CA53003969F9 /* ReqResService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1228,6 +1241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95C5918B1F6F7C1200C4405A /* ViewController.swift in Sources */,
+				95EE90EA21B4CA5C003969F9 /* ReqResService.swift in Sources */,
 				954999CC20E4C0B2002ED05D /* GitHubService.swift in Sources */,
 				95C591891F6F7C1200C4405A /* AppDelegate.swift in Sources */,
 			);

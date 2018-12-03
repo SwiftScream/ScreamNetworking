@@ -26,6 +26,12 @@ public protocol SessionConfiguration {
     var dataDecodingStrategy: JSONDecoder.DataDecodingStrategy { get }
     var nonConformingFloatDecodingStrategy: JSONDecoder.NonConformingFloatDecodingStrategy { get }
 
+    var keyEncodingStrategy: JSONEncoder.KeyEncodingStrategy { get }
+    var dateEncodingStrategy: JSONEncoder.DateEncodingStrategy { get }
+    var dataEncodingStrategy: JSONEncoder.DataEncodingStrategy { get }
+    var nonConformingFloatEncodingStrategy: JSONEncoder.NonConformingFloatEncodingStrategy { get }
+
+
     typealias HeaderMap = [String: PartialKeyPath<Self>]
     static var requestHeaders: HeaderMap { get }
 
@@ -45,6 +51,11 @@ extension SessionConfiguration {
     public var dateDecodingStrategy: JSONDecoder.DateDecodingStrategy { return .deferredToDate }
     public var dataDecodingStrategy: JSONDecoder.DataDecodingStrategy { return .base64 }
     public var nonConformingFloatDecodingStrategy: JSONDecoder.NonConformingFloatDecodingStrategy { return .throw }
+
+    public var keyEncodingStrategy: JSONEncoder.KeyEncodingStrategy { return .useDefaultKeys }
+    public var dateEncodingStrategy: JSONEncoder.DateEncodingStrategy { return .deferredToDate }
+    public var dataEncodingStrategy: JSONEncoder.DataEncodingStrategy { return .base64 }
+    public var nonConformingFloatEncodingStrategy: JSONEncoder.NonConformingFloatEncodingStrategy { return .throw }
 
     public static var requestHeaders: HeaderMap { return [:] }
     public static var templateVariables: VariableMap { return [:] }

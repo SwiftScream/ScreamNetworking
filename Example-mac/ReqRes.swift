@@ -16,7 +16,22 @@ import Foundation
 import ScreamNetworking
 import ScreamEssentials
 
-runGitHubExample()
-runResReqExample()
+private let session = ReqResSession()
+private var loginRequest: AutoCancellable?
 
-RunLoop.current.run(until: Date(timeIntervalSinceNow: 10))
+public func runResReqExample() {
+    let credentials = ReqResCredentials(email: "swiftscream@example.com", password: "swordfish")
+    loginRequest = session.enqueue(ReqResLogin(credentials: credentials)) { response in
+        do {
+            switch try response.unwrap() {
+            case .error(let e):
+                print("Domain Error: \(e.error)")
+            case .success(let object):
+                print("Auth Token: \(object.token)")
+            }
+        } catch let e {
+            print("Networking Error: \(e)")
+        }
+    }
+
+}

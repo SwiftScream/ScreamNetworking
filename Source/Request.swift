@@ -17,22 +17,28 @@ import URITemplate
 import ScreamEssentials
 
 public struct EmptyResponse: Decodable { }
+extension Never: Encodable {
+    public func encode(to encoder: Encoder) throws { }
+}
 
 public protocol Request {
     associatedtype SessionConfigurationType: SessionConfiguration = DefaultSessionConfiguration
     associatedtype ResponseBodyType: Decodable = EmptyResponse
+    associatedtype RequestBodyType: Encodable
     typealias Endpoint = EndpointT<Self>
     typealias HeaderMap = [String: PartialKeyPath<Self>]
 
     static var endpoint: Endpoint { get }
     static var method: String { get }
     static var headers: HeaderMap { get }
+    static var body: KeyPath<Self, RequestBodyType>? { get }
     var loggingOptions: LoggingOptions { get }
 }
 
 extension Request {
     public static var method: String { return "GET" }
     public static var headers: HeaderMap { return [:] }
+    public static var body: KeyPath<Self, Never>? { return nil }
     public var loggingOptions: LoggingOptions { return [] }
 }
 
